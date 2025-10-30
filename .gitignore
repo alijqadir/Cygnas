@@ -2,3 +2,8 @@ public/
 public/
 
 public/
+public/
+asystom/media/*.mp4
+asystom/media/*.mov
+static/asystom/media/*.mp4
+static/asystom/media/*.mov
