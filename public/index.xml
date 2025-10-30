@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Cygnas</title><link>https://www.cygnas.co.uk/</link><description>Recent content in Home on Cygnas</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Thu, 30 Oct 2025 09:00:00 +0500</lastBuildDate><atom:link href="https://www.cygnas.co.uk/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello Cygnas</title><link>https://www.cygnas.co.uk/blog/hello-cygnas/</link><pubDate>Thu, 30 Oct 2025 09:00:00 +0500</pubDate><guid>https://www.cygnas.co.uk/blog/hello-cygnas/</guid><description>&lt;p&gt;Short intro paragraph that appears before the &lt;strong&gt;Read more&lt;/strong&gt; break.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;Now the full article content goes here. You can include images, code blocks, and headings. Keep posts readable and focused.&lt;/p&gt;</description></item><item><title>Digital Twins 101</title><link>https://www.cygnas.co.uk/blog/digital-twins-101/</link><pubDate>Tue, 28 Oct 2025 10:00:00 +0500</pubDate><guid>https://www.cygnas.co.uk/blog/digital-twins-101/</guid><description>&lt;p&gt;Digital twins let you virtually mirror real assets so you can explore performance, failures, and optimization safely.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;In practice, a good twin fuses sensor data, physics models, and ML. Start small: a single asset with clear KPIs. Expand once you’re getting decisions from the twin—not just dashboards.&lt;/p&gt;</description></item><item><title>AI Reliability in Industry</title><link>https://www.cygnas.co.uk/blog/ai-reliability-in-industry/</link><pubDate>Sat, 25 Oct 2025 14:30:00 +0500</pubDate><guid>https://www.cygnas.co.uk/blog/ai-reliability-in-industry/</guid><description>&lt;p&gt;From model drift to data quality, production AI needs rigorous monitoring and clear fallback paths.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;Aim for observable pipelines, versioned datasets, and human‑centered guardrails. Reliability emerges from process—not just better models.&lt;/p&gt;</description></item><item><title>Asystom</title><link>https://www.cygnas.co.uk/asystom/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.cygnas.co.uk/asystom/</guid><description>&lt;noscript
+ &gt;&lt;iframe
+ src="https://www.googletagmanager.com/ns.html?id="
+ height="0"
+ width="0"
+ style="display: none; visibility: hidden"
+ &gt;&lt;/iframe
+ &gt;&lt;/noscript&gt;
+ 
+&lt;div class="industrial-header"&gt;
+ &lt;div class="container"&gt;
+ &lt;div
+ style="
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100%;
+ "
+ &gt;
+ &lt;div style="font-weight: 500"&gt;
+ Official Asystom Reseller in the UK &amp; Ireland
+ &lt;/div&gt;
+ &lt;div style="display: flex; gap: var(--space-6)"&gt;
+ &lt;a
+ href="tel:+442045772345"
+ style="
+ color: white;
+ display: flex;
+ align-items: center;
+ gap: var(--space-2);
+ "
+ &gt;
+ &lt;svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"&gt;
+ &lt;path
+ d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM5 6h1.5c.1 1.2.4 2.4.8 3.5L5.7 11.3c-.4-1.3-.7-2.6-.7-4zM19 20c-1.4 0-2.7-.2-4-.7l1.8-1.8c1.1.4 2.3.7 3.5.8V20z"
+ /&gt;
+ &lt;/svg&gt;
+ +44 20 4577 2345
+ &lt;/a&gt;
+ &lt;a
+ href="mailto:solutions@cygnas.co.uk"
+ style="
+ color: white;
+ display: flex;
+ align-items: center;
+ gap: var(--space-2);
+ "
+ &gt;
+ &lt;svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"&gt;
+ &lt;path
+ d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+ /&gt;
+ &lt;/svg&gt;
+ solutions@cygnas.co.uk
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+ &lt;main id="content"&gt;
+
+
+&lt;section class="hero"&gt;
+ &lt;div class="container"&gt;
+ &lt;div class="hero-split"&gt;
+ &lt;div class="hero-content"&gt;
+ &lt;h1&gt;Predict Equipment Failures Before They Happen&lt;/h1&gt;
+ &lt;p&gt;
+ Asystom's wireless condition monitoring with Edge AI detects anomalies
+ in real-time, reducing downtime by up to 50% and maintenance costs by
+ 30%.
+ &lt;/p&gt;</description></item><item><title>ZWCAD Landing</title><link>https://www.cygnas.co.uk/zwsoft-uk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.cygnas.co.uk/zwsoft-uk/</guid><description>&lt;!-- HERO --&gt;
+ &lt;div class="da-main"&gt;
+ &lt;div
+ class="da-bg pc"
+ style="background-image: url('images/pw1.jpg')"
+ &gt;&lt;/div&gt;
+ &lt;div
+ class="da-bg phone"
+ style="background-image: url('images/pw1-b.jpg')"
+ &gt;&lt;/div&gt;
+ &lt;div class="da-text"&gt;
+ &lt;div class="da-box"&gt;
+ &lt;div class="da-tip d-bold"&gt;ZWCAD 2026, Create amazing things!&lt;/div&gt;
+ &lt;h2 class="da-titles d-bold"&gt;
+ Pre-order ZWCAD 2026 today and save 15%
+ &lt;/h2&gt;
+ &lt;div class="da-intro"&gt;Timeline：April 8th - May 7th, 2025&lt;/div&gt;
+ &lt;div class="da-buttombox"&gt;
+ &lt;a
+ class="da-buttom d-bold"
+ data-toggle="modal"
+ data-target="#leadform"
+ &gt;Order ZWCAD 2026 Now&lt;/a
+ &gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;!-- OFFERS --&gt;
+ &lt;div class="db-main"&gt;
+ &lt;div class="db-inner"&gt;
+ &lt;div class="db-top"&gt;
+ &lt;h2 class="db-titles d-bold"&gt;Our offers for you&lt;/h2&gt;
+ &lt;div class="db-querybox"&gt;
+ &lt;div class="db-tip"&gt;Terms and conditions&lt;/div&gt;
+ &lt;div class="db-query"&gt;
+ &lt;div class="db-query_icon"&gt;
+ &lt;img src="images/pe4.png" alt="" /&gt;
+ &lt;/div&gt;
+ &lt;div class="db-sub"&gt;
+ &lt;div class="db-box"&gt;
+ &lt;div class="db-textbox"&gt;
+ &lt;p&gt;Offer period: Valid from April 8th to May 7th, 2025.&lt;/p&gt;
+ &lt;p&gt;
+ Availability: This promotion is only available in
+ &lt;span style="color: #ffd84b"&gt;*selected markets&lt;/span&gt;.
+ Please contact your local reseller or distributor for
+ availability and further details.
+ &lt;/p&gt;</description></item></channel></rss>

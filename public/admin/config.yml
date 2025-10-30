@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway   # easiest on Netlify. If not using Netlify, change to: github
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+site_url: "https://www.cygnas.co.uk"
+logo_url: "/img/cms-logo.png"
+
+publish_mode: editorial_workflow  # drafts -> review -> publish
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "blog/{{slug}}/"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "Cygnas Editorial" }
+      - { label: "Categories", name: "categories", widget: "list", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, allow_multiple: false }
+      - { label: "Canonical URL", name: "canonicalURL", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About"
+        file: "content/about/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "privacy"
+        label: "Privacy Policy"
+        file: "content/privacy/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "terms"
+        label: "Terms"
+        file: "content/terms/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+

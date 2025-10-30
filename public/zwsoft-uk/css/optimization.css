@@ -1,0 +1,173 @@
+﻿.layui-layer-dialog .layui-layer-content{word-break: break-word !important;}
+body header{z-index: 999; width: 100%; left: 0; top: 0; transition: all .2s;}
+body header .btn-secondary {padding: 12px 20px; margin-right: 5px;}
+body.scrolling header{position: fixed; background: #0f4ec4; height: 80px; padding: 19px 0px;}
+body.scrolling header .btn-primary, body.scrolling header .btn-secondary{padding: 8px 15px;}
+body header .btn-secondary.mobile-show{display: none;}
+body header .btn-secondary.pc-show{display: inline-block;}
+body.scrolling .top_middle_content{margin-top: 100px;}
+
+#subform .modal-content{padding: 25px;}
+.popform .form-control{padding: 8px 12px;}
+.popform .form-group{margin-bottom: 20px;}
+
+.cost_caltulator .checkbox label{padding-left: 0;}
+.cost_caltulator .list-inline{text-align: center; margin: 0 !important; padding: 50px 0 0 0 !important;}
+.cost_caltulator .list-inline .list-inline-item:not(:last-child){margin-right: 1.5rem;}
+.cost_caltulator .list-inline .list-inline-item .btn-secondary, .cost_caltulator .list-inline .list-inline-item .btn-primary{width: 250px;}
+.cost_caltulator input#year{background: #FFFFFF; color: #000B1F;}
+
+.thanks-body{padding: 100px 20px;}
+.thanks-body h2{color: #101828; font-weight: 700; font-size: 30px; line-height: 38px;}
+.thanks-body a {color: #276DDF;}
+
+.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-secondary,
+.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-primary,
+.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-secondary,
+.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-primary{
+	width: 320px;
+}
+.vscad-de .home_title{
+	font-size: 40px;
+}
+@media only screen and (max-width: 1300px){
+	.vscad-de .home_title{
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width: 992px) and (min-width: 768px)  {
+	footer .container .row:nth-child(1) .col-md-6:nth-child(2){
+		padding-left: 5px;
+		padding-right: 0px;
+	}
+}
+
+
+@media only screen and (max-width: 767px){
+    body header, body.scrolling header{padding: 15px 0; height: 58px;}
+    body header .col-auto{padding-left: 10px; padding-right: 0;}
+    body header .col-auto.d-none {padding-right: 10px; padding-left: 0; display: block !important;}
+    body header .btn-primary, body header .btn-secondary, body.scrolling header .btn-primary, body.scrolling header .btn-secondary{padding: 3px 5px;font-size: 13px;}
+    body header .btn-secondary img{padding-left: 3px;}
+    body header .btn-secondary.mobile-show{display: inline-block;}
+    body header .btn-secondary.pc-show{display: none;}
+    body header .btn-secondary{margin-right: 0;}
+    body.scrolling .top_middle_content{margin-top: 58px;}
+
+    .top_middle_content ul li .btn, .why_middle_content ul li .btn {font-size: 14px;}
+
+    #subform .modal-body{padding-top: 10px;}
+    #subform .modal-content{padding: 20px; width: 90%;max-height: calc(100vh - 50px); margin: 0 auto; overflow: scroll;}
+    #subform .modal-dialog-centered{min-height: 100%;}
+    #subform .modal-header .close {margin: -0.5rem -0.5rem -1rem auto;}
+    #subform #trielform{margin-top: 20px !important;}
+    .popform h2{font-size: 18px;}
+    .popform .form-control{font-size: 14px;}
+    .popform .col-md-6{width: 50%;}
+    .popform .form-group{margin-bottom: 10px;}
+    .popform label{margin-bottom: 5px;}
+    .popform .checkbox label{font-size: 14px;}
+    .popform .btn-primary{padding: 10px;}
+    .popform .checkbox label{margin: 15px 0 10px 0;}
+
+    .cost_caltulator h5{height: 2em; font-size: 12px;}
+    .cost_caltulator .list-inline .list-inline-item .btn-secondary, .cost_caltulator .list-inline .list-inline-item .btn-primary{width: auto; min-width: 164px; font-size: 14px; padding: 12px 16px;}
+	
+	.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-secondary, 
+	.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-primary, 
+	.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-secondary, 
+	.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-primary{
+		margin-bottom: 10px;
+	}
+	.vscad-de .cost_caltulator .list-inline .list-inline-item:not(:last-child),
+	.vscad-es .cost_caltulator .list-inline .list-inline-item:not(:last-child){
+		margin-right: 0px;
+	}
+    
+}
+
+@media (min-width: 576px){
+    #subform .modal-dialog-centered {min-height: calc(100%);}
+}
+
+
+@media only screen and (max-width: 500px){
+    .top_middle_content h1, .home_title {font-size: 28px;}
+
+    .newsletter_form ul .list-inline-item:not(:last-child){margin-right: 8px;}
+    .newsletter_form .form-control {width: 175px;}
+    .newsletter_form .form-control, .newsletter_form .btn-submit {padding: 8px 10px;}
+	
+	.popform .col-md-6{
+		width: 100%;
+	}
+	.popform .row-name-con .col-md-6{
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 450px){
+    .top_middle_content ul li .btn {padding: 12px 10px;}
+    .top_middle_content ul li .btn-primary {min-width: 95px;}
+    .why_middle_content ul li .btn {font-size: 13px; padding: 10px 6px;}
+    .why_middle_content ul li .btn-primary {min-width: 75px;}
+    .why_middle_content .list-inline-item:not(:last-child){margin-right: 5px;}
+
+    .cost_caltulator .list-inline .list-inline-item:not(:last-child) {margin-right: .3rem;}
+    .cost_caltulator .list-inline .list-inline-item .btn-secondary, .cost_caltulator .list-inline .list-inline-item .btn-primary{width: auto; min-width: 95px; padding: 12px 10px;}
+    
+
+    .thanks-body{padding: 80px 20px;}
+    .thanks-body h2{font-size: 24px;}
+    .thanks-body img{max-width: 80%;}
+	
+	.vscad-de .logo ,
+	.vscad-es .logo{
+		width: 80px;
+	}
+	.vscad-de header .col-auto a,
+	.vscad-es header .col-auto a{
+		font-size: 12px;
+	}
+	
+	.vscad-de .home_title{
+		font-size: 24px;
+	}
+	
+}
+@media only screen and (max-width: 360px){
+	.vscad-de .logo ,
+	.vscad-es .logo{
+		width: 60px;
+	}
+	.vscad-de .ul-container1,
+	.vscad-es .ul-container1{
+		text-align: center;
+	}
+	/*
+	.vscad-de .ul-container1 li a,
+	.vscad-es .ul-container1 li a,
+	*/
+
+	.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-secondary, 
+	.vscad-de .cost_caltulator .list-inline .list-inline-item .btn-primary, 
+	.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-secondary, 
+	.vscad-es .cost_caltulator .list-inline .list-inline-item .btn-primary{
+		width: 277px;
+	}
+	.vscad-en .top_middle_content .list-inline li:nth-child(1),
+	.vscad-en .btn-1{
+		margin-bottom: 15px;
+	}
+}
+@media only screen and (max-width: 359px){
+	.vscad-de header .btn-secondary.mobile-show ,
+	.vscad-de header .btn-primary,
+	.vscad-es header .btn-secondary.mobile-show,
+	.vscad-es header .btn-primary{
+		display: none;
+	}
+	.vscad-de .home_title{
+		font-size: 20px;
+	}
+}

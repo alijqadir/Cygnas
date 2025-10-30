@@ -1,0 +1,65 @@
+.content img{max-width:100%;height:auto;border-radius:12px}
+.content pre{overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:12px}
+.content code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+.content h2, .content h3{margin-top:1.2em}
+
+/* Blog layout helpers */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.grid-2{display:grid;grid-template-columns:2fr 1fr;gap:32px}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+.post-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.1);padding:16px;border-radius:16px;transition:.2s}
+.post-card:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:0 12px 30px rgba(59,130,246,.15)}
+.post-card h2{margin:.2rem 0 .4rem;font-size:1.3rem}
+.post-card .meta{color:var(--gray);font-size:.9rem;margin-bottom:.5rem}
+.post-card h3{margin:.2rem 0 8px;font-size:1.05rem}
+.post-card ul{margin:.25rem 0 0;padding-left:1rem}
+.post-card li{margin:.15rem 0}
+
+/* Blog page spacing */
+.blog-list{padding:48px 0 64px}
+.blog-list h1{margin:0 0 12px}
+.blog-list .grid{margin-top:14px;gap:28px}
+nav.pagination{margin-top:28px;display:flex;justify-content:center}
+
+/* Single post spacing/layout */
+.single-post{padding:48px 0 64px}
+.single-post article header{margin-bottom:12px}
+.single-post article .meta{color:var(--gray);margin-top:.5rem;line-height:1.3}
+.single-post article{max-width:780px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.1);padding:20px;border-radius:16px}
+.single-post article header h1{margin:0 0 .25rem}
+.single-post article header .meta{font-size:.95rem}
+.single-post .content{color:var(--light);line-height:1.75}
+.single-post .content a{color:#9cd1ff}
+.single-post .content h2,.single-post .content h3{color:#fff}
+.single-post .content ul,.single-post .content ol{padding-left:1.2rem;margin:.75rem 0}
+.single-post .content blockquote{margin:1rem 0;padding:.75rem 1rem;border-left:3px solid var(--primary);background:rgba(255,255,255,.03);border-radius:8px;color:#cbd5e1}
+.single-post hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:1.25rem 0}
+
+/* Ensure post media/title never overlay the site header */
+.single-post{position:relative;z-index:0}
+.single-post article header,.single-post article figure,.single-post article img,.single-post h1{position:relative;z-index:1}
+.single-post article figure{margin:16px 0}
+.single-post article figure img{width:100%;height:auto;max-height:520px;object-fit:cover;display:block;border-radius:12px}
+@media(max-width:600px){.single-post article figure img{max-height:320px}}
+
+/* Breadcrumb and tags */
+.breadcrumb{margin:0 0 .5rem}
+.breadcrumb a{color:#9cd1ff;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.tag-chip{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:#cbd5e1;text-decoration:none;font-size:.9rem;background:rgba(255,255,255,.04)}
+.tag-chip:hover{border-color:var(--primary);color:#fff}
+
+/* Related + post nav */
+.related-list{margin:8px 0 0;padding-left:18px}
+.related-list li{margin:4px 0}
+.post-nav{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+.post-nav a{color:#9cd1ff;text-decoration:none}
+.post-nav a:hover{text-decoration:underline}
+
+/* Sidebar improvements */
+.sidebar{display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:calc(var(--header-h, 72px) + 16px)}
+@media(max-width:900px){.sidebar{position:static;gap:12px}}
+.single-post .content p{margin:1rem 0}
+.single-post .content img{display:block;margin:12px 0;border-radius:12px}
+@media(max-width:900px){.single-post{padding:36px 0 56px}.sidebar{margin-top:24px}}

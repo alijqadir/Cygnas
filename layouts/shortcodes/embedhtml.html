@@ -1,0 +1,10 @@
+{{ $path := .Get 0 }}
+{{ $raw := readFile $path }}
+{{ $step1 := replaceRE "(?i)^[\\s\\S]*?<body[^>]*>" "" $raw }}
+{{ $body := replaceRE "(?i)</body>[\\s\\S]*$" "" $step1 }}
+{{ $body = replaceRE "(?i)<header[\\s\\S]*?</header>" "" $body }}
+{{ $body = replaceRE "(?i)<footer[\\s\\S]*?</footer>" "" $body }}
+{{ if or (eq $path "index.html") (eq $path "/index.html") }}
+  {{ $body = replaceRE "(?is)<script[\\s\\S]*?</script>" "" $body }}
+{{ end }}
+{{ $body | safeHTML }}

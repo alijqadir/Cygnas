@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="container blog-list">
+  <h1>Blog</h1>
+  {{ $p := .Paginate (.Pages) }}
+  {{ if $p.Pages }}
+    <div class="grid">
+      {{ range $p.Pages }}
+        <article class="post-card">
+          {{ with .Params.image }}<a href="{{ $.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></a>{{ end }}
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <div class="meta">{{ .Date.Format "02 Jan 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}</div>
+          <p>{{ .Summary }}</p>
+        </article>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  {{ else }}
+    <p>No posts yet.</p>
+  {{ end }}
+</section>
+{{ end }}

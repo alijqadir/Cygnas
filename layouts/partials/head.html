@@ -1,0 +1,69 @@
+{{ $rel := .RelPermalink }}
+{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
+{{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Hugo" />
+<title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+
+<!-- Base fonts and icons used across pages -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css" />
+<script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+<!-- Shared site styles (header/footer, homepage sections) -->
+<link rel="stylesheet" href="/styles.css" />
+
+{{ $main := resources.Get "css/main.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}">
+
+{{ if $isZW }}
+  <!-- ZWSOFT LP assets -->
+  <link rel="dns-prefetch" href="https://statics.zwsoft.com/" />
+  <link rel="dns-prefetch" href="https://www.zwsoft.com/" />
+  <link rel="preconnect" href="https://statics.zwsoft.com/" />
+  <link rel="preconnect" href="https://www.zwsoft.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="preconnect" href="https://script.google.com" crossorigin />
+  <link rel="dns-prefetch" href="//script.google.com" />
+
+  <link rel="stylesheet" href="/zwsoft-uk/css/43c207542d464747b841346087489693.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/fontawsome.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/intltelinput-17.0.806da.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/style06da.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/resposnive.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/aos.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/owl.carousel.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/optimization.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/myiconfont.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/video-js.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/index.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/media-en06da.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/swiper.min.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/fontaa6c.css" />
+  <link rel="stylesheet" href="/zwsoft-uk/css/promotion-europe-2025.css" />
+{{ end }}
+
+{{ if $isAsy }}
+  <!-- Asystom landing assets (hosted) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/main.css" />
+  <link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/tight-dark.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+  <script src="https://www.cygnas.co.uk/asystom/js/dark-toggle.js" defer></script>
+  <script src="https://www.cygnas.co.uk/asystom/js/form-handler.js" defer></script>
+  <script src="https://www.cygnas.co.uk/asystom/js/support-capture.js" defer></script>
+{{ end }}
+
+<!-- Offset main content under fixed header -->
+<style>
+  main#content { padding-top: calc(var(--header-h, 72px) + 12px); }
+  header#header{position:fixed;top:0;width:100%;z-index:1000}
+  body{scroll-behavior:smooth}
+ </style>
