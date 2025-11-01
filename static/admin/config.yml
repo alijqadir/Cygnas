@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway   # easiest on Netlify. If not using Netlify, change to: github
+  name: github
+  repo: alijqadir/Cygnas
   branch: main
+  base_url: https://cygnas.co.uk/api/decap
+  auth_endpoint: auth
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -54,4 +57,3 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
-
