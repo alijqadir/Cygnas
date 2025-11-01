@@ -29,6 +29,13 @@
   to = "/admin/index.html"
   status = 200
 
+# Proxy CMS OAuth bridge via server (no DNS change needed)
+[[redirects]]
+  from = "/api/decap/*"
+  to = "http://34.252.17.33/:splat"
+  status = 200
+  force = true
+
 # Basic security headers
 [[headers]]
   for = "/*"

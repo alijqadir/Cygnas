@@ -6,23 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- Decap CMS -->
+    <!-- Let Decap CMS load /admin/config.yml; no manual init -->
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
-
-    <!-- Netlify Identity widget (REQUIRED for invite/reset flows) -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          // Coming from invite/reset email? The widget will auto-open the modal.
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              // After login, go to the CMS UI
-              window.location.href = "/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
