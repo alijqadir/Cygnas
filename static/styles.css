@@ -177,8 +177,9 @@ nav {
   justify-content: center;
   padding: 1.4rem;
   transition: 0.3s;
-  filter: grayscale(100%) brightness(0.9) contrast(1.05);
-  opacity: 0.85;
+  /* Slightly brighter baseline for logos */
+  filter: grayscale(80%) brightness(1.05) contrast(1.05);
+  opacity: 0.95;
   text-decoration: none;
 }
 .client-card:hover {
