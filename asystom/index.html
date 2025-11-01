@@ -26,6 +26,61 @@
   rel="stylesheet"
 />
 
+<!-- Balanced section spacing for Asystom page -->
+<style>
+  .hero,
+  .section,
+  .stripe,
+  .cta-strip,
+  .industrial-cta {
+    padding-top: var(--space-7) !important;
+    padding-bottom: var(--space-7) !important;
+  }
+  .section h2 {
+    margin-bottom: var(--space-5) !important;
+  }
+  /* Avoid double padding when sections are nested */
+  .section > .container > .section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  /* Ensure in-page anchors are not hidden under headers */
+  section[id], .section[id] {
+    scroll-margin-top: calc((var(--header-h, 72px)) + 36px);
+  }
+  #industries { scroll-margin-top: calc((var(--header-h, 72px)) + 48px); }
+  /* Restore padding and avoid clipping for Industries nested section */
+  .section > .container > .section.industries,
+  .section.industries {
+    padding-top: var(--space-7) !important;
+    padding-bottom: var(--space-7) !important;
+    overflow: visible !important;
+  }
+  /* Center the CTAs in Industrial CTA section on desktop */
+  @media (min-width: 768px) {
+    .industrial-cta .cta-row {
+      display: flex;
+      justify-content: center !important;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 640px) {
+    .hero,
+    .section,
+    .stripe,
+    .cta-strip,
+    .industrial-cta {
+      padding-top: var(--space-6) !important;
+      padding-bottom: var(--space-6) !important;
+    }
+    .section h2 {
+      margin-bottom: var(--space-4) !important;
+    }
+  }
+</style>
+
 
 
   </head>
@@ -595,11 +650,11 @@
         >Book Free Assessment</a
       >
       <a
-        href="https://www.cygnas.co.uk/asystom/case-studies"
+        href="#case-studies-gate"
         class="btn"
+        data-open-case-studies
         style="background: transparent; border: 2px solid white; color: white"
-        >View Case Studies</a
-      >
+        >View Case Studies</a>
     </div>
   </div>
 </section>
@@ -986,18 +1041,25 @@
 <script>
   
   (function () {
-    var headerH = document.querySelector(".site-header")?.offsetHeight || 70;
-    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        var id = a.getAttribute("href");
-        if (id.length < 2) return;
-        var el = document.querySelector(id);
+    function headerOffset() {
+      var h1 = document.querySelector('.industrial-header')?.offsetHeight || 0;
+      var h2 = document.querySelector('.site-header')?.offsetHeight || 0;
+      return h1 + h2 + 8; // small gap
+    }
+    var anchors = Array.from(document.querySelectorAll('a[href^="#"], a[data-nav]'));
+    anchors.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href') || '';
+        var idx = href.indexOf('#');
+        if (idx === -1) return;
+        var hash = href.slice(idx);
+        if (!hash || hash.length < 2) return;
+        var el = document.querySelector(hash);
         if (!el) return;
         e.preventDefault();
-        var top =
-          el.getBoundingClientRect().top + window.pageYOffset - (headerH - 2);
-        window.scrollTo({ top: top, behavior: "smooth" });
-        history.replaceState(null, "", id);
+        var top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        history.replaceState(null, '', hash);
       });
     });
   })();
@@ -1051,6 +1113,106 @@
     });
   })();
 </script>
+<!-- Case Studies Gate (email capture) -->
+<style>
+  .cs-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:10000}
+  .cs-modal.is-open{display:flex}
+  .cs-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+  .cs-dialog{position:relative;background:#fff;color:#0b1b2a;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);width:min(92vw,520px);padding:var(--space-6,24px)}
+  .cs-dialog h3{margin:0 0 var(--space-3,12px);font-size:20px}
+  .cs-dialog p{margin:0 0 var(--space-4,16px);color:#4b5b6b}
+  .cs-close{position:absolute;top:8px;right:10px;border:0;background:transparent;color:#667;cursor:pointer;font-size:22px;line-height:1}
+  .cs-field{margin-bottom:var(--space-4,16px)}
+  .cs-field input[type=email]{width:100%;padding:12px 14px;border:1px solid #d6dde5;border-radius:8px;font:inherit}
+  .cs-field input[type=email]:focus{outline:0;border-color:#2e7cf6;box-shadow:0 0 0 3px rgba(46,124,246,.15)}
+  .cs-msg{margin-top:10px;font-size:14px;color:#1a3}
+  .hidden{display:none !important}
+</style>
+<div id="case-studies-gate" class="cs-modal" aria-hidden="true">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-dialog" role="dialog" aria-modal="true" aria-labelledby="csTitle">
+    <button class="cs-close" aria-label="Close" data-close>&times;</button>
+    <h3 id="csTitle">Get the Case Studies PDF</h3>
+    <p>Enter your work email to access the PDF.</p>
+    <form name="case-studies" id="caseStudiesForm" method="POST" data-netlify="true" netlify netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="case-studies" />
+      <input type="hidden" name="page_url" />
+      <input type="hidden" name="referrer" />
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="user_agent" />
+      <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <div class="cs-field">
+        <input type="email" name="email" placeholder="Work email *" required />
+      </div>
+      <button class="btn btn-primary" type="submit">Get PDF</button>
+      <div class="cs-msg" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var PDF_URL = '/assets/Cygnas%20Case%20Studies%20Master%20Rev11.pdf';
+  var modal = document.getElementById('case-studies-gate');
+  var openers = document.querySelectorAll('[data-open-case-studies]');
+  var closers = modal.querySelectorAll('[data-close]');
+  var form = document.getElementById('caseStudiesForm');
+  var msg = modal.querySelector('.cs-msg');
 
-  </body>
+  function open(){ modal.classList.add('is-open'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('is-open'); document.body.style.overflow=''; }
+
+  openers.forEach(function(el){
+    el.addEventListener('click', function(e){
+      if (localStorage.getItem('cs_access_granted') === '1') {
+        e.preventDefault();
+        window.open(PDF_URL, '_blank', 'noopener');
+        return;
+      }
+      e.preventDefault();
+      open();
+    });
+  });
+
+  closers.forEach(function(el){ el.addEventListener('click', close); });
+  modal.addEventListener('click', function(e){ if (e.target.classList.contains('cs-backdrop')) close(); });
+
+  function populateHidden(){
+    try {
+      form.querySelector('input[name="page_url"]').value = location.href;
+      form.querySelector('input[name="referrer"]').value = document.referrer || '';
+      var qp = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+        if (qp.has(k)) form.querySelector('input[name="'+k+'"]').value = qp.get(k);
+      });
+      form.querySelector('input[name="user_agent"]').value = navigator.userAgent || '';
+    } catch(_){}
+  }
+  populateHidden();
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.textContent = 'Submitting...';
+    var fd = new FormData(form);
+    if (!fd.get('form-name')) fd.set('form-name','case-studies');
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(fd).toString()
+    })
+    .then(function(){
+      msg.textContent = 'Thank you! Opening PDF...';
+      try { localStorage.setItem('cs_access_granted','1'); } catch(_){ }
+      setTimeout(function(){ window.open(PDF_URL, '_blank', 'noopener'); close(); }, 350);
+    })
+    .catch(function(){
+      msg.textContent = 'Could not submit. Please try again.';
+    });
+  });
+})();
+</script>
+</body>
 </html>

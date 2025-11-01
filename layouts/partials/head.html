@@ -59,6 +59,61 @@
   <script src="https://www.cygnas.co.uk/asystom/js/dark-toggle.js" defer></script>
   <script src="https://www.cygnas.co.uk/asystom/js/form-handler.js" defer></script>
   <script src="https://www.cygnas.co.uk/asystom/js/support-capture.js" defer></script>
+
+  <!-- Balanced section spacing for Asystom pages -->
+  <style>
+    .hero,
+    .section,
+    .stripe,
+    .cta-strip,
+    .industrial-cta {
+      padding-top: var(--space-7) !important;
+      padding-bottom: var(--space-7) !important;
+    }
+    .section h2 {
+      margin-bottom: var(--space-5) !important;
+    }
+    /* Avoid double padding when sections are nested */
+    .section > .container > .section {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    /* Ensure in-page anchors are not hidden under headers */
+    section[id], .section[id] {
+      scroll-margin-top: calc((var(--header-h, 72px)) + 36px);
+    }
+    #industries { scroll-margin-top: calc((var(--header-h, 72px)) + 48px); }
+    /* Restore padding and avoid clipping for Industries nested section */
+    .section > .container > .section.industries,
+    .section.industries {
+      padding-top: var(--space-7) !important;
+      padding-bottom: var(--space-7) !important;
+      overflow: visible !important;
+    }
+    /* Center the CTAs in Industrial CTA section on desktop */
+    @media (min-width: 768px) {
+      .industrial-cta .cta-row {
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        gap: var(--space-4);
+        flex-wrap: wrap;
+      }
+    }
+    @media (max-width: 640px) {
+      .hero,
+      .section,
+      .stripe,
+      .cta-strip,
+      .industrial-cta {
+        padding-top: var(--space-6) !important;
+        padding-bottom: var(--space-6) !important;
+      }
+      .section h2 {
+        margin-bottom: var(--space-4) !important;
+      }
+    }
+  </style>
 {{ end }}
 
 <!-- Offset main content under fixed header -->
