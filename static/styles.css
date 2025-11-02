@@ -177,13 +177,13 @@ nav {
   justify-content: center;
   padding: 1.4rem;
   transition: 0.3s;
-  /* Slightly brighter baseline for logos */
-  filter: grayscale(80%) brightness(1.05) contrast(1.05);
-  opacity: 0.95;
+  /* Full-color baseline for logos */
+  filter: none !important;
+  opacity: 1;
   text-decoration: none;
 }
 .client-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--primary);
   box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
   filter: none;

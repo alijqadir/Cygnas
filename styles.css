@@ -29,7 +29,7 @@ body {
 }
 
 /* Navigation — significantly taller */
-header {
+#header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -39,33 +39,33 @@ header {
   z-index: 1000;
   transition: 0.3s;
 }
-header.scrolled {
+#header.scrolled {
   background: rgba(10, 10, 15, 0.96);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-nav {
+#header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 0;
 } /* increased */
-.logo {
+#header .logo {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
 }
-.logo-img {
+#header .logo-img {
   height: 86px;
   width: auto;
   filter: drop-shadow(0 6px 22px rgba(59, 130, 246, 0.25));
 }
-.nav-links {
+#header .nav-links {
   display: flex;
   gap: 2.2rem;
   align-items: center;
 }
-.nav-links a {
+#header .nav-links a {
   color: var(--light);
   text-decoration: none;
   font-weight: 600;
@@ -75,10 +75,17 @@ nav {
   gap: 0.5rem;
   position: relative;
 }
-.nav-links a:hover {
-  color: var(--accent-glow);
+#header .nav-links a:not(.cta-button) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
-.nav-links a::after {
+#header .nav-links a:hover {
+  color: var(--accent-glow);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+#header .nav-links a::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -88,14 +95,24 @@ nav {
   background: linear-gradient(135deg, #3b82f6, #06b6d4);
   transition: width 0.3s;
 }
-.nav-links a:hover::after {
+#header .nav-links a:hover::after {
   width: 100%;
 }
-.cta-button {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
-  padding: 1.1rem 2.1rem;
+#header .cta-button {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 1.25rem 17px !important;
   border-radius: 999px;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 6px 22px rgba(59, 130, 246, 0.32);
+  border: none;
+  font-weight: 600;
+  line-height: 1;
+}
+#header .cta-button i {
+  font-size: 1.1rem;
 }
 
 /* ===== Additional homepage hero helpers ===== */
@@ -166,31 +183,7 @@ nav {
   justify-content: center;
   margin-top: 2rem;
 }
-.clients-grid .client-card { flex: 0 1 240px; }
-
-/* Preferred: grid layout for exact, even sizing */
-@supports (display: grid) {
-  .clients-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
-    gap: 1.4rem;
-    align-items: center;
-    justify-items: center;
-  }
-}
-.client-card {
-  width: 100%;
-  height: 120px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.4rem;
-  transition: 0.3s;
-  filter: grayscale(100%) brightness(0.9) contrast(1.05);
-  opacity: 0.85;
+.clients-grid $11 !important;
   text-decoration: none;
 }
 @media (max-width: 1024px) {
@@ -203,11 +196,9 @@ nav {
   @supports (display: grid) { .clients-grid { grid-template-columns: 1fr; } }
 }
 .client-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--primary);
   box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
-  filter: none;
-  opacity: 1;
 }
 .client-card img {
   max-width: 160px;
@@ -231,27 +222,27 @@ nav {
   text-align: center;
 }
 
-.hamburger {
+#header .hamburger {
   display: none;
   flex-direction: column;
   gap: 4px;
   padding: 5px;
   cursor: pointer;
 }
-.hamburger span {
+#header .hamburger span {
   width: 26px;
   height: 3px;
   background: var(--light);
   border-radius: 3px;
   transition: 0.3s;
 }
-.hamburger.active span:nth-child(1) {
+#header .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.hamburger.active span:nth-child(2) {
+#header .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-.hamburger.active span:nth-child(3) {
+#header .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
@@ -825,3 +816,5 @@ nav {
     height: 60px !important;
   }
 }
+
+.client-card img{filter:none !important;}

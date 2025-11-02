@@ -3,68 +3,75 @@
   <head>
 	<meta name="generator" content="Hugo 0.150.0">
     <meta charset="utf-8" />
+
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>
-  Cygnas • Asystom Predictive Maintenance
-</title>
+<title>Cygnas | Asystom Predictive Maintenance</title>
 <meta
   name="description"
-  content="Cygnas-styled funnel inspired by Sensoteq’s Solutions: Sensors • Connectivity • Platform • Analytics."
+  content="Cygnas-styled funnel inspired by Sensoteq's Solutions: Sensors | Connectivity | Platform | Analytics."
 />
 <link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/main.css" />
-<link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/tight-dark.css" />
-<script src="https://www.cygnas.co.uk/asystom/js/dark-toggle.js"></script>
-
- <script src="https://www.cygnas.co.uk/asystom/js/form-handler.js"></script>
- 
- <script src="https://www.cygnas.co.uk/asystom/js/support-capture.js"></script>
- 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
   rel="stylesheet"
 />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+/>
+<script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+<link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/main.css" />
+<link rel="stylesheet" href="https://www.cygnas.co.uk/asystom/css/tight-dark.css" />
+<script src="https://www.cygnas.co.uk/asystom/js/dark-toggle.js" defer></script>
+<script src="https://www.cygnas.co.uk/asystom/js/form-handler.js" defer></script>
+<script src="https://www.cygnas.co.uk/asystom/js/support-capture.js" defer></script>
 
-<!-- Balanced section spacing for Asystom page -->
+<!-- Local overrides for spacing, CTA alignment, and footer -->
 <style>
+  main#content {
+    padding-top: calc(var(--header-h, 120px) + 12px);
+  }
   .hero,
   .section,
   .stripe,
   .cta-strip,
   .industrial-cta {
-    padding-top: var(--space-7) !important;
-    padding-bottom: var(--space-7) !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
   }
   .section h2 {
-    margin-bottom: var(--space-5) !important;
+    margin-bottom: 28px !important;
   }
-  /* Avoid double padding when sections are nested */
   .section > .container > .section {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  /* Ensure in-page anchors are not hidden under headers */
-  section[id], .section[id] {
-    scroll-margin-top: calc((var(--header-h, 72px)) + 36px);
+  section[id],
+  .section[id] {
+    scroll-margin-top: calc((var(--header-h, 120px)) + 36px);
   }
-  #industries { scroll-margin-top: calc((var(--header-h, 72px)) + 48px); }
-  /* Restore padding and avoid clipping for Industries nested section */
+  #industries {
+    scroll-margin-top: calc((var(--header-h, 120px)) + 48px);
+  }
   .section > .container > .section.industries,
   .section.industries {
-    padding-top: var(--space-7) !important;
-    padding-bottom: var(--space-7) !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
     overflow: visible !important;
   }
-  /* Center the CTAs in Industrial CTA section on desktop */
-  @media (min-width: 768px) {
-    .industrial-cta .cta-row {
-      display: flex;
-      justify-content: center !important;
-      align-items: center;
-      gap: var(--space-4);
-      flex-wrap: wrap;
-    }
+  .industrial-cta .cta-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .industrial-cta .cta-row .btn {
+    min-width: 220px;
+    text-align: center;
   }
   @media (max-width: 640px) {
     .hero,
@@ -72,19 +79,79 @@
     .stripe,
     .cta-strip,
     .industrial-cta {
-      padding-top: var(--space-6) !important;
-      padding-bottom: var(--space-6) !important;
+      padding-top: 36px !important;
+      padding-bottom: 36px !important;
     }
     .section h2 {
-      margin-bottom: var(--space-4) !important;
+      margin-bottom: 20px !important;
     }
+    .industrial-cta .cta-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .industrial-cta .cta-row .btn {
+      width: 100%;
+    }
+  }
+  .tech-specs .spec-value {
+    white-space: nowrap;
+  }
+  .site-footer {
+    background: #0b1b2a;
+    color: #f1f5f9;
+    padding: 56px 0;
+  }
+  .site-footer a {
+    color: inherit;
+  }
+  .site-footer .footer-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 32px;
+    padding-top: 24px;
+    color: rgba(241, 245, 249, 0.7);
+  }
+  .footer-bottom a {
+    color: rgba(241, 245, 249, 0.9);
   }
 </style>
 
 
 
+
+
+  
+
+  
   </head>
-  <body>
+<body>
+  
+<header id="header">
+  <nav class="container">
+    <a href="#home" class="logo" aria-label="Cygnas - back to top">
+      <img class="logo-img" src="/assets/cygnas-logo.png" alt="Cygnas logo" />
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/index.html#home"><i class="ti ti-home"></i> Home</a>
+      <a href="/index.html#services"><i class="ti ti-settings-cog"></i> Services</a>
+      <a href="/index.html#industries"><i class="ti ti-building-factory-2"></i> Industries</a>
+      <a href="/index.html#clients"><i class="ti ti-handshake"></i> Clients</a>
+      <a href="/index.html#about"><i class="ti ti-info-circle"></i> About</a>
+      <a href="/blog/"><i class="ti ti-news"></i> Blog</a>
+      <a href="/asystom/index.html"><i class="ti ti-cpu"></i> Asystom</a>
+      <a href="/zwsoft-uk/index.html"><i class="ti ti-handshake"></i> ZWSOFT</a>
+      <a href="/index.html#contact" class="cta-button"><i class="ti ti-phone"></i> Get Started</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+<script src="/script.js" defer></script>
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id="
@@ -94,85 +161,8 @@
       ></iframe
     ></noscript>
     
-<div class="industrial-header">
-  <div class="container">
-    <div
-      style="
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-      "
-    >
-      <div style="font-weight: 500">
-        Official Asystom Reseller in the UK & Ireland
-      </div>
-      <div style="display: flex; gap: var(--space-6)">
-        <a
-          href="tel:+442045772345"
-          style="
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-          "
-        >
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM5 6h1.5c.1 1.2.4 2.4.8 3.5L5.7 11.3c-.4-1.3-.7-2.6-.7-4zM19 20c-1.4 0-2.7-.2-4-.7l1.8-1.8c1.1.4 2.3.7 3.5.8V20z"
-            />
-          </svg>
-          +44 20 4577 2345
-        </a>
-        <a
-          href="mailto:solutions@cygnas.co.uk"
-          style="
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-          "
-        >
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-            />
-          </svg>
-          solutions@cygnas.co.uk
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="https://www.cygnas.co.uk/asystom/">
-      <img src="https://www.cygnas.co.uk/asystom/media/cygnas-logo.png" alt="Cygnas" height="32" />
-    </a>
-    <nav>
-      
-      <a href="https://www.cygnas.co.uk/asystom/#solutions" data-nav>Solutions</a>
-      
-      <a href="https://www.cygnas.co.uk/asystom/#industries" data-nav>Industries</a>
-      
-      <a href="https://www.cygnas.co.uk/asystom/pilot/" data-nav>Pilot</a>
-      
-      <a href="https://www.cygnas.co.uk/asystom/resources/" data-nav>Resources</a>
-      
-      <a href="https://www.cygnas.co.uk/asystom/#contact" data-nav>Contact</a>
-      
-      <a class="btn btn-primary" href="#contact">Book Assessment</a>
-    </nav>
-    <button class="btn btn-secondary" onclick="toggleTheme()">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"
-        />
-      </svg>
-    </button>
-  </div>
-</header>
+
 
     <main id="content">
 
@@ -446,7 +436,7 @@
     <div class="container grid-feature">
       <div>
         <h3>Sensors — Learn &amp; Detect</h3>
-        <p>Wireless, battery-powered beacons capture vibration, ultrasound and temperature, learning each asset’s normal behavior to flag meaningful deviations early.</p>
+        <p>Wireless, battery-powered beacons capture vibration, ultrasound and temperature, learning each asset's normal behavior to flag meaningful deviations early.</p>
         
         <ul>
           <li>map[Multi-sensor:vibration • ultrasound • temperature]</li><li>Edge AI baseline &#43; anomaly scoring</li><li>Quick installation—no cabling</li>
@@ -607,7 +597,7 @@
       <article class="card">
         <img src="https://www.cygnas.co.uk/asystom/media/icons/ai.svg" alt="">
         <h3>Edge AI Diagnostics</h3>
-        <p>Models learn each machine’s baseline and surface actionable anomalies—not noise.</p>
+        <p>Models learn each machine's baseline and surface actionable anomalies—not noise.</p>
       </article>
       
       <article class="card">
@@ -840,168 +830,50 @@
   </div>
 </section>
 </main>
-    <footer class="site-footer">
+    <footer>
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-content">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <img
-            src="https://www.cygnas.co.uk/asystom/media/logo-cygnas.svg"
-            alt="Cygnas"
-            height="32"
-            style="filter: brightness(0) invert(1); opacity: 0.9"
-          />
-        </div>
-        <strong
-          style="
-            display: block;
-            margin: var(--space-4) 0 var(--space-3);
-            color: white;
-            font-size: 16px;
-          "
-        >
-          Cygnas • Authorized Asystom Reseller
-        </strong>
-        <div class="footer-contact">
-          <a
-            href="mailto:"
-            style="
-              display: flex;
-              align-items: center;
-              gap: var(--space-2);
-              margin-bottom: var(--space-2);
-            "
-          >
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            
-          </a>
-          <a
-            href=""
-            target="_blank"
-            rel="noopener"
-            style="display: flex; align-items: center; gap: var(--space-2)"
-          >
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-              />
-            </svg>
-            WhatsApp Support
-          </a>
-        </div>
+        <h3>CYGNAS</h3>
+        <p>
+          Engineering excellence through innovation. We're not just partners in creating
+          a sustainable, efficient future.
+        </p>
       </div>
-
-      <div class="footer-section">
-        <h4>Resources</h4>
+      <div class="footer-links">
+        <h4>Services</h4>
         <ul>
-          <li><a href="https://www.cygnas.co.uk/asystom/resources/roi-calculator/">ROI Calculator</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/pilot/">14-Day Pilot Program</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/case-studies/">Case Studies</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/documentation/">Documentation</a></li>
+          <li><a href="/index.html#services">Digital Twins</a></li>
+          <li><a href="/index.html#services">AI Analysis</a></li>
+          <li><a href="/index.html#services">Simulations</a></li>
+          <li><a href="/index.html#services">Asset Integrity</a></li>
         </ul>
       </div>
-
-      <div class="footer-section">
+      <div class="footer-links">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/index.html#industries">Oil &amp; Gas</a></li>
+          <li><a href="/index.html#industries">Renewable Energy</a></li>
+          <li><a href="/index.html#industries">Hydrogen</a></li>
+          <li><a href="/index.html#industries">Aerospace</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://www.cygnas.co.uk/asystom/about/">About Us</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/contact/">Contact</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/privacy/">Privacy Policy</a></li>
-          <li><a href="https://www.cygnas.co.uk/asystom/terms/">Terms of Service</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/index.html#contact">Careers</a></li>
+          <li><a href="https://linkedin.com/company/cygnas-solutions" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="tiny">
-      <p style="margin: 0">
-        © 2025 Cygnas. All rights reserved. | Authorized
-        Asystom Technology Partner
-      </p>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Cygnas Solutions Ltd. All rights reserved. | Engineering the Future, Today.</p>
     </div>
   </div>
 </footer>
 
-<style>
-  .footer-brand {
-    max-width: 360px;
-  }
-
-  .footer-logo {
-    margin-bottom: var(--space-4);
-  }
-
-  .footer-contact a {
-    transition: all 0.2s ease;
-    padding: var(--space-2);
-    margin-left: calc(-1 * var(--space-2));
-    border-radius: var(--radius);
-  }
-
-  .footer-contact a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-
-  .footer-section h4 {
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: var(--space-4);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-section ul li {
-    margin-bottom: var(--space-3);
-  }
-
-  .footer-section ul li a {
-    transition: all 0.2s ease;
-    padding: var(--space-1) 0;
-    display: inline-block;
-    position: relative;
-  }
-
-  .footer-section ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--accent);
-    transition: width 0.3s ease;
-  }
-
-  .footer-section ul li a:hover {
-    color: white;
-    padding-left: var(--space-2);
-  }
-
-  .footer-section ul li a:hover::after {
-    width: 100%;
-  }
-</style>
  
 <link
   rel="stylesheet"
@@ -1042,9 +914,8 @@
   
   (function () {
     function headerOffset() {
-      var h1 = document.querySelector('.industrial-header')?.offsetHeight || 0;
-      var h2 = document.querySelector('.site-header')?.offsetHeight || 0;
-      return h1 + h2 + 8; // small gap
+      var headerVar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 120;
+      return headerVar + 8; // small gap to avoid clipping
     }
     var anchors = Array.from(document.querySelectorAll('a[href^="#"], a[data-nav]'));
     anchors.forEach(function (a) {
@@ -1144,7 +1015,7 @@
       <input type="hidden" name="utm_term" />
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="user_agent" />
-      <p class="hidden"><label>Don�t fill this out: <input name="bot-field" /></label></p>
+      <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
       <div class="cs-field">
         <input type="email" name="email" placeholder="Work email *" required />
       </div>

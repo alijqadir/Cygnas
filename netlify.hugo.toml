@@ -29,6 +29,14 @@
   to = "/admin/index.html"
   status = 200
 
+# Force www → apex to keep OAuth origins identical
+[[redirects]]
+  from = "/*"
+  to = "https://cygnas.co.uk/:splat"
+  status = 301
+  force = true
+  conditions = { Host = ["www.cygnas.co.uk"] }
+
 # Proxy CMS OAuth bridge via server (no DNS change needed)
 [[redirects]]
   from = "/api/decap/*"
