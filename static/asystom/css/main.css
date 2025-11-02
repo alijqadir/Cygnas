@@ -1899,3 +1899,13 @@ textarea:focus {
 .site-header .site-nav a.current {
   color: var(--accent);
 }
+
+.footer-bottom {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin: 0;
+}

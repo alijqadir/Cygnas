@@ -5,16 +5,22 @@ const SHEETS_ENDPOINT =
 const EMAIL_ENDPOINT = "https://api.hajjguider.com/send-email.php";
 const BRAND = "Asystom";
 
+let messageDiv = null;
+
 // ====== Form Handling ======
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("leadForm");
   if (!form) return;
+
+  messageDiv = ensureMessageBox(form);
 
   // Set up attribution
   setupAttribution();
 
   // Initialize phone input if available
   initializePhoneInput();
+
+  attachFieldListeners(form);
 
   // Form submission handler
   form.addEventListener("submit", handleFormSubmit);
@@ -62,7 +68,7 @@ async function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const submitBtn = form.querySelector('button[type="submit"]');
-  const messageDiv = document.getElementById("formMessage");
+  const msgBox = messageDiv || ensureMessageBox(form);
 
   // Store original button state
   const originalText = submitBtn.textContent;
@@ -71,8 +77,11 @@ async function handleFormSubmit(e) {
   // Update UI
   submitBtn.disabled = true;
   submitBtn.textContent = "Submitting...";
-  messageDiv.innerHTML = "";
-  messageDiv.className = "";
+  if (msgBox) {
+    msgBox.innerHTML = "";
+    msgBox.className = "form-message";
+    msgBox.style.display = "none";
+  }
 
   try {
     // Validate form
@@ -88,7 +97,7 @@ async function handleFormSubmit(e) {
 
     // Success
     showSuccess(
-      messageDiv,
+      msgBox,
       "Thank you! We will contact you within 1 business day."
     );
     form.reset();
@@ -98,7 +107,7 @@ async function handleFormSubmit(e) {
   } catch (error) {
     // Error handling
     showError(
-      messageDiv,
+      msgBox,
       error.message || "Something went wrong. Please try again."
     );
   } finally {
@@ -111,24 +120,39 @@ async function handleFormSubmit(e) {
 function validateForm(form) {
   const requiredFields = form.querySelectorAll("[required]");
   let isValid = true;
+  let firstInvalid = null;
 
   requiredFields.forEach((field) => {
-    if (!field.value.trim()) {
-      isValid = false;
-      field.classList.add("invalid");
-    } else {
-      field.classList.remove("invalid");
-    }
+    const rawValue = field.value != null ? field.value : "";
+    const value = typeof rawValue === "string" ? rawValue.trim() : rawValue;
+    let errorMessage = "";
 
-    // Email validation
-    if (field.type === "email" && field.value.trim()) {
-      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+    if (!value) {
+      errorMessage = "This field is required.";
+    } else if (field.type === "email") {
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       if (!emailValid) {
-        isValid = false;
-        field.classList.add("invalid");
+        errorMessage = "Enter a valid business email.";
+      }
+    } else if (field.name === "phone") {
+      const phoneValid = /^\+?[0-9()\-\s]{7,20}$/.test(value);
+      if (!phoneValid) {
+        errorMessage = "Enter a valid phone number.";
       }
     }
+
+    if (errorMessage) {
+      isValid = false;
+      if (!firstInvalid) firstInvalid = field;
+      setFieldError(field, errorMessage);
+    } else {
+      clearFieldError(field);
+    }
   });
+
+  if (!isValid && firstInvalid) {
+    firstInvalid.focus({ preventScroll: false });
+  }
 
   return isValid;
 }
@@ -196,6 +220,76 @@ function submitToAdditionalEndpoints(payload) {
       /* Ignore errors for secondary endpoints */
     });
   } catch (e) {}
+}
+
+function ensureMessageBox(form) {
+  let box =
+    document.getElementById("formMessage") ||
+    form.querySelector(".form-message");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "formMessage";
+    box.className = "form-message";
+    box.style.display = "none";
+    form.appendChild(box);
+  }
+  return box;
+}
+
+function getErrorContainer(field) {
+  return field.closest("label") || field.parentElement || field;
+}
+
+function setFieldError(field, message) {
+  field.classList.add("invalid");
+  field.setAttribute("aria-invalid", "true");
+  const container = getErrorContainer(field);
+  if (!container) return;
+  let msg = container.querySelector(".error-message");
+  if (!msg) {
+    msg = document.createElement("div");
+    msg.className = "error-message";
+    container.appendChild(msg);
+  }
+  msg.textContent = message;
+  msg.style.display = "block";
+}
+
+function clearFieldError(field) {
+  field.classList.remove("invalid");
+  field.removeAttribute("aria-invalid");
+  const container = getErrorContainer(field);
+  if (!container) return;
+  const msg = container.querySelector(".error-message");
+  if (msg) {
+    msg.textContent = "";
+    msg.style.display = "none";
+  }
+}
+
+function attachFieldListeners(form) {
+  form
+    .querySelectorAll("input, select, textarea")
+    .forEach(function (field) {
+      const handler = function () {
+        if (field.classList.contains("invalid")) {
+          const rawValue = field.value != null ? field.value : "";
+          const value =
+            typeof rawValue === "string" ? rawValue.trim() : rawValue;
+          if (!value) return;
+          if (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+            return;
+          if (
+            field.name === "phone" &&
+            !/^\+?[0-9()\-\s]{7,20}$/.test(value)
+          )
+            return;
+          clearFieldError(field);
+        }
+      };
+      field.addEventListener("input", handler);
+      field.addEventListener("change", handler);
+    });
 }
 
 function showSuccess(messageDiv, text) {

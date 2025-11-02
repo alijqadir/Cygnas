@@ -4,7 +4,8 @@
       <div class="footer-brand">
         <h3>CYGNAS</h3>
         <p>
-          Engineering excellence through innovation. We're not just partners in creating a sustainable, efficient future.
+          Engineering excellence through innovation. We're not just partners in
+          creating a sustainable, efficient future.
         </p>
       </div>
       <div class="footer-links">
@@ -30,44 +31,48 @@
         <ul>
           <li><a href="/index.html#about">About Us</a></li>
           <li><a href="/index.html#contact">Contact</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="/index.html#contact">Careers</a></li>
           <li>
-            <a href="https://linkedin.com/company/cygnas-solutions" target="_blank">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/company/cygnas-solutions-limited/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="http://www.youtube.com/@cygnas" target="_blank">YouTube</a>
           </li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>
-        &copy; {{ now.Year }} Cygnas Solutions Ltd. All rights reserved. | Engineering the Future, Today.
+      <p style="color: rgba(255, 255, 255, 0.88) !important">
+        &copy; {{ now.Year }} Cygnas Solutions Ltd. All rights reserved. |
+        Engineering the Future, Today.
       </p>
     </div>
   </div>
 </footer>
 
 <!-- Page-specific JS -->
-{{ $rel := .RelPermalink }}
-{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
-{{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
-
-{{ if $isZW }}
-  <script src="/zwsoft-uk/js/jquery.min.js"></script>
-  <script src="/zwsoft-uk/js/bootstrap.min.js"></script>
-  <script src="/zwsoft-uk/js/intltelinput-17.0.8.min.js"></script>
-  <script src="/zwsoft-uk/js/intltelinput-config-autocad-comparison.js"></script>
-  <script src="/zwsoft-uk/js/gsap-3.10.4.min.js"></script>
-  <script src="/zwsoft-uk/js/gsap-scrolltrigger-3.10.4.min.js"></script>
-  <script src="/zwsoft-uk/js/owl.carousel-2.3.4.min.js"></script>
-  <script src="/zwsoft-uk/js/swiper.min.js"></script>
-  <script src="/zwsoft-uk/js/aos.js"></script>
-  <!-- Form handlers -->
-  <script src="/zwsoft-uk/form-to-sheets.js"></script>
-  <script src="/zwsoft-uk/zwsoft_form_patch_formpost_v1.js"></script>
-{{ end }}
-
-{{ if $isAsy }}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-  <script src="/asystom/js/lead-form-fallback.js"></script>
+{{ $rel := .RelPermalink }} {{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq
+$rel "/zwsoft-uk/index.html") }} {{ $isAsy := or (hasPrefix $rel "/asystom/")
+(eq $rel "/asystom/index.html") }} {{ if $isZW }}
+<script src="/zwsoft-uk/js/jquery.min.js"></script>
+<script src="/zwsoft-uk/js/bootstrap.min.js"></script>
+<script src="/zwsoft-uk/js/intltelinput-17.0.8.min.js"></script>
+<script src="/zwsoft-uk/js/intltelinput-config-autocad-comparison.js"></script>
+<script src="/zwsoft-uk/js/gsap-3.10.4.min.js"></script>
+<script src="/zwsoft-uk/js/gsap-scrolltrigger-3.10.4.min.js"></script>
+<script src="/zwsoft-uk/js/owl.carousel-2.3.4.min.js"></script>
+<script src="/zwsoft-uk/js/swiper.min.js"></script>
+<script src="/zwsoft-uk/js/aos.js"></script>
+<!-- Form handlers -->
+<script src="/zwsoft-uk/form-to-sheets.js"></script>
+<script src="/zwsoft-uk/zwsoft_form_patch_formpost_v1.js"></script>
+{{ end }} {{ if $isAsy }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="/asystom/js/lead-form-fallback.js"></script>
 {{ end }}
 
 <script src="/script.js"></script>

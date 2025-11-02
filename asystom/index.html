@@ -30,6 +30,9 @@
 
 <!-- Local overrides for spacing, CTA alignment, and footer -->
 <style>
+  body {
+    overflow-x: hidden;
+  }
   main#content {
     padding-top: calc(var(--header-h, 120px) + 12px);
   }
@@ -114,9 +117,16 @@
     margin-top: 32px;
     padding-top: 24px;
     color: rgba(241, 245, 249, 0.7);
+    text-align: center;
+  }
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.92)!important;
+    margin: 0;
+    
   }
   .footer-bottom a {
-    color: rgba(241, 245, 249, 0.9);
+    color: rgba(241, 245, 249, 0.9)!important;
+   
   }
 </style>
 
@@ -167,7 +177,7 @@
     <main id="content">
 
 
-<section class="hero">
+<section id="home" class="hero">
   <div class="container">
     <div class="hero-split">
       <div class="hero-content">
@@ -509,7 +519,7 @@
             Powerful, autonomous and connected multi-sensor beacons that collect
             and analyze the operating data of the monitored machines.
           </p>
-          <a href="https://www.cygnas.co.uk/asystom/asystom-sentinel" class="trio-button">Beacons overview</a>
+          <a href="/asystom/index.html#solutions" class="trio-button">Beacons overview</a>
         </div>
       </div>
 
@@ -523,7 +533,7 @@
             network, allows secure storage, transfer and treatment of all your
             measurements.
           </p>
-          <a href="https://www.cygnas.co.uk/asystom/asystom-infra" class="trio-button">Infrastructure review</a>
+          <a href="/asystom/index.html#solutions" class="trio-button">Infrastructure review</a>
         </div>
       </div>
 
@@ -539,7 +549,7 @@
             platform accessible on tablets and computers, allowing you to view
             all data collected in real time.
           </p>
-          <a href="https://www.cygnas.co.uk/asystom/asystom-advisor" class="trio-button"
+          <a href="/asystom/index.html#solutions" class="trio-button"
             >Get to know the platform</a
           >
         </div>
@@ -562,19 +572,19 @@
     <h2>Built for Your Industry</h2>
     <div class="grid-3">
       
-      <a class="tile" href="https://www.cygnas.co.uk/asystom/industries/power/" data-gtm="tile_click">
+      <a class="tile" href="/asystom/index.html#contact" data-gtm="tile_click">
         <img src="https://www.cygnas.co.uk/asystom/media/icons/ind-power.svg" alt="">
-        <h3>Power Generation</h3>
+        <h3>Energy</h3>
         <p>Protect turbines, pumps and fans with earlier warnings to prevent unplanned downtime.</p>
       </a>
       
-      <a class="tile" href="https://www.cygnas.co.uk/asystom/industries/pharma/" data-gtm="tile_click">
+      <a class="tile" href="/asystom/index.html#contact" data-gtm="tile_click">
         <img src="https://www.cygnas.co.uk/asystom/media/icons/ind-pharma.svg" alt="">
-        <h3>Pharmaceuticals</h3>
+        <h3>Process</h3>
         <p>Monitor AHUs, mixers and centrifuges with compliant data handling and alerts.</p>
       </a>
       
-      <a class="tile" href="https://www.cygnas.co.uk/asystom/industries/manufacturing/" data-gtm="tile_click">
+      <a class="tile" href="/asystom/index.html#contact" data-gtm="tile_click">
         <img src="https://www.cygnas.co.uk/asystom/media/icons/ind-mfg.svg" alt="">
         <h3>Manufacturing</h3>
         <p>Scale across lines—from pilot to hundreds of assets—with consistent diagnostics.</p>
@@ -830,7 +840,7 @@
   </div>
 </section>
 </main>
-    <footer>
+<footer class="site-footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
@@ -864,7 +874,8 @@
           <li><a href="/index.html#about">About Us</a></li>
           <li><a href="/index.html#contact">Contact</a></li>
           <li><a href="/index.html#contact">Careers</a></li>
-          <li><a href="https://linkedin.com/company/cygnas-solutions" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/company/cygnas-solutions-limited/" target="_blank">LinkedIn</a></li>
+          <li><a href="http://www.youtube.com/@cygnas" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
@@ -1026,7 +1037,7 @@
 </div>
 <script>
 (function(){
-  var PDF_URL = '/assets/Cygnas%20Case%20Studies%20Master%20Rev11.pdf';
+  var PDF_URL = '/assets/Asset%20Condition%20Monitoring%20RevA00_251031_214255.pdf';
   var modal = document.getElementById('case-studies-gate');
   var openers = document.querySelectorAll('[data-open-case-studies]');
   var closers = modal.querySelectorAll('[data-close]');

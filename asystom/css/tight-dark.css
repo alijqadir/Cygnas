@@ -467,3 +467,8 @@
     border: 1px solid #ddd !important;
   }
 }
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin: 0;
+}
