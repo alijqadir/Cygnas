@@ -66,6 +66,9 @@
   function enhance(){
     var form = findForm();
     if (!form) return;
+    if (window.__asystomLeadForm && window.__asystomLeadForm.ready) {
+      return;
+    }
 
     form.addEventListener('submit', function(e){
       // Capture-phase handler in fallback ensures we run before other listeners

@@ -1,9 +1,11 @@
 // ====== Endpoints & brand ======
 const CSV_ENDPOINT = "https://api.hajjguider.com/csv-capture.php";
 const SHEETS_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbx04QsemFyIJrUblOpXNVSJj8R09GKUsSbvmI2DCvC0Kf_VsI1i8iRTTtxByGkB1hod/exec";
+  "https://script.google.com/macros/s/AKfycbxVI2npxiPQkDyhvxhMAxhR0ZoIJpjiB3kZkePtfaee4NfYieUfLliiJN3MWnFvq7sC/exec";
 const EMAIL_ENDPOINT = "https://api.hajjguider.com/send-email.php";
 const BRAND = "Asystom";
+
+window.__asystomLeadForm = window.__asystomLeadForm || { ready: false };
 
 let messageDiv = null;
 
@@ -13,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!form) return;
 
   messageDiv = ensureMessageBox(form);
+
+  window.__asystomLeadForm.ready = true;
+  window.__asystomLeadForm.form = form;
+  window.__asystomLeadForm.validate = function () {
+    return validateForm(form);
+  };
 
   // Set up attribution
   setupAttribution();

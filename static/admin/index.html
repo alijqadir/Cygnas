@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <script>
+      try {
+        ["decap-cms-config", "netlify-cms-user", "netlify-cms-auth", "netlify-cms-entry-cache", "netlify-cms-site-urls"].forEach(
+          (key) => window.localStorage && window.localStorage.removeItem(key),
+        );
+      } catch (err) {
+        console.warn("Unable to clear cached Decap CMS data", err);
+      }
+    </script>
     <!-- Let Decap CMS load /admin/config.yml; no manual init -->
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
   </body>
