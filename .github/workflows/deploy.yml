@@ -36,7 +36,7 @@ jobs:
         run: hugo --gc --minify -b https://www.cygnas.co.uk
 
       - name: Deploy to Lightsail
-        uses: burnett01/rsync-deployments@v5.2
+        uses: burnett01/rsync-deployments@v5.1
         with:
           switches: -az --delete
           path: public/
