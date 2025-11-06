@@ -8,7 +8,7 @@ backend:
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-site_url: "https://www.cygnas.co.uk"
+site_url: "https://cygnas.co.uk"
 logo_url: "/assets/cygnas-logo.png"
 
 publish_mode: editorial_workflow  # drafts -> review -> publish
