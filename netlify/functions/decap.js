@@ -159,15 +159,20 @@ const verifyState = (signed, expectedState) => {
   return signaturesMatch && state === expectedState;
 };
 
-const unauthorized = (description, status = 400) => ({
-  statusCode: status,
-  headers: {
-    "Content-Type": "text/html; charset=utf-8",
-    "Cache-Control": "no-store",
-    "Set-Cookie": buildSetCookie("revoked", { expire: true }),
-  },
-  body: ERROR_TEMPLATE("authorization_failed", description),
-});
+const unauthorized = (description, status = 400) => {
+  console.warn(
+    `[${new Date().toISOString()}] OAuth error ${status}: ${description}`,
+  );
+  return {
+    statusCode: status,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "Set-Cookie": buildSetCookie("revoked", { expire: true }),
+    },
+    body: ERROR_TEMPLATE("authorization_failed", description),
+  };
+};
 
 exports.handler = async (event) => {
   try {
@@ -252,6 +257,13 @@ window.location.replace(${JSON.stringify(location.toString())});
         token: tokenPayload.access_token,
         provider: "github",
       };
+
+      console.log(
+        `[${new Date().toISOString()}] OAuth success for state ${state.slice(
+          0,
+          6,
+        )}…`,
+      );
 
       return {
         statusCode: 200,

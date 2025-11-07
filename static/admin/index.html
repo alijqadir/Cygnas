@@ -7,13 +7,47 @@
   </head>
   <body>
     <script>
-      try {
-        ["decap-cms-config", "netlify-cms-user", "netlify-cms-auth", "netlify-cms-entry-cache", "netlify-cms-site-urls"].forEach(
-          (key) => window.localStorage && window.localStorage.removeItem(key),
-        );
-      } catch (err) {
-        console.warn("Unable to clear cached Decap CMS data", err);
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("flush")) {
+        try {
+          ["decap-cms-config", "netlify-cms-user", "netlify-cms-auth", "netlify-cms-entry-cache", "netlify-cms-site-urls"].forEach(
+            (key) => window.localStorage && window.localStorage.removeItem(key),
+          );
+          if (window.history && window.history.replaceState) {
+            const url = new URL(window.location.href);
+            url.searchParams.delete("flush");
+            window.history.replaceState(null, "", url.toString());
+          }
+        } catch (err) {
+          console.warn("Unable to clear cached Decap CMS data", err);
+        }
       }
+      window.addEventListener(
+        "message",
+        (event) => {
+          if (!event?.data || typeof event.data !== "string") return;
+          const match = event.data.match(/^authorization:github:success:(.+)$/);
+          if (!match) return;
+          try {
+            const payload = JSON.parse(match[1]);
+            const token = payload?.token;
+            if (!token) return;
+            const storedUser = {
+              token,
+              provider: "github",
+              backendName: "github",
+            };
+            window.localStorage?.setItem("decap-cms-user", JSON.stringify(storedUser));
+            window.localStorage?.setItem(
+              "decap-cms-auth",
+              JSON.stringify({ secret: "", token }),
+            );
+          } catch (err) {
+            console.warn("Failed to mirror Decap auth payload", err);
+          }
+        },
+        false,
+      );
     </script>
     <!-- Let Decap CMS load /admin/config.yml; no manual init -->
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
