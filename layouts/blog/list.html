@@ -9,7 +9,8 @@
           {{ with .Params.image }}<a href="{{ $.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></a>{{ end }}
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <div class="meta">{{ .Date.Format "02 Jan 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}</div>
-          <p>{{ .Summary }}</p>
+          {{ $excerpt := or .Params.description .Summary }}
+          <p>{{ $excerpt | plainify | truncate 200 }}</p>
         </article>
       {{ end }}
     </div>

@@ -12,6 +12,7 @@ tags:
   - Engineering
   - Simulation
   - Design
+image: "/uploads/hero-theme-8.png"
 ---
 
 
