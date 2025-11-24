@@ -1,12 +1,15 @@
 ---
-title: "Digital Twins 101"
-date: 2025-10-28T10:00:00+05:00
-description: "A quick primer on digital twin concepts and practical value."
-author: "Cygnas Editorial"
-tags: ["Digital Twin","Simulation"]
-categories: ["Engineering"]
-image: "/assets/hero-theme-7.png"
 draft: false
+title: Digital Twins 101
+date: 2025-10-28T10:00:00+05:00
+description: A quick primer on digital twin concepts and practical value.
+author: Cygnas Editorial
+categories:
+  - Engineering
+tags:
+  - Digital Twin
+  - Simulation
+image: /uploads/ai-digital-twin.png
 ---
 
 Digital twins let you virtually mirror real assets so you can explore performance, failures, and optimization safely.
