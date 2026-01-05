@@ -49,7 +49,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Google Sheets submission
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLSOeJG8SN1ifQyQ_fTqBzzXi4P7wXvhOURQltcqRhB6vO4tTYMQrRzXrV1Xux-FWJ/exec';
+// Live Google Apps Script endpoint for contact form submissions
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2fYcz54vDn_acieqexiY_fhzDxfcq-8SECqxmABqVb_f-aEPZ_6nynQdbjNXVOHJLmw/exec';
 const contactForm=document.getElementById('contactForm');
 if (contactForm) {
   const submitBtn=document.getElementById('submitBtn');
