@@ -180,6 +180,206 @@
           margin-top: 1rem;
         }
       }
+
+      /* FAQ section */
+      .faq-section {
+        position: relative;
+        background: radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.14), transparent 26%),
+          radial-gradient(circle at 82% 12%, rgba(14, 165, 233, 0.16), transparent 24%),
+          #0a0f1c;
+        color: #e5e7eb;
+        padding: 80px 20px;
+        overflow: hidden;
+      }
+      .faq-section::after {
+        content: "";
+        position: absolute;
+        inset: 16% 10% auto 52%;
+        height: 280px;
+        filter: blur(120px);
+        background: linear-gradient(120deg, rgba(59, 130, 246, 0.25), rgba(14, 165, 233, 0.15));
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      .faq-wrapper {
+        position: relative;
+        max-width: 1160px;
+        margin: 0 auto;
+        z-index: 1;
+      }
+      .faq-kicker {
+        color: #5eead4;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+      .faq-title {
+        font-size: 2.35rem;
+        line-height: 1.25;
+        margin: 0 0 12px;
+        color: #f8fafc;
+      }
+      .faq-sub {
+        max-width: 840px;
+        color: #cbd5e1;
+        font-size: 1.02rem;
+        line-height: 1.65;
+        margin: 0 0 22px;
+      }
+      .faq-accordion {
+        counter-reset: faq-counter;
+        display: grid;
+        gap: 14px;
+        margin-top: 22px;
+      }
+      .faq-item {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.03));
+        border-radius: 16px;
+        overflow: hidden;
+        transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .faq-item.is-open {
+        border-color: rgba(59, 130, 246, 0.6);
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.45), 0 0 0 1px rgba(59, 130, 246, 0.12);
+        transform: translateY(-2px);
+      }
+      .faq-trigger {
+        width: 100%;
+        background: none;
+        border: 0;
+        color: inherit;
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 14px;
+        align-items: center;
+        text-align: left;
+        padding: 18px 20px;
+        cursor: pointer;
+      }
+      .faq-num {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(59, 130, 246, 0.14);
+        color: #7dd3fc;
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+      }
+      .faq-num::before {
+        counter-increment: faq-counter;
+        content: counter(faq-counter, decimal-leading-zero);
+      }
+      .faq-question {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .faq-question .q-text {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #f8fafc;
+      }
+      .faq-question .q-meta {
+        color: #9ca3af;
+        font-size: 0.92rem;
+      }
+      .faq-badge {
+        background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        color: #0b1220;
+        font-weight: 800;
+        font-size: 0.72rem;
+        padding: 6px 10px;
+        border-radius: 999px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        box-shadow: 0 8px 20px rgba(6, 182, 212, 0.35);
+      }
+      .faq-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        display: grid;
+        place-items: center;
+        color: #cbd5e1;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+      .faq-item.is-open .faq-icon {
+        border-color: rgba(59, 130, 246, 0.7);
+        background: rgba(59, 130, 246, 0.12);
+        color: #93c5fd;
+      }
+      .faq-icon i {
+        font-size: 1.05rem;
+        transition: transform 0.25s ease;
+      }
+      .faq-item.is-open .faq-icon i {
+        transform: rotate(45deg);
+      }
+      .faq-panel {
+        padding: 0 20px 0 74px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
+      }
+      .faq-item.is-open .faq-panel {
+        max-height: 1200px;
+        opacity: 1;
+        padding-bottom: 18px;
+      }
+      .faq-panel p {
+        margin: 10px 0 0;
+        line-height: 1.7;
+        color: #e2e8f0;
+      }
+      .faq-panel ul {
+        margin: 10px 0 0 18px;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+      .faq-panel strong {
+        color: #f8fafc;
+      }
+      @media (max-width: 900px) {
+        .faq-title {
+          font-size: 2rem;
+        }
+        .faq-trigger {
+          grid-template-columns: auto 1fr auto;
+          gap: 12px;
+          align-items: flex-start;
+        }
+        .faq-badge {
+          display: none;
+        }
+        .faq-panel {
+          padding-left: 24px;
+        }
+      }
+      @media (max-width: 640px) {
+        .faq-section {
+          padding: 64px 16px;
+        }
+        .faq-title {
+          font-size: 1.65rem;
+        }
+        .faq-trigger {
+          padding: 16px;
+        }
+        .faq-question .q-text {
+          font-size: 1rem;
+        }
+        .faq-panel {
+          padding: 0 16px 0 16px;
+        }
+      }
     </style>
     
     
@@ -802,6 +1002,371 @@
         </div>
       </div>
     </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="zw-faq">
+      <div class="faq-wrapper">
+        <p class="faq-kicker">Top 5 critical FAQs · Week 1</p>
+        <h2 class="faq-title">Answers that drive 60% of qualified leads</h2>
+        <p class="faq-sub">
+          Fast, trust-building responses for the questions people search most. The first five items below alone cover 40%+ of visitor intent; the rest tackle pricing, licensing, performance, and migration detail.
+        </p>
+
+        <div class="faq-accordion" role="list">
+          <article class="faq-item is-top" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Is ZWCAD really a good alternative to AutoCAD?</span>
+                <span class="q-meta">15–20% conversion · Trusted by BP, Shell, Aramco, Baker Hughes, DNV</span>
+              </div>
+              <span class="faq-badge" aria-hidden="true">Top 5</span>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <p>
+                Yes—peer-grade, not a budget knock-off. Enterprise teams use it daily with 100% DWG compatibility, faster performance, and ~70% cost savings versus legacy CAD.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item is-top" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">How much does ZWCAD cost vs AutoCAD?</span>
+                <span class="q-meta">Main objection handler · 18–25% conversion</span>
+              </div>
+              <span class="faq-badge" aria-hidden="true">Top 5</span>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+              <p>
+                ZWCAD perpetual: £599–1,299 per seat (Standard/Professional), MFG £1,299–1,799. Flex subscription: £26.9/month. AutoCAD subscription: ~£310/month. Typical savings: 70%+ over three years.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item is-top" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Will my AutoCAD DWG files work in ZWCAD?</span>
+                <span class="q-meta">Trust builder · removes switching anxiety</span>
+              </div>
+              <span class="faq-badge" aria-hidden="true">Top 5</span>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+              <p>
+                Yes—99.9% compatibility across DWG 2000–2025 including blocks, layers, line styles, linetypes, and dimensions. LISP routines usually run with minor tweaks; UI is familiar to reduce ramp-up.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item is-top" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Is ZWCAD faster than AutoCAD?</span>
+                <span class="q-meta">Performance validation · 12–18%+ conversion</span>
+              </div>
+              <span class="faq-badge" aria-hidden="true">Top 5</span>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+              <p>
+                Yes—real-world client benchmarks show up to 1.98× faster overall. Large files (100MB+): 40–60% faster; typical 10–50MB files: 10–25% faster; overall workflows: 20–30% faster completion.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item is-top" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can I get ZWCAD with a perpetual license?</span>
+                <span class="q-meta">Licensing preference · CFO approval</span>
+              </div>
+              <span class="faq-badge" aria-hidden="true">Top 5</span>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+              <p>
+                Yes. Perpetual is available and encouraged—you own it forever. Optional yearly maintenance (£150–200) keeps you current; Flex subscription is available if you prefer OpEx.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">How many versions of ZWCAD are there?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
+              <ul>
+                <li><strong>Standard</strong> (£599–799): 2D drafting.</li>
+                <li><strong>Professional</strong> (£899–1,299, recommended): 2D + 3D, full API (LISP/VBA/.NET/ZRX).</li>
+                <li><strong>MFG</strong> (£1,299–1,799): Pro + manufacturing tools, design tables, parametric blocks.</li>
+                <li><strong>Flex</strong> (£26.9/month): Subscription option, always latest version.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can I use ZWCAD offline?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
+              <p>
+                Yes. After activation, ZWCAD runs 100% offline indefinitely—no always-on internet or phone-home requirements.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-8" id="faq-btn-8">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">What’s the 3-year cost of ownership?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8">
+              <p>
+                ZWCAD perpetual: £899–1,299 initial + optional £0–200/year = £899–1,699 per seat over 3 years. AutoCAD subscription: £310/month × 36 = £11,160. Savings: £5,800–9,100 per person (10 seats ≈ £58k–101k saved).
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-9" id="faq-btn-9">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Are there volume discounts?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9">
+              <p>
+                Yes: 5–15% for 10+ seats, flexible payment terms, educational licenses, and loyalty pricing for renewals.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-10" id="faq-btn-10">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can I choose perpetual or subscription?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-10" role="region" aria-labelledby="faq-btn-10">
+              <p>
+                Yes. Perpetual is available (own it forever) and Flex subscription is optional. No forced upgrades or lock-in; maintenance is optional but recommended to stay current.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-11" id="faq-btn-11">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">What’s included in support?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-11" role="region" aria-labelledby="faq-btn-11">
+              <ul>
+                <li><strong>Standard maintenance</strong> (£150–200/year): bug fixes, patches, email/portal support, knowledge base.</li>
+                <li><strong>Cygnas premium</strong>: local UK engineers, 2–4 hour escalation, tailored training, migration help, design review/optimisation.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-12" id="faq-btn-12">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Does ZWCAD have parametric design?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-12" role="region" aria-labelledby="faq-btn-12">
+              <p>
+                Yes—Professional and MFG include geometric constraints (horizontal, vertical, tangent, coincident), dimensional constraints, block parametrics, and associative dimensions.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-13" id="faq-btn-13">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can I import my LISP routines?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-13" role="region" aria-labelledby="faq-btn-13">
+              <p>
+                Yes—about 95% run unchanged. VBA macros are fully supported; .NET plugins are supported via SDK. Cygnas can adjust or modernise scripts for you.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-14" id="faq-btn-14">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Is ZWCAD good for architecture and AEC?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-14" role="region" aria-labelledby="faq-btn-14">
+              <p>
+                Yes—Professional covers 2D drafting, paper space, viewports, plot styles, GIS integration, and handles very large building plans (1GB+) while staying 70% cheaper than AutoCAD.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-15" id="faq-btn-15">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Is ZWCAD good for manufacturing?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-15" role="region" aria-labelledby="faq-btn-15">
+              <p>
+                Yes—ZWCAD MFG adds GD&T, thread specs, fastener libraries, BOM, smart blocks, and mechanical toolsets suited to production and assembly drawings.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-16" id="faq-btn-16">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can ZWCAD handle very large files (100MB+)?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-16" role="region" aria-labelledby="faq-btn-16">
+              <p>
+                Yes—tested on 1GB+ files with reliable stability. Performance gains: 40–60% faster on huge files, 10–25% faster on normal files, fewer crashes, efficient RAM use.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-17" id="faq-btn-17">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Does Cygnas offer on-site installation?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-17" role="region" aria-labelledby="faq-btn-17">
+              <p>
+                Yes—remote deployment is standard; on-site and hybrid rollouts are available (fees apply).
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-18" id="faq-btn-18">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Can I get custom LISP scripts?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-18" role="region" aria-labelledby="faq-btn-18">
+              <p>
+                Yes—Cygnas converts AutoCAD LISP, builds new utilities, integrates third-party tools, and automates repetitive tasks. Typical pricing: £150–300/hour.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-19" id="faq-btn-19">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">Why buy from a reseller vs ZWSOFT direct?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-19" role="region" aria-labelledby="faq-btn-19">
+              <ul>
+                <li>Local UK engineer support and faster response.</li>
+                <li>Training tailored to your workflows.</li>
+                <li>Full migration + integration (API, LISP).</li>
+                <li>Pricing flexibility and long-term partnership.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-20" id="faq-btn-20">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">What makes Cygnas different?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-20" role="region" aria-labelledby="faq-btn-20">
+              <p>
+                We’re consultants first, resellers second: chartered engineers with 25+ years in energy/oil & gas, track record with BP, Shell, Aramco, DNV, plus migration, training, and design optimisation baked in.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-21" id="faq-btn-21">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">What if I don’t renew maintenance?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-21" role="region" aria-labelledby="faq-btn-21">
+              <p>
+                Nothing breaks—you keep using the software forever and your files remain accessible. You simply stop receiving new versions and maintenance updates.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" role="listitem">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-22" id="faq-btn-22">
+              <span class="faq-num" aria-hidden="true"></span>
+              <div class="faq-question">
+                <span class="q-text">What file formats does ZWCAD support?</span>
+              </div>
+              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
+            </button>
+            <div class="faq-panel" id="faq-panel-22" role="region" aria-labelledby="faq-btn-22">
+              <ul>
+                <li><strong>CAD</strong>: DWG/DXF/DWT (2000–2025).</li>
+                <li><strong>Point clouds</strong>: .las, .laz, .e57, .xyz.</li>
+                <li><strong>Raster</strong>: .jpg, .png, .tiff, .pdf.</li>
+                <li><strong>GIS</strong>: Shapefiles.</li>
+                <li><strong>Data</strong>: Excel/CSV links to blocks.</li>
+                <li><strong>3D</strong>: STEP/IGES limited; best handled in ZW3D.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA -->
     <div class="tu-main">
@@ -1675,12 +2240,34 @@
         });
       })();
     </script>
+    <script>
+      // FAQ accordion interactions
+      (function () {
+        var items = document.querySelectorAll(".faq-item");
+        if (!items.length) return;
+
+        items.forEach(function (item) {
+          var btn = item.querySelector(".faq-trigger");
+          var panel = item.querySelector(".faq-panel");
+          if (!btn || !panel) return;
+
+          btn.addEventListener("click", function () {
+            var isOpen = item.classList.contains("is-open");
+            if (isOpen) {
+              item.classList.remove("is-open");
+              btn.setAttribute("aria-expanded", "false");
+              panel.style.maxHeight = null;
+            } else {
+              item.classList.add("is-open");
+              btn.setAttribute("aria-expanded", "true");
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        });
+      })();
+    </script>
 </main>
 
   <script src="/script.js" defer></script>
 </body>
 </html>
-
-
-
-
