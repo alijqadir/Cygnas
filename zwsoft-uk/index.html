@@ -180,206 +180,6 @@
           margin-top: 1rem;
         }
       }
-
-      /* FAQ section */
-      .faq-section {
-        position: relative;
-        background: radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.14), transparent 26%),
-          radial-gradient(circle at 82% 12%, rgba(14, 165, 233, 0.16), transparent 24%),
-          #0a0f1c;
-        color: #e5e7eb;
-        padding: 80px 20px;
-        overflow: hidden;
-      }
-      .faq-section::after {
-        content: "";
-        position: absolute;
-        inset: 16% 10% auto 52%;
-        height: 280px;
-        filter: blur(120px);
-        background: linear-gradient(120deg, rgba(59, 130, 246, 0.25), rgba(14, 165, 233, 0.15));
-        opacity: 0.8;
-        pointer-events: none;
-      }
-      .faq-wrapper {
-        position: relative;
-        max-width: 1160px;
-        margin: 0 auto;
-        z-index: 1;
-      }
-      .faq-kicker {
-        color: #5eead4;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-      }
-      .faq-title {
-        font-size: 2.35rem;
-        line-height: 1.25;
-        margin: 0 0 12px;
-        color: #f8fafc;
-      }
-      .faq-sub {
-        max-width: 840px;
-        color: #cbd5e1;
-        font-size: 1.02rem;
-        line-height: 1.65;
-        margin: 0 0 22px;
-      }
-      .faq-accordion {
-        counter-reset: faq-counter;
-        display: grid;
-        gap: 14px;
-        margin-top: 22px;
-      }
-      .faq-item {
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.03));
-        border-radius: 16px;
-        overflow: hidden;
-        transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-      }
-      .faq-item.is-open {
-        border-color: rgba(59, 130, 246, 0.6);
-        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.45), 0 0 0 1px rgba(59, 130, 246, 0.12);
-        transform: translateY(-2px);
-      }
-      .faq-trigger {
-        width: 100%;
-        background: none;
-        border: 0;
-        color: inherit;
-        display: grid;
-        grid-template-columns: auto 1fr auto auto;
-        gap: 14px;
-        align-items: center;
-        text-align: left;
-        padding: 18px 20px;
-        cursor: pointer;
-      }
-      .faq-num {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: rgba(59, 130, 246, 0.14);
-        color: #7dd3fc;
-        font-weight: 800;
-        font-size: 0.95rem;
-        letter-spacing: 0.04em;
-      }
-      .faq-num::before {
-        counter-increment: faq-counter;
-        content: counter(faq-counter, decimal-leading-zero);
-      }
-      .faq-question {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .faq-question .q-text {
-        font-weight: 700;
-        font-size: 1.05rem;
-        color: #f8fafc;
-      }
-      .faq-question .q-meta {
-        color: #9ca3af;
-        font-size: 0.92rem;
-      }
-      .faq-badge {
-        background: linear-gradient(135deg, #3b82f6, #06b6d4);
-        color: #0b1220;
-        font-weight: 800;
-        font-size: 0.72rem;
-        padding: 6px 10px;
-        border-radius: 999px;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        box-shadow: 0 8px 20px rgba(6, 182, 212, 0.35);
-      }
-      .faq-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        display: grid;
-        place-items: center;
-        color: #cbd5e1;
-        transition: border-color 0.2s ease, background 0.2s ease;
-      }
-      .faq-item.is-open .faq-icon {
-        border-color: rgba(59, 130, 246, 0.7);
-        background: rgba(59, 130, 246, 0.12);
-        color: #93c5fd;
-      }
-      .faq-icon i {
-        font-size: 1.05rem;
-        transition: transform 0.25s ease;
-      }
-      .faq-item.is-open .faq-icon i {
-        transform: rotate(45deg);
-      }
-      .faq-panel {
-        padding: 0 20px 0 74px;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
-      }
-      .faq-item.is-open .faq-panel {
-        max-height: 1200px;
-        opacity: 1;
-        padding-bottom: 18px;
-      }
-      .faq-panel p {
-        margin: 10px 0 0;
-        line-height: 1.7;
-        color: #e2e8f0;
-      }
-      .faq-panel ul {
-        margin: 10px 0 0 18px;
-        color: #cbd5e1;
-        line-height: 1.6;
-      }
-      .faq-panel strong {
-        color: #f8fafc;
-      }
-      @media (max-width: 900px) {
-        .faq-title {
-          font-size: 2rem;
-        }
-        .faq-trigger {
-          grid-template-columns: auto 1fr auto;
-          gap: 12px;
-          align-items: flex-start;
-        }
-        .faq-badge {
-          display: none;
-        }
-        .faq-panel {
-          padding-left: 24px;
-        }
-      }
-      @media (max-width: 640px) {
-        .faq-section {
-          padding: 64px 16px;
-        }
-        .faq-title {
-          font-size: 1.65rem;
-        }
-        .faq-trigger {
-          padding: 16px;
-        }
-        .faq-question .q-text {
-          font-size: 1rem;
-        }
-        .faq-panel {
-          padding: 0 16px 0 16px;
-        }
-      }
     </style>
     
     
@@ -1003,371 +803,6 @@
       </div>
     </div>
 
-    <!-- FAQ -->
-    <section class="faq-section" id="zw-faq">
-      <div class="faq-wrapper">
-        <p class="faq-kicker">Top 5 critical FAQs · Week 1</p>
-        <h2 class="faq-title">Answers that drive 60% of qualified leads</h2>
-        <p class="faq-sub">
-          Fast, trust-building responses for the questions people search most. The first five items below alone cover 40%+ of visitor intent; the rest tackle pricing, licensing, performance, and migration detail.
-        </p>
-
-        <div class="faq-accordion" role="list">
-          <article class="faq-item is-top" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Is ZWCAD really a good alternative to AutoCAD?</span>
-                <span class="q-meta">15–20% conversion · Trusted by BP, Shell, Aramco, Baker Hughes, DNV</span>
-              </div>
-              <span class="faq-badge" aria-hidden="true">Top 5</span>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
-              <p>
-                Yes—peer-grade, not a budget knock-off. Enterprise teams use it daily with 100% DWG compatibility, faster performance, and ~70% cost savings versus legacy CAD.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item is-top" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">How much does ZWCAD cost vs AutoCAD?</span>
-                <span class="q-meta">Main objection handler · 18–25% conversion</span>
-              </div>
-              <span class="faq-badge" aria-hidden="true">Top 5</span>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
-              <p>
-                ZWCAD perpetual: £599–1,299 per seat (Standard/Professional), MFG £1,299–1,799. Flex subscription: £26.9/month. AutoCAD subscription: ~£310/month. Typical savings: 70%+ over three years.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item is-top" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Will my AutoCAD DWG files work in ZWCAD?</span>
-                <span class="q-meta">Trust builder · removes switching anxiety</span>
-              </div>
-              <span class="faq-badge" aria-hidden="true">Top 5</span>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
-              <p>
-                Yes—99.9% compatibility across DWG 2000–2025 including blocks, layers, line styles, linetypes, and dimensions. LISP routines usually run with minor tweaks; UI is familiar to reduce ramp-up.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item is-top" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Is ZWCAD faster than AutoCAD?</span>
-                <span class="q-meta">Performance validation · 12–18%+ conversion</span>
-              </div>
-              <span class="faq-badge" aria-hidden="true">Top 5</span>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
-              <p>
-                Yes—real-world client benchmarks show up to 1.98× faster overall. Large files (100MB+): 40–60% faster; typical 10–50MB files: 10–25% faster; overall workflows: 20–30% faster completion.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item is-top" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can I get ZWCAD with a perpetual license?</span>
-                <span class="q-meta">Licensing preference · CFO approval</span>
-              </div>
-              <span class="faq-badge" aria-hidden="true">Top 5</span>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
-              <p>
-                Yes. Perpetual is available and encouraged—you own it forever. Optional yearly maintenance (£150–200) keeps you current; Flex subscription is available if you prefer OpEx.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">How many versions of ZWCAD are there?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
-              <ul>
-                <li><strong>Standard</strong> (£599–799): 2D drafting.</li>
-                <li><strong>Professional</strong> (£899–1,299, recommended): 2D + 3D, full API (LISP/VBA/.NET/ZRX).</li>
-                <li><strong>MFG</strong> (£1,299–1,799): Pro + manufacturing tools, design tables, parametric blocks.</li>
-                <li><strong>Flex</strong> (£26.9/month): Subscription option, always latest version.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can I use ZWCAD offline?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
-              <p>
-                Yes. After activation, ZWCAD runs 100% offline indefinitely—no always-on internet or phone-home requirements.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-8" id="faq-btn-8">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">What’s the 3-year cost of ownership?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8">
-              <p>
-                ZWCAD perpetual: £899–1,299 initial + optional £0–200/year = £899–1,699 per seat over 3 years. AutoCAD subscription: £310/month × 36 = £11,160. Savings: £5,800–9,100 per person (10 seats ≈ £58k–101k saved).
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-9" id="faq-btn-9">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Are there volume discounts?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9">
-              <p>
-                Yes: 5–15% for 10+ seats, flexible payment terms, educational licenses, and loyalty pricing for renewals.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-10" id="faq-btn-10">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can I choose perpetual or subscription?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-10" role="region" aria-labelledby="faq-btn-10">
-              <p>
-                Yes. Perpetual is available (own it forever) and Flex subscription is optional. No forced upgrades or lock-in; maintenance is optional but recommended to stay current.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-11" id="faq-btn-11">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">What’s included in support?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-11" role="region" aria-labelledby="faq-btn-11">
-              <ul>
-                <li><strong>Standard maintenance</strong> (£150–200/year): bug fixes, patches, email/portal support, knowledge base.</li>
-                <li><strong>Cygnas premium</strong>: local UK engineers, 2–4 hour escalation, tailored training, migration help, design review/optimisation.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-12" id="faq-btn-12">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Does ZWCAD have parametric design?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-12" role="region" aria-labelledby="faq-btn-12">
-              <p>
-                Yes—Professional and MFG include geometric constraints (horizontal, vertical, tangent, coincident), dimensional constraints, block parametrics, and associative dimensions.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-13" id="faq-btn-13">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can I import my LISP routines?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-13" role="region" aria-labelledby="faq-btn-13">
-              <p>
-                Yes—about 95% run unchanged. VBA macros are fully supported; .NET plugins are supported via SDK. Cygnas can adjust or modernise scripts for you.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-14" id="faq-btn-14">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Is ZWCAD good for architecture and AEC?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-14" role="region" aria-labelledby="faq-btn-14">
-              <p>
-                Yes—Professional covers 2D drafting, paper space, viewports, plot styles, GIS integration, and handles very large building plans (1GB+) while staying 70% cheaper than AutoCAD.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-15" id="faq-btn-15">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Is ZWCAD good for manufacturing?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-15" role="region" aria-labelledby="faq-btn-15">
-              <p>
-                Yes—ZWCAD MFG adds GD&T, thread specs, fastener libraries, BOM, smart blocks, and mechanical toolsets suited to production and assembly drawings.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-16" id="faq-btn-16">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can ZWCAD handle very large files (100MB+)?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-16" role="region" aria-labelledby="faq-btn-16">
-              <p>
-                Yes—tested on 1GB+ files with reliable stability. Performance gains: 40–60% faster on huge files, 10–25% faster on normal files, fewer crashes, efficient RAM use.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-17" id="faq-btn-17">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Does Cygnas offer on-site installation?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-17" role="region" aria-labelledby="faq-btn-17">
-              <p>
-                Yes—remote deployment is standard; on-site and hybrid rollouts are available (fees apply).
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-18" id="faq-btn-18">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Can I get custom LISP scripts?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-18" role="region" aria-labelledby="faq-btn-18">
-              <p>
-                Yes—Cygnas converts AutoCAD LISP, builds new utilities, integrates third-party tools, and automates repetitive tasks. Typical pricing: £150–300/hour.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-19" id="faq-btn-19">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">Why buy from a reseller vs ZWSOFT direct?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-19" role="region" aria-labelledby="faq-btn-19">
-              <ul>
-                <li>Local UK engineer support and faster response.</li>
-                <li>Training tailored to your workflows.</li>
-                <li>Full migration + integration (API, LISP).</li>
-                <li>Pricing flexibility and long-term partnership.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-20" id="faq-btn-20">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">What makes Cygnas different?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-20" role="region" aria-labelledby="faq-btn-20">
-              <p>
-                We’re consultants first, resellers second: chartered engineers with 25+ years in energy/oil & gas, track record with BP, Shell, Aramco, DNV, plus migration, training, and design optimisation baked in.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-21" id="faq-btn-21">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">What if I don’t renew maintenance?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-21" role="region" aria-labelledby="faq-btn-21">
-              <p>
-                Nothing breaks—you keep using the software forever and your files remain accessible. You simply stop receiving new versions and maintenance updates.
-              </p>
-            </div>
-          </article>
-
-          <article class="faq-item" role="listitem">
-            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-22" id="faq-btn-22">
-              <span class="faq-num" aria-hidden="true"></span>
-              <div class="faq-question">
-                <span class="q-text">What file formats does ZWCAD support?</span>
-              </div>
-              <span class="faq-icon" aria-hidden="true"><i class="ti ti-plus"></i></span>
-            </button>
-            <div class="faq-panel" id="faq-panel-22" role="region" aria-labelledby="faq-btn-22">
-              <ul>
-                <li><strong>CAD</strong>: DWG/DXF/DWT (2000–2025).</li>
-                <li><strong>Point clouds</strong>: .las, .laz, .e57, .xyz.</li>
-                <li><strong>Raster</strong>: .jpg, .png, .tiff, .pdf.</li>
-                <li><strong>GIS</strong>: Shapefiles.</li>
-                <li><strong>Data</strong>: Excel/CSV links to blocks.</li>
-                <li><strong>3D</strong>: STEP/IGES limited; best handled in ZW3D.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA -->
     <div class="tu-main">
       <div class="tu-inner">
@@ -1428,6 +863,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Cygnas Solutions Ltd. All rights reserved. | Engineering the Future, Today.</p>
+      <p><a href="/privacy-policy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></p>
     </div>
   </div>
 </footer>
@@ -1457,21 +893,12 @@
             <div class="popform">
               <h2 class="text-center t-bold">Get in touch for ZWCAD 2026</h2>
 
-              <form
-                id="leadForm"
-                class="mt-4 mt-md-5 needs-validation"
-                novalidate
-              >
+              <form id="leadForm" class="mt-4 mt-md-5 needs-validation" action="" method="POST">
                 <div class="row row-name-con">
                   <div class="col-md-6 name">
                     <div class="form-group">
                       <label>First name <span>*</span></label>
-                      <input
-                        type="text"
-                        class="form-control first-name"
-                        placeholder="First name"
-                        required
-                      />
+                      <input type="text" class="form-control first-name" name="first_name" placeholder="First name" required />
                       <div class="invalid-feedback">
                         Please enter your first name.
                       </div>
@@ -1480,12 +907,7 @@
                   <div class="col-md-6 name">
                     <div class="form-group">
                       <label>Last name <span>*</span></label>
-                      <input
-                        type="text"
-                        class="form-control last-name"
-                        placeholder="Last name"
-                        required
-                      />
+                      <input type="text" class="form-control last-name" name="last_name" placeholder="Last name" required />
                       <div class="invalid-feedback">
                         Please enter your last name.
                       </div>
@@ -1497,12 +919,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Phone number <span>*</span></label>
-                      <input
-                        class="form-control phone"
-                        id="leadPhone"
-                        type="tel"
-                        required
-                      />
+                      <input class="form-control phone" id="leadPhone" name="phone" type="tel" required />
                       <div class="invalid-feedback">
                         Please enter a valid phone number.
                       </div>
@@ -1511,12 +928,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Work email <span>*</span></label>
-                      <input
-                        type="email"
-                        class="form-control email"
-                        placeholder="you@company.com"
-                        required
-                      />
+                      <input type="email" class="form-control email" name="email" placeholder="you@company.com" required />
                       <div class="invalid-feedback">
                         Please enter a valid work email.
                       </div>
@@ -1529,7 +941,7 @@
                     <div class="form-group">
                       <label>Country/Region <span>*</span></label>
                       <div class="selectbox">
-                        <select class="form-control country" required>
+                        <select class="form-control country" name="country" required>
                           <option
                             value=""
                             disabled
@@ -1596,12 +1008,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Company <span>*</span></label>
-                      <input
-                        type="text"
-                        class="form-control company"
-                        placeholder="Enter your company name"
-                        required
-                      />
+                      <input type="text" class="form-control company" name="company" placeholder="Enter your company name" required />
                       <div class="invalid-feedback">
                         Please enter your company.
                       </div>
@@ -1614,7 +1021,7 @@
                     <div class="form-group">
                       <label>Industry <span>*</span></label>
                       <div class="selectbox">
-                        <select class="form-control industry" required>
+                        <select class="form-control industry" name="industry" required>
                           <option
                             value=""
                             disabled
@@ -1739,7 +1146,7 @@
                     <div class="form-group">
                       <label>Interested Product <span>*</span></label>
                       <div class="selectbox">
-                        <select class="form-control request_type" required>
+                        <select class="form-control request_type" name="interested_product" required>
                           <option
                             value=""
                             disabled
@@ -1764,12 +1171,12 @@
                 <div class="form-group">
                   <div class="checkbox consent_box">
                     <label>
-                      <input type="checkbox" id="policy" required />
+                      <input type="checkbox" id="policy" name="policy" required />
                       <span class="cr"
                         ><i class="cr-icon fa fa-check">&nbsp;</i></span
                       >
-                      By submitting this form you agree to ZWSOFT's
-                      <a href="https://www.zwsoft.com/privacy" target="_blank">
+                      By submitting this form you agree to our
+                      <a href="/privacy-policy.html" target="_blank">
                         Privacy Policy</a
                       >
                       and would like to receive news about ZWSOFT.
@@ -1782,9 +1189,9 @@
 
                 <div class="form-group">
                   <input type="submit" value="Submit" class="btn btn-primary" />
-                  <input type="hidden" value="EN_vsACAD" class="source" />
-                  <input type="hidden" value="" class="from" />
-                  <input type="hidden" value="ZWCAD 2026" class="product" />
+                  <input type="hidden" value="EN_vsACAD" name="source" class="source" />
+                  <input type="hidden" value="" name="from" class="from" />
+                  <input type="hidden" value="ZWCAD 2026" name="product" class="product" />
                 </div>
               </form>
             </div>
@@ -1830,53 +1237,8 @@
               </p>
 
               <div class="gm-btns">
-                <a
-                  title="Request Download Link"
-                  class="gm-btn size16"
-                  href="/index.html#contact"
-                >
-                  <img src="images/tk-t1.png" alt="" class="gm-btn-icon" /><span
-                    class="gm-txt"
-                    >Request Download</span
-                  >
-                </a>
-                <a
-                  title="Installation Guide"
-                  class="gm-btn size16"
-                  href="https://dl.zwsoft.com/market/ZWCAD/ZWCAD_2025_Installation_Guide.pdf"
-                  target="_blank"
-                >
-                  <img src="images/tk-t1.png" alt="" class="gm-btn-icon" /><span
-                    class="gm-txt"
-                    >Installation Guide</span
-                  >
-                </a>
-                <a
-                  title="Quick Tutorial"
-                  class="gm-btn size16"
-                  href="https://www.youtube.com/watch?v=qGlPQJ39acc&amp;list=PLIKB9JsUVS9YtyOnLrKFT92dXQvpzucps&amp;index=1"
-                  target="_blank"
-                >
-                  <img src="images/tk-t2.png" alt="" class="gm-btn-icon" /><span
-                    class="gm-txt"
-                    >Quick Tutorial</span
-                  >
-                </a>
-                <a
-                  title="More about ZWCAD"
-                  class="gm-btn size16"
-                  href="https://www.zwsoft.com/product/zwcad"
-                  target="_blank"
-                >
-                  <img src="images/tk-t3.png" alt="" class="gm-btn-icon" /><span
-                    class="gm-txt"
-                    >More about ZWCAD</span
-                  >
-                </a>
-              </div>
-            </div>
-            <!-- Submitting veil is injected here by JS when sending -->
-          </div>
+                  <div class="gm-note size16" style="text-align:center;margin-top:4px;">We'll email your download link and onboarding info shortly.</div>
+                </div>
         </div>
       </div>
     </div>
@@ -2033,241 +1395,139 @@
       })(jQuery);
     </script>
 
-    <!-- SINGLE-FORM HANDLER -->
-    <script>
-      (function () {
-        var ENDPOINT =
-          "https://script.google.com/macros/s/AKfycbyoH33HyuAAPcGtj7GEUS-0DxZDTW5RZQlPZtuoQcANZkEfhMvxID9_grfBEkrck1s4/exec"; // Apps Script /exec
-        var FORM_MODAL = "#leadform";
-        var THANK_MODAL = "#thankBox2";
+    
+      <!-- SINGLE-FORM HANDLER -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          (function () {
+            var ENDPOINT = "https://script.google.com/macros/s/AKfycbyoH33HyuAAPcGtj7GEUS-0DxZDTW5RZQlPZtuoQcANZkEfhMvxID9_grfBEkrck1s4/exec";
+            var FORM_MODAL = "#leadform";
+            var THANK_MODAL = "#thankBox2";
+            var DOWNLOAD_LINK = "";
 
-        // Spinner keyframes (once)
-        (function addSpin() {
-          if (document.getElementById("cgxspin")) return;
-          var s = document.createElement("style");
-          s.id = "cgxspin";
-          s.textContent = "@keyframes cgxspin{to{transform:rotate(360deg)}}";
-          document.head.appendChild(s);
-        })();
-
-        function showPending() {
-          var $thank = window.jQuery ? jQuery(THANK_MODAL) : null;
-          if (!$thank || !$thank.length) return;
-          if ($thank.css("position") === "static") {
-            $thank.css("position", "relative");
-          }
-          $thank.find(".cgx-veil").remove();
-          $thank.append(
-            '<div class="cgx-veil" style="position:absolute;inset:0;background:rgba(255,255,255,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">' +
-              '<div class="cgx-spinner" style="width:28px;height:28px;border:3px solid #ddd;border-top-color:#333;border-radius:50%;animation:cgxspin 0.9s linear infinite;"></div>' +
-              '<div style="margin-top:10px;color:#333;font:600 14px/1.4 system-ui,Segoe UI,Roboto,Arial">Submittingâ€¦</div>' +
-              "</div>"
-          );
-          try {
-            $thank.modal("show");
-          } catch (_) {}
-          try {
-            window.jQuery && jQuery(FORM_MODAL).modal("hide");
-          } catch (_) {}
-        }
-        function clearPending(ok) {
-          var $thank = window.jQuery ? jQuery(THANK_MODAL) : null;
-          if ($thank && $thank.length) {
-            $thank.find(".cgx-veil").remove();
-            if (!ok) {
-              try {
-                $thank.modal("hide");
-              } catch (_) {}
-            }
-          }
-        }
-
-        // Init phone input
-        var phoneEl = document.getElementById("leadPhone");
-        window.phoneInput = window.intlTelInput(phoneEl, {
-          utilsScript:
-            "https://statics.zwsoft.com/static/style2023/js/intl-tel-input-utils-17.0.8.js",
-          preferredCountries: [],
-          dropdownContainer: document.body,
-        });
-
-        // Bootstrap-style validation + submit
-        var form = document.getElementById("leadForm");
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // HTML5 validity first
-          if (!form.checkValidity()) {
-            form.classList.add("was-validated");
-            return;
-          }
-
-          // Validate phone via plugin
-          try {
-            if (!window.phoneInput.isValidNumber()) {
-              phoneEl.setCustomValidity("Invalid");
-              form.classList.add("was-validated");
-              phoneEl.reportValidity && phoneEl.reportValidity();
-              phoneEl.addEventListener(
-                "input",
-                function () {
-                  phoneEl.setCustomValidity("");
-                },
-                { once: true }
-              );
-              return;
-            } else {
-              phoneEl.setCustomValidity("");
-            }
-          } catch (_) {}
-
-          // Build payload
-          function q(sel) {
-            var el = form.querySelector(sel);
-            return el ? (el.value || "").trim() : "";
-          }
-
-          var fd = new FormData();
-          var first = q(".first-name"),
-            last = q(".last-name");
-          if (first) fd.set("first_name", first);
-          if (last) fd.set("last_name", last);
-          var email = q(".email");
-          if (email) fd.set("email", email);
-
-          // Phone with country code (keep +CC-LOCAL format, and also send E.164)
-          var e164 = "";
-          try {
-            e164 = window.phoneInput.getNumber();
-          } catch (_) {}
-          var cd = null;
-          try {
-            cd = window.phoneInput.getSelectedCountryData();
-          } catch (_) {}
-          var localRaw = phoneEl.value.replace(/\D/g, "");
-          var phoneCombined =
-            cd && cd.dialCode
-              ? "+" + cd.dialCode + "-" + localRaw
-              : e164 || localRaw;
-          if (phoneCombined) fd.set("phone", phoneCombined);
-          if (e164) fd.set("phone_e164", e164);
-
-          [
-            ["company", ".company"],
-            ["country", ".country"],
-            ["industry", ".industry"],
-            ["interested_product", ".request_type"],
-            ["source", ".source"],
-            ["from", ".from"],
-            ["product", ".product"],
-          ].forEach(function (pair) {
-            var k = pair[0],
-              v = q(pair[1]);
-            if (v) fd.set(k, v);
-          });
-
-          var policy = form.querySelector("#policy");
-          fd.set("policy", policy && policy.checked ? "Y" : "N");
-
-          fd.set("page_url", location.href);
-          fd.set("referrer", document.referrer || "");
-          fd.set("user_agent", navigator.userAgent || "");
-          try {
-            var qp = new URLSearchParams(location.search);
-            [
-              "utm_source",
-              "utm_medium",
-              "utm_campaign",
-              "utm_term",
-              "utm_content",
-            ].forEach(function (k) {
-              if (qp.has(k)) fd.set(k, qp.get(k));
-            });
-          } catch (_) {}
-          fd.set("_ajax", "1");
-
-          // UI: show pending + disable submit
-          showPending();
-          form
-            .querySelectorAll('button[type="submit"],input[type="submit"]')
-            .forEach(function (b) {
-              b.disabled = true;
-            });
-
-          fetch(ENDPOINT, { method: "POST", body: fd })
-            .then(function (res) {
-              var ct = res.headers.get("content-type") || "";
-              if (ct.includes("application/json")) return res.json();
-              return { ok: res.ok };
-            })
-            .then(function (data) {
-              var ok = !!(data && data.ok);
-              if (ok) {
-                clearPending(true);
-                // show email on thank-you
-                try {
-                  document.querySelector(".gm-email").textContent = email || "";
-                } catch (_) {}
-                // small inline success (if form visible in DOM)
-                var msg = document.createElement("div");
-                msg.textContent = "Thanks! We'll get back to you shortly.";
-                msg.style = "margin-top:12px;color:#0a0;";
-                form.appendChild(msg);
-                // reset form UI for next time
-                form.reset();
-                form.classList.remove("was-validated");
-                form
-                  .querySelectorAll("select.form-control")
-                  .forEach(function (s) {
-                    s.classList.remove("black");
-                  });
-              } else {
-                clearPending(false);
-                alert("Submission failed. Please try again.");
+            function showPending() {
+              var $thank = window.jQuery ? jQuery(THANK_MODAL) : null;
+              if (!$thank || !$thank.length) return;
+              if ($thank.css("position") === "static") {
+                $thank.css("position", "relative");
               }
-            })
-            .catch(function () {
-              clearPending(false);
-              alert("Network error. Please try again.");
-            })
-            .finally(function () {
-              form
-                .querySelectorAll('button[type="submit"],input[type="submit"]')
-                .forEach(function (b) {
-                  b.disabled = false;
-                });
-            });
-        });
-      })();
-    </script>
-    <script>
-      // FAQ accordion interactions
-      (function () {
-        var items = document.querySelectorAll(".faq-item");
-        if (!items.length) return;
-
-        items.forEach(function (item) {
-          var btn = item.querySelector(".faq-trigger");
-          var panel = item.querySelector(".faq-panel");
-          if (!btn || !panel) return;
-
-          btn.addEventListener("click", function () {
-            var isOpen = item.classList.contains("is-open");
-            if (isOpen) {
-              item.classList.remove("is-open");
-              btn.setAttribute("aria-expanded", "false");
-              panel.style.maxHeight = null;
-            } else {
-              item.classList.add("is-open");
-              btn.setAttribute("aria-expanded", "true");
-              panel.style.maxHeight = panel.scrollHeight + "px";
+              $thank.find(".cgx-veil").remove();
+              $thank.append(
+                '<div class="cgx-veil" style="position:absolute;inset:0;background:rgba(255,255,255,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">' +
+                  '<div class="cgx-spinner" style="width:28px;height:28px;border:3px solid #ddd;border-top-color:#333;border-radius:50%;animation:cgxspin 0.9s linear infinite;"></div>' +
+                  '<div style="margin-top:10px;color:#333;font:600 14px/1.4 system-ui,Segoe UI,Roboto,Arial">Submitting…</div>' +
+                  "</div>"
+              );
+              try { $thank.modal("show"); } catch (_) {}
+              try { window.jQuery && jQuery(FORM_MODAL).modal("hide"); } catch (_) {}
             }
-          });
-        });
-      })();
-    </script>
-</main>
 
-  <script src="/script.js" defer></script>
-</body>
+            function clearPending(ok) {
+              var $thank = window.jQuery ? jQuery(THANK_MODAL) : null;
+              if ($thank && $thank.length) {
+                $thank.find(".cgx-veil").remove();
+                if (!ok) {
+                  try { $thank.modal("hide"); } catch (_) {}
+                }
+              }
+            }
+
+            var phoneEl = document.getElementById("leadPhone");
+            var form = document.getElementById("leadForm");
+            if (!form) return;
+            var fromField = form.querySelector(".from");
+            var defaultFrom = fromField ? fromField.value : "";
+            function setFrom(val) { if (fromField) fromField.value = val || ""; }
+
+            document.querySelectorAll("[data-lead-source]").forEach(function (el) {
+              el.addEventListener("click", function () {
+                setFrom(el.getAttribute("data-lead-source") || defaultFrom);
+              });
+            });
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              if (!form.checkValidity()) {
+                form.classList.add("was-validated");
+                return;
+              }
+              function q(sel) { var el = form.querySelector(sel); return el ? (el.value || "").trim() : ""; }
+              var fd = new FormData();
+              var first = q(".first-name"), last = q(".last-name");
+              if (first) fd.set("first_name", first);
+              if (last) fd.set("last_name", last);
+              var fullName = [first, last].filter(Boolean).join(" ").trim();
+              if (fullName) fd.set("name", fullName);
+              var email = q(".email"); if (email) fd.set("email", email);
+              var phoneRaw = (phoneEl && phoneEl.value || "").trim();
+              var localRaw = phoneRaw.replace(/\D/g, "");
+              if (phoneRaw) fd.set("phone", phoneRaw);
+              fd.set("phone_raw", phoneRaw);
+              fd.set("numonly", localRaw);
+              fd.set("phone_e164", "");
+              fd.set("country_code", "");
+              fd.set("interest_level", q(".interest_level") || "");
+              fd.set("message", "");
+              [["company", ".company"],["country", ".country"],["industry", ".industry"],["interested_product", ".request_type"],["source", ".source"],["from", ".from"],["product", ".product"]].forEach(function (pair) {
+                var k = pair[0], v = q(pair[1]); if (v) fd.set(k, v);
+              });
+              var policy = form.querySelector("#policy");
+              fd.set("policy", policy && policy.checked ? "Y" : "N");
+              fd.set("page_url", location.href);
+              fd.set("referrer", document.referrer || "");
+              fd.set("user_agent", navigator.userAgent || "");
+              try {
+                var qp = new URLSearchParams(location.search);
+                ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function (k) { if (qp.has(k)) fd.set(k, qp.get(k)); });
+              } catch(_){}
+              fd.set("_ajax", "1");
+
+              // Push custom event for GTM trigger
+              try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "lead_submit" }); } catch(_){}
+
+
+              showPending();
+              form.querySelectorAll('button[type="submit"],input[type="submit"]').forEach(function (b) { b.disabled = true; });
+
+              function showOk() {
+                clearPending(true);
+                try { document.querySelector(".gm-email").textContent = email || ""; } catch(_){}
+                try { window.jQuery && jQuery(THANK_MODAL).modal("show"); } catch(_){}
+                try { window.jQuery && jQuery(FORM_MODAL).modal("hide"); } catch(_){}
+                try { if (DOWNLOAD_LINK && (fromField && fromField.value) === "download_now") { window.open(DOWNLOAD_LINK, "_blank", "noopener"); } } catch(_){}
+                var msg = document.createElement("div"); msg.textContent = "Thanks! We'll get back to you shortly."; msg.style = "margin-top:12px;color:#0a0;"; form.appendChild(msg);
+                form.reset(); setFrom(defaultFrom); form.classList.remove("was-validated");
+                form.querySelectorAll("select.form-control").forEach(function (s) { s.classList.remove("black"); });
+                form.querySelectorAll('button[type="submit"],input[type="submit"]').forEach(function (b) { b.disabled = false; });
+              }
+
+              (function(){
+                var sink = document.getElementById('sheetsSink');
+                if (!sink) {
+                  sink = document.createElement('iframe');
+                  sink.name = 'sheetsSink';
+                  sink.id = 'sheetsSink';
+                  sink.style.display = 'none';
+                  document.body.appendChild(sink);
+                }
+                try { sink.onload = function(){ showOk(); }; } catch(_){ }
+                setTimeout(showOk, 2000);
+                try {
+                  form.action = ENDPOINT;
+                  form.method = 'POST';
+                  form.target = 'sheetsSink';
+                  form.submit();
+                } catch(_) {
+                  clearPending(false);
+                  alert('Submission failed. Please try again.');
+                  form.querySelectorAll('button[type="submit"],input[type="submit"]').forEach(function (b) { b.disabled = false; });
+                }
+              })();
+            });
+          })();
+        });
+      </script>
+    </main>
+    <script src="/script.js"></script>
+  </body>
 </html>
