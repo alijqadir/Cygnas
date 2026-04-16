@@ -23,7 +23,7 @@ This matters more than most software reviews admit. The number one unspoken conc
 
 **ZWSOFT was founded in 1998; the same year Google was incorporated,** to put that in context. For over 25 years, they have focused on a single mission: build professional-grade CAD and design software that gives engineers and architects **the tools they need to boost productivity without the enterprise price tag that's become the industry norm.**
 
-![](/uploads/zwcad-profile.png "25 years of CAD/CAE/CAM Solutions Excellence")
+![](/uploads/frame-2055246568-1-.png "25 years of CAD/CAE/CAM Solutions Excellence")
 
 Today, ZWSOFT serves **over 1.4 million users across 90+ countries, including 149 Fortune 500 corporations.** This is not a startup trying to undercut a market leader. It is a mature engineering software business with a **25-year track record,** a global support network, and, crucially, an R&D team that has been rebuilding core components of ZWCAD from the ground up to prepare for this generation of releases.
 
