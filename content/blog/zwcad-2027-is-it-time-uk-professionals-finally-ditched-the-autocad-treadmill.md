@@ -8,6 +8,7 @@ description: ZWCAD 2027 has arrived in Beta and it comes with Revit file import,
   release might be the one that finally changes your mind.
 author: "Cygnas Solutions "
 tags: []
+image: /uploads/frame-2055246568-1-.png
 ---
 ## The CAD software you're using hasn't really changed. The bill has.
 
