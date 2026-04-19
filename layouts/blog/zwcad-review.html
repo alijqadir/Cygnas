@@ -1,0 +1,758 @@
+{{ define "main" }}
+<style>
+  main#content {
+    padding-top: var(--header-h, 120px);
+  }
+
+  .zwcad-review-page {
+    --ink: #0f1923;
+    --ink-light: #2c3e50;
+    --muted: #6b7a8d;
+    --border: #e8ecf2;
+    --bg: #fafbfd;
+    --bg-card: #ffffff;
+    --blue: #1d6fe8;
+    --blue-soft: #ebf3ff;
+    --blue-mid: #1a3f7a;
+    --gold: #d4a017;
+    --green: #1a8a4a;
+    --accent-strip: #f0f6ff;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: clip;
+  }
+
+  .zwcad-review-page *,
+  .zwcad-review-page *::before,
+  .zwcad-review-page *::after {
+    box-sizing: border-box;
+  }
+
+  .zwcad-review-topbar {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 max(24px, calc((100vw - 1180px) / 2));
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .zwcad-review-brand {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  .zwcad-review-brand span {
+    color: var(--blue);
+  }
+
+  .zwcad-review-header-cta,
+  .zwcad-review-button,
+  .zwcad-review-sidebar-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    border: 1px solid var(--blue);
+  }
+
+  .zwcad-review-header-cta:hover,
+  .zwcad-review-button:hover,
+  .zwcad-review-sidebar-cta a:hover {
+    background: var(--blue-mid);
+    border-color: var(--blue-mid);
+  }
+
+  .zwcad-review-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 82px;
+    padding-right: max(24px, calc((100vw - 1180px) / 2));
+    padding-bottom: 68px;
+    padding-left: max(24px, calc((100vw - 1180px) / 2));
+    background: linear-gradient(135deg, var(--blue-mid) 0%, #0a1628 100%);
+    color: #fff;
+  }
+
+  .zwcad-review-hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: 0;
+    width: 48%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(29, 111, 232, 0.2), rgba(255, 255, 255, 0));
+    transform: skewX(-12deg);
+    transform-origin: top right;
+  }
+
+  .zwcad-review-hero-inner {
+    width: min(820px, 100%);
+    max-width: 820px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .zwcad-review-category {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 100%;
+    margin-bottom: 24px;
+    padding: 5px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .zwcad-review-hero h1 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 4.3vw, 52px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: 0;
+    overflow-wrap: break-word;
+  }
+
+  .zwcad-review-standfirst {
+    max-width: 700px;
+    margin: 0 0 32px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 19px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+  }
+
+  .zwcad-review-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 13px;
+  }
+
+  .zwcad-review-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.32);
+  }
+
+  .zwcad-review-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 48px;
+  }
+
+  .zwcad-review-body {
+    min-width: 0;
+  }
+
+  .zwcad-review-body h2 {
+    margin: 48px 0 16px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    color: var(--ink);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: 0;
+    overflow-wrap: break-word;
+  }
+
+  .zwcad-review-body h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .zwcad-review-body h3 {
+    margin: 32px 0 12px;
+    color: var(--ink-light);
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+  }
+
+  .zwcad-review-body p {
+    margin: 0 0 20px;
+    color: var(--ink-light);
+    overflow-wrap: break-word;
+  }
+
+  .zwcad-review-body strong {
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  .zwcad-review-body em {
+    color: #20364e;
+  }
+
+  .zwcad-review-body a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(29, 111, 232, 0.32);
+  }
+
+  .zwcad-review-body a:hover {
+    border-color: var(--blue);
+  }
+
+  .zwcad-review-callout,
+  .zwcad-review-pullquote,
+  .zwcad-review-feature,
+  .zwcad-review-compare,
+  .zwcad-review-author,
+  .zwcad-review-download {
+    border-radius: 12px;
+  }
+
+  .zwcad-review-callout {
+    margin: 32px 0;
+    padding: 24px 28px;
+    border: 1px solid #d0e4ff;
+    background: var(--accent-strip);
+  }
+
+  .zwcad-review-label {
+    margin-bottom: 10px;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .zwcad-review-callout p {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .zwcad-review-pullquote {
+    margin: 32px 0;
+    padding: 24px 28px 24px 24px;
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    background: var(--blue-soft);
+  }
+
+  .zwcad-review-pullquote p {
+    margin: 0;
+    color: var(--blue-mid);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .zwcad-review-pullquote cite {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    font-style: normal;
+  }
+
+  .zwcad-review-feature {
+    margin: 32px 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  .zwcad-review-feature-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, var(--blue-soft), var(--bg-card));
+  }
+
+  .zwcad-review-feature-icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--blue);
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .zwcad-review-feature-title {
+    color: var(--ink);
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+
+  .zwcad-review-feature-tag {
+    margin-left: auto;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .zwcad-review-feature-body {
+    padding: 20px 24px;
+  }
+
+  .zwcad-review-feature-body p {
+    margin: 0 0 16px;
+    font-size: 15px;
+  }
+
+  .zwcad-review-feature-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .zwcad-review-media-card {
+    margin-top: 18px;
+    padding: 20px;
+    min-height: 148px;
+    display: grid;
+    align-content: end;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(10, 22, 40, 0.1), rgba(10, 22, 40, 0.88)),
+      url("/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp") center/cover;
+    color: #fff;
+  }
+
+  .zwcad-review-media-card strong {
+    color: #fff;
+  }
+
+  .zwcad-review-media-card span {
+    display: block;
+    max-width: 520px;
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .zwcad-review-image-card {
+    margin: 20px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f5f7fa;
+  }
+
+  .zwcad-review-image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .zwcad-review-image-card figcaption {
+    padding: 12px 16px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .zwcad-review-compare {
+    margin: 32px 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  .zwcad-review-compare-head,
+  .zwcad-review-compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .zwcad-review-compare-head {
+    padding: 14px 24px;
+    background: var(--blue-mid);
+    color: #fff;
+  }
+
+  .zwcad-review-compare-head div {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .zwcad-review-compare-head div:first-child {
+    text-align: left;
+  }
+
+  .zwcad-review-compare-row {
+    padding: 12px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .zwcad-review-compare-row:nth-child(odd) {
+    background: var(--accent-strip);
+  }
+
+  .zwcad-review-compare-feature {
+    color: var(--ink-light);
+    font-size: 14px;
+  }
+
+  .zwcad-review-compare-value {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .zwcad-review-yes {
+    color: var(--green);
+  }
+
+  .zwcad-review-no {
+    color: #7d8793;
+    font-weight: 600;
+  }
+
+  .zwcad-review-checklist {
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .zwcad-review-checklist li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: var(--ink-light);
+    font-size: 15px;
+  }
+
+  .zwcad-review-checklist li::before {
+    content: "✓";
+    margin-top: 1px;
+    color: var(--green);
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .zwcad-review-download {
+    margin-top: 48px;
+    padding: 40px;
+    background: linear-gradient(135deg, var(--blue-mid) 0%, #0a1628 100%);
+    color: #fff;
+    text-align: center;
+  }
+
+  .zwcad-review-download h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+  }
+
+  .zwcad-review-download p {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .zwcad-review-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 30px 0 32px;
+    text-align: left;
+  }
+
+  .zwcad-review-step {
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .zwcad-review-step-num {
+    margin-bottom: 6px;
+    color: #6dd5fa;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .zwcad-review-step-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .zwcad-review-download .zwcad-review-button {
+    min-height: 52px;
+    padding: 0 34px;
+    font-size: 16px;
+  }
+
+  .zwcad-review-note,
+  .zwcad-review-badge {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 12px;
+  }
+
+  .zwcad-review-badge {
+    color: #f0c040;
+    font-weight: 800;
+  }
+
+  .zwcad-review-author {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 56px 0 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  .zwcad-review-avatar {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue));
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .zwcad-review-author-name {
+    margin-bottom: 2px;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .zwcad-review-author-role {
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .zwcad-review-author-text {
+    color: var(--ink-light);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .zwcad-review-sidebar {
+    min-width: 0;
+  }
+
+  .zwcad-review-toc,
+  .zwcad-review-sidebar-cta {
+    position: sticky;
+    border-radius: 12px;
+  }
+
+  .zwcad-review-toc {
+    top: calc(var(--header-h, 120px) + 20px);
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
+  .zwcad-review-toc-title {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .zwcad-review-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .zwcad-review-toc li {
+    margin-bottom: 8px;
+  }
+
+  .zwcad-review-toc a {
+    display: block;
+    padding-left: 10px;
+    border-left: 2px solid transparent;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .zwcad-review-toc a:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .zwcad-review-sidebar-cta {
+    top: calc(var(--header-h, 120px) + 326px);
+    padding: 24px;
+    background: linear-gradient(135deg, var(--blue-mid) 0%, #0a1628 100%);
+    color: #fff;
+    text-align: center;
+  }
+
+  .zwcad-review-sidebar-cta h3 {
+    margin: 0 0 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .zwcad-review-sidebar-cta p {
+    margin: 0 0 16px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .zwcad-review-sidebar-cta a {
+    width: 100%;
+  }
+
+  .zwcad-review-gold-label {
+    margin-top: 10px;
+    color: #f0c040;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  @media (max-width: 980px) {
+    .zwcad-review-layout {
+      grid-template-columns: 1fr;
+      padding: 36px 24px;
+    }
+
+    .zwcad-review-sidebar {
+      display: none;
+    }
+
+    .zwcad-review-hero {
+      padding: 58px 24px 46px;
+    }
+
+    .zwcad-review-topbar {
+      padding: 0 24px;
+    }
+
+    .zwcad-review-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .zwcad-review-page {
+      font-size: 16px;
+    }
+
+    .zwcad-review-hero h1 {
+      font-size: 29px;
+      line-height: 1.14;
+    }
+
+    .zwcad-review-standfirst {
+      font-size: 17px;
+    }
+
+    .zwcad-review-topbar {
+      align-items: flex-start;
+      height: auto;
+      flex-direction: column;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      gap: 12px;
+    }
+
+    .zwcad-review-header-cta {
+      width: 100%;
+    }
+
+    .zwcad-review-meta {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .zwcad-review-dot {
+      display: none;
+    }
+
+    .zwcad-review-feature-head {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .zwcad-review-feature-tag {
+      margin-left: 50px;
+    }
+
+    .zwcad-review-compare {
+      overflow-x: auto;
+    }
+
+    .zwcad-review-compare-head,
+    .zwcad-review-compare-row {
+      min-width: 620px;
+    }
+
+    .zwcad-review-download {
+      padding: 30px 22px;
+    }
+
+    .zwcad-review-author {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="zwcad-review-page">
+  {{ .Content }}
+</div>
+{{ end }}

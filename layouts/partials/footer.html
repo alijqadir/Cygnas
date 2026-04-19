@@ -55,9 +55,12 @@
 </footer>
 
 <!-- Page-specific JS -->
-{{ $rel := .RelPermalink }} {{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq
-$rel "/zwsoft-uk/index.html") }} {{ $isAsy := or (hasPrefix $rel "/asystom/")
-(eq $rel "/asystom/index.html") }} {{ if $isZW }}
+{{ $rel := .RelPermalink }}
+{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
+{{ $isZW2027 := hasPrefix $rel "/zwsoft-uk/zwcad-2027/" }}
+{{ $isZWLegacy := and $isZW (not $isZW2027) }}
+{{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
+{{ if $isZWLegacy }}
 <script src="/zwsoft-uk/js/jquery.min.js"></script>
 <script src="/zwsoft-uk/js/bootstrap.min.js"></script>
 <script src="/zwsoft-uk/js/intltelinput-17.0.8.min.js"></script>

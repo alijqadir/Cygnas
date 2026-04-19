@@ -6,7 +6,8 @@
     <div class="grid">
       {{ range $p.Pages }}
         <article class="post-card">
-          {{ with .Params.image }}<a href="{{ $.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></a>{{ end }}
+          {{ $page := . }}
+          {{ with $page.Params.image }}<a href="{{ $page.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy"></a>{{ end }}
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <div class="meta">{{ .Date.Format "02 Jan 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}</div>
           {{ $excerpt := or .Params.description .Summary }}

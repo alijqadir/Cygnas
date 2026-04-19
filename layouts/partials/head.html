@@ -1,11 +1,41 @@
 {{ $rel := .RelPermalink }}
 {{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
+{{ $isZW2027 := hasPrefix $rel "/zwsoft-uk/zwcad-2027/" }}
+{{ $isZWLegacy := and $isZW (not $isZW2027) }}
 {{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
+{{ $desc := "" }}
+{{ with .Description }}
+  {{ $desc = . }}
+{{ else }}
+  {{ with .Params.description }}
+    {{ $desc = . }}
+  {{ end }}
+{{ end }}
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content="Hugo" />
 <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+{{ with $desc }}
+<meta name="description" content="{{ . | plainify }}" />
+{{ end }}
+<link rel="canonical" href="{{ .Permalink }}" />
+<meta property="og:title" content="{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}" />
+{{ with $desc }}
+<meta property="og:description" content="{{ . | plainify }}" />
+{{ end }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+<meta name="twitter:card" content="summary_large_image" />
+{{ else }}
+<meta name="twitter:card" content="summary" />
+{{ end }}
+<meta name="twitter:title" content="{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}" />
+{{ with $desc }}
+<meta name="twitter:description" content="{{ . | plainify }}" />
+{{ end }}
 
 <!-- Base fonts and icons used across pages -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,13 +49,20 @@
 {{ end }}
 
 <style id="global-header-css">
-  :root { --header-h: 120px; }
+  :root { --header-h: 72px; }
+  html,
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
   main#content {
-    padding-top: calc(var(--header-h, 120px) + 12px);
+    padding-top: var(--header-h, 72px);
   }
   #header {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: rgba(10, 10, 15, 0.88);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -199,8 +236,8 @@
     #header .nav-links {
       position: fixed;
       right: 0;
-      top: var(--header-h, 120px);
-      height: calc(100vh - var(--header-h, 120px));
+      top: var(--header-h, 72px);
+      height: calc(100vh - var(--header-h, 72px));
       width: 100vw;
       background: rgba(10, 10, 15, 0.98);
       flex-direction: column;
@@ -245,7 +282,11 @@
 {{ $main := resources.Get "css/main.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $main.RelPermalink }}">
 
-{{ if $isZW }}
+{{ if $isZW2027 }}
+  <link rel="stylesheet" href="/zwsoft-uk/zwcad-2027/assets/hub.css" />
+{{ end }}
+
+{{ if $isZWLegacy }}
   <!-- ZWSOFT LP assets -->
   <link rel="dns-prefetch" href="https://statics.zwsoft.com/" />
   <link rel="dns-prefetch" href="https://www.zwsoft.com/" />
