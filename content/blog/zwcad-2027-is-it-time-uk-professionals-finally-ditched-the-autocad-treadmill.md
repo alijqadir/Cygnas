@@ -1,6 +1,6 @@
 ---
 title: "ZWCAD 2027 Review: Faster, Smarter, and Excellent at the Things That
-  Matter to Boost"
+  Matter to Boost Productivity"
 date: 2026-04-22T12:23:00.000+01:00
 description: ZWCAD 2027 has arrived in Beta and it comes with Revit file import,
   150% faster block editing, one-click data extraction, and a refreshed
