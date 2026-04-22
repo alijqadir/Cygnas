@@ -96,33 +96,25 @@ ZWCAD 2027 also ships with a refreshed interface, unified colour scheme, redesig
 
 ## ZWCAD 2027 vs AutoCAD: The honest comparison
 
-We're not going to tell you AutoCAD is a bad product; it isn't. But there are some concrete, factual differences that are worth laying out clearly.
+We're not going to tell you AutoCAD is a bad product; it isn't. But there are some concrete, factual differences that are worth laying out clearly. Here is a quick look. 
 
-The full comparison runs to over 200 features. [Contact us to request the complete document.](https://www.claudeusercontent.com/zwcad2027_website.html#cta)
+![](/uploads/screenshot-2026-04-21-130642.png)
+
+The full comparison runs to over 200 features. [Contact us to request the complete document.](https://www.claudeusercontent.com/zwcad2027_website.html#cta)The other main difference is the price and the value one gets out of it. Since the features have already been looked into, [the price comparison calculator](https://cygnas.co.uk/zwsoft-uk/zwcad-2027/) provides **a brilliant overview of what a typical user of AUTOCAD could save with ZWCAD for an advanced feature set.** 
 
 ## Who is ZWCAD 2027 built for in the UK?
 
 Based on our experience transitioning over 100 UK firms, here's where ZWCAD tends to deliver the most obvious value:
 
-* **Structural and civil engineering consultancies:**
-
-  Running AutoCAD LT or full AutoCAD on multiple seats, where the annual licence spend has become a recurring frustration at board level
-* **Architectural practices:**
-
-  Receiving Revit models from structural engineers and spending time on workarounds to extract information they need in 2D
-* **Design teams doing quantity takeoff or coordinate-heavy work:**
-
-  The data extraction and coordinate tools alone justify the evaluation
-* **Firms with mixed project types:**
-
-  Who want the flexibility of choosing between perpetual and subscription licensing rather than being locked into a single model
-* **University departments and educational institutions:**
-
-  Running AutoCAD lab licences, where multi-seat costs add up quickly and ZWCAD's academic pricing offers meaningful savings
+* **Structural and civil engineering consultancies:** Running AutoCAD LT or full AutoCAD on multiple seats, where the annual licence spend has become a recurring frustration at board level
+* **Architectural practices:** Receiving Revit models from structural engineers and spending time on workarounds to extract information they need in 2D
+* **Design teams doing quantity takeoff or coordinate-heavy work:** The data extraction and coordinate tools alone justify the evaluation
+* **Firms with mixed project types:** Who want the flexibility of choosing between perpetual and subscription licensing rather than being locked into a single model
+* **University departments and educational institutions:** Running AutoCAD lab licences, where multi-seat costs add up quickly and ZWCAD's academic pricing offers meaningful savings
 
 **It's also worth noting what ZWCAD isn't ideal for, at least in its current form.** If your workflow is built around Revit as a primary authoring environment, or if you need advanced 3D solid modelling within the same tool, ZWCAD's standard edition is a 2D-first product (the Pro edition extends this). And if your firm runs bespoke LISP routines or .NET plugins that are deeply embedded in your AutoCAD workflow, migration will require testing those carefully, though ZWCAD supports the same API interfaces.
 
-## What does switching actually involve
+## What does switching actually involve?
 
 The honest answer: **less than most people expect, more than some vendors admit.**
 
