@@ -26,9 +26,9 @@ This matters more than most software reviews admit. The number one unspoken conc
 
 ![](/uploads/zwsoft-profile-final.png "25 years of CAD/CAE/CAM Solutions Excellence")
 
-Today, ZWSOFT serves **over 1.4 million users across 90+ countries, including 149 Fortune 500 corporations.** This is not a startup trying to undercut a market leader. It is a mature engineering software business with a **25-year track record,** a global support network, and, crucially, an R&D team that has been rebuilding core components of ZWCAD from the ground up to prepare for this generation of releases.
+Today, [ZWSOFT](https://www.zwsoft.com/) serves **over 1.4 million users across 90+ countries, including 149 Fortune 500 corporations.** This is not a startup trying to undercut a market leader. It is a mature engineering software business with a **25-year track record,** a global support network, and, crucially, an R&D team that has been rebuilding core components of ZWCAD from the ground up to prepare for this generation of releases.
 
-In the United Kingdom, **Cygnas Solutions Limited is the Authorised Reseller for ZWCAD.** We've helped over **100 UK firms transition their CAD workflows;** from small architectural practices to mid-sized structural engineering consultancies and provide UK-based technical support, hands-on onboarding, and ongoing consultancy throughout the process.
+In the United Kingdom, **[Cygnas Solutions Limited](https://deploy-preview-25--cygnas-admin.netlify.app/zwsoft-uk/zwcad/) is the Authorised Reseller for ZWCAD.** We've helped over **100 UK firms transition their CAD workflows;** from small architectural practices to mid-sized structural engineering consultancies and provide UK-based technical support, hands-on onboarding, and ongoing consultancy throughout the process.
 
 ## What ZWCAD 2027 is actually trying to do
 
@@ -48,7 +48,7 @@ move to the latest version whenever you choose), giving firms the ability to ali
 ## What's actually new in ZWCAD 2027
 
 If the design philosophy of this release were to be described in two words, it would simpy be **"one-click."** 
-This phisolophy has been strucutred around understading the various painpoints CAD users go through on a daily basis which hinder productivity. Where previous versions required a sequence of commands, 2027 collapses them into a single action. Let's look at the significant ones.
+This phisolophy has been strucutred around understading the **various painpoints CAD users go through on a daily basis which hinder productivity.** Where previous versions required a sequence of commands, 2027 collapses them into a single action. **Let's look at the significant ones.**
 
 ### **1) RVT Import: Bridge the BIM gap without the Revit licence**
 
@@ -92,7 +92,7 @@ Ask any CAD manager and they'll tell you: the most common drawing that gets sent
 
 ### 7) The Refreshed Interface: More space, less visual noise
 
-ZWCAD 2027 also ships with a refreshed interface, unified colour scheme, redesigned icons, and a layout that **increases the drawing area by 15%.** It's the kind of update that sounds minor in a feature list but makes a meaningful difference when you're staring at it for eight hours. The redesigned icons are more intuitive, the visual fatigue reduction is real, and the extra drawing space is particularly appreciated on laptop screens.
+ZWCAD 2027 also ships with a refreshed interface, unified colour scheme, redesigned icons, and a layout that **increases the drawing area by 15%.** It's the kind of update that sounds minor in a feature list but makes a meaningful difference when you're staring at it for eight hours. The redesigned icons are more intuitive, the visual fatigue reduction is real, and **the extra drawing space is particularly appreciated on laptop screens.**
 
 ## ZWCAD 2027 vs AutoCAD: The honest comparison
 
@@ -100,7 +100,7 @@ We're not going to tell you AutoCAD is a bad product; it isn't. But there are so
 
 ![](/uploads/screenshot-2026-04-21-130642.png)
 
-The full comparison runs to over 200 features. [Contact us to request the complete document.](https://www.claudeusercontent.com/zwcad2027_website.html#cta)
+The full comparison runs to over 200 features. [Contact us to request the complete document.](https://cygnas.co.uk/zwsoft-uk/zwcad-2027/download/)
 
 The other main difference is the value one get out of the price being paid. Since the features have already been looked into, [the price comparison calculator](https://cygnas.co.uk/zwsoft-uk/zwcad-2027/) provides **a brilliant overview of what a typical user of AUTOCAD could save with ZWCAD for an advanced feature set.** 
 
