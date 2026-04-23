@@ -103,11 +103,49 @@
     transform-origin: top right;
   }
 
-  .zwcad-review-hero-inner {
-    width: min(820px, 100%);
-    max-width: 820px;
+  .zwcad-review-hero-shell {
     position: relative;
     z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 42px;
+    align-items: center;
+  }
+
+  .zwcad-review-hero-inner {
+    width: min(100%, 680px);
+    max-width: 680px;
+  }
+
+  .zwcad-review-hero-media {
+    position: relative;
+    justify-self: end;
+    width: min(100%, 520px);
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 80px rgba(6, 15, 31, 0.42);
+    backdrop-filter: blur(10px);
+  }
+
+  .zwcad-review-hero-media::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(109, 213, 250, 0.18), rgba(29, 111, 232, 0.04));
+    z-index: -1;
+  }
+
+  .zwcad-review-hero-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    background: #dcecff;
   }
 
   .zwcad-review-category {
@@ -520,9 +558,23 @@
   }
 
   .zwcad-review-download .zwcad-review-button {
+    width: min(100%, 420px);
     min-height: 52px;
     padding: 0 34px;
+    border-bottom: none;
+    color: #fff;
     font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    box-shadow: 0 18px 40px rgba(29, 111, 232, 0.28);
+    text-shadow: none;
+    -webkit-text-fill-color: #fff;
+  }
+
+  .zwcad-review-download .zwcad-review-button:hover {
+    color: #fff;
+    border-bottom: none;
+    -webkit-text-fill-color: #fff;
   }
 
   .zwcad-review-note,
@@ -665,6 +717,17 @@
   }
 
   @media (max-width: 980px) {
+    .zwcad-review-hero-shell {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .zwcad-review-hero-media {
+      justify-self: stretch;
+      width: 100%;
+      max-width: 640px;
+    }
+
     .zwcad-review-layout {
       grid-template-columns: 1fr;
       padding: 36px 24px;
@@ -699,6 +762,11 @@
 
     .zwcad-review-standfirst {
       font-size: 17px;
+    }
+
+    .zwcad-review-hero-media {
+      padding: 10px;
+      border-radius: 18px;
     }
 
     .zwcad-review-topbar {
