@@ -19,11 +19,12 @@
 
 <style>
 :root {
-  --zwcad-product-nav-offset: 60px;
+  --zwcad-product-nav-offset: var(--header-h, 92px);
+  --zwcad-product-nav-h: 48px;
 }
 
 main#content {
-  padding-top: 0 !important;
+  padding-top: calc(var(--header-h, 92px) + var(--zwcad-product-nav-h)) !important;
 }
 
 .zwcad-product-page {
@@ -73,8 +74,11 @@ main#content {
 }
 
 .zwcad-product-page .site-nav {
-  position: sticky;
+  position: fixed;
   top: var(--zwcad-product-nav-offset);
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 900;
   display: flex;
   align-items: center;
@@ -194,13 +198,21 @@ main#content {
 
 .btn-primary {
   background: var(--blue);
-  color: var(--white);
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
 }
 
 .btn-primary:hover {
   background: var(--navy2);
   box-shadow: 0 6px 20px rgba(26, 111, 232, 0.35);
   transform: translateY(-1px);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:visited {
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
 }
 
 .btn-lg {
@@ -210,8 +222,10 @@ main#content {
 }
 
 .btn-teal {
-  background: var(--teal);
-  color: var(--white);
+  background: linear-gradient(135deg, #18d7b7 0%, #0db7cf 100%);
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
+  box-shadow: 0 10px 24px rgba(0, 196, 160, 0.22);
 }
 
 .btn-teal:hover {
@@ -219,15 +233,31 @@ main#content {
   transform: translateY(-1px);
 }
 
+.btn-teal:hover,
+.btn-teal:focus,
+.btn-teal:visited {
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
+}
+
 .btn-outline-white {
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(9, 26, 51, 0.18);
 }
 
 .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.82);
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus,
+.btn-outline-white:visited {
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white);
 }
 
 .tab-page {
@@ -476,9 +506,9 @@ main#content {
 .section-label {
   margin-bottom: 10px;
   color: var(--blue);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1013,7 +1043,7 @@ main#content {
   position: relative;
   overflow: hidden;
   padding: 100px 60px 80px;
-  background: linear-gradient(140deg, #060e1c 0%, #0a1628 55%, #0d2040 100%);
+  background: linear-gradient(140deg, #0d2242 0%, #143767 56%, #1f5190 100%);
 }
 
 .hero-2027::before {
@@ -1024,8 +1054,18 @@ main#content {
   width: 58%;
   height: 100%;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(26, 111, 232, 0.18), rgba(26, 111, 232, 0));
+  background: linear-gradient(135deg, rgba(96, 168, 255, 0.26), rgba(96, 168, 255, 0.04) 72%, rgba(96, 168, 255, 0));
   transform: translateX(-20%) skewX(-10deg);
+}
+
+.hero-2027::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(130, 190, 255, 0.16), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 38%);
 }
 
 .hero-2027-inner {
@@ -1082,7 +1122,7 @@ main#content {
 .hero-2027-sub {
   max-width: 640px;
   margin: 0 auto 36px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 19px;
   font-weight: 300;
   line-height: 1.7;
@@ -1101,14 +1141,14 @@ main#content {
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .h2027-pill {
   padding: 24px 20px;
-  background: #080f1e;
+  background: rgba(11, 29, 58, 0.46);
   text-align: center;
 }
 
@@ -1208,22 +1248,44 @@ main#content {
   text-transform: uppercase;
 }
 
+.video-block {
+  margin-top: 20px;
+}
+
 .video-ph {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   aspect-ratio: 16/9;
-  margin-top: 20px;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 10px;
   background: var(--navy);
-  cursor: pointer;
+  overflow: hidden;
+}
+
+.video-ph-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
   transition: opacity 0.2s;
 }
 
-.video-ph:hover {
+.video-ph-placeholder:hover {
   opacity: 0.9;
+}
+
+.video-embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #07111e;
+}
+
+.video-still {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #eef4ff;
 }
 
 .play-circle {
@@ -1247,11 +1309,10 @@ main#content {
 }
 
 .video-cap {
-  position: absolute;
-  bottom: 10px;
-  left: 12px;
-  color: rgba(255, 255, 255, 0.62);
+  margin-top: 10px;
+  color: rgba(18, 30, 50, 0.62);
   font-size: 11px;
+  line-height: 1.5;
 }
 
 .feat2027-full {
@@ -1334,6 +1395,12 @@ main#content {
 }
 
 .cv2.no {
+  color: var(--red);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cv2.no-text {
   color: #5f6b7a;
   font-size: 13px;
   font-weight: 700;
@@ -1646,7 +1713,118 @@ main#content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 52px;
+  margin-top: 0;
+}
+
+.pricing-license-shell {
+  margin-top: 36px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  overflow: hidden;
+}
+
+.pricing-license-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(26, 111, 232, 0.05), rgba(26, 111, 232, 0));
+}
+
+.pricing-license-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.pricing-license-tab:hover {
+  border-color: rgba(26, 111, 232, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-license-tab.active {
+  border-color: var(--blue);
+  background: var(--white);
+  box-shadow: 0 12px 28px rgba(11, 29, 58, 0.08);
+}
+
+.pricing-license-tab-kicker {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricing-license-tab-title {
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.pricing-license-tab-copy {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pricing-license-pane {
+  display: none;
+  padding: 28px;
+}
+
+.pricing-license-pane.active {
+  display: block;
+}
+
+.pricing-license-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.pricing-license-title {
+  color: var(--navy);
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.pricing-license-copy {
+  max-width: 760px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pricing-license-meta {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(26, 111, 232, 0.08);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pricing-license-pane .pricing-grid {
+  margin-top: 28px;
 }
 
 .pricing-card {
@@ -1711,6 +1889,15 @@ main#content {
   margin-bottom: 24px;
 }
 
+.pricing-price-label {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .pricing-amount {
   color: var(--navy);
   font-family: inherit;
@@ -1725,10 +1912,38 @@ main#content {
   font-weight: 400;
 }
 
+.pricing-was {
+  margin-top: 4px;
+  color: #7b879a;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.pricing-local {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--navy);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pricing-local strong {
+  font-weight: 700;
+}
+
 .pricing-type {
   margin-top: 4px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.pricing-source-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+  text-align: center;
 }
 
 .pricing-features {
@@ -1867,15 +2082,24 @@ main#content {
   .hero {
     padding-top: 60px;
   }
+
+  .pricing-license-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-license-head {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 640px) {
   :root {
-    --zwcad-product-nav-offset: 56px;
+    --zwcad-product-nav-offset: var(--header-h, 76px);
+    --zwcad-product-nav-h: 46px;
   }
 
   main#content {
-    padding-top: 0 !important;
+    padding-top: calc(var(--header-h, 76px) + var(--zwcad-product-nav-h)) !important;
   }
 
   .zwcad-product-page .site-nav {
@@ -1928,6 +2152,18 @@ main#content {
   .calc-output,
   .pricing-card {
     padding: 24px;
+  }
+
+  .pricing-license-pane {
+    padding: 24px;
+  }
+
+  .pricing-license-tab {
+    padding: 14px 16px;
+  }
+
+  .pricing-license-title {
+    font-size: 24px;
   }
 
   .hero-stats {
@@ -2206,12 +2442,12 @@ main#content {
       <div class="section-inner">
         <div class="cygnas-grid">
           <div>
-            <div class="cygnas-badge"><span>🏅 ZWCAD Gold Reseller — United Kingdom</span></div>
+            <div class="cygnas-badge"><span>Cygnas Solutions - Authorised Reseller of ZWCAD in the UK</span></div>
             <h2 class="cygnas-h">Buy ZWCAD Through Cygnas Solutions and Get More Than Software</h2>
             <p class="cygnas-body">When you purchase ZWCAD through Cygnas Solutions, you're not just getting a licence key. You're getting a UK-based engineering partner who has done this migration over 100 times — and who will be with you through every step of the process.</p>
             <div class="cygnas-stats">
               <div class="cygnas-stat"><div class="cygnas-stat-num">100<em>+</em></div><div class="cygnas-stat-label">UK firms transitioned</div></div>
-              <div class="cygnas-stat"><div class="cygnas-stat-num"><em>🏅</em></div><div class="cygnas-stat-label">Gold Reseller status</div></div>
+              <div class="cygnas-stat"><div class="cygnas-stat-num"><em>UK</em></div><div class="cygnas-stat-label">Authorised reseller</div></div>
               <div class="cygnas-stat"><div class="cygnas-stat-num">25<em>+</em></div><div class="cygnas-stat-label">Years engineering expertise</div></div>
             </div>
             <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -2292,7 +2528,14 @@ main#content {
             <div class="feat2027-title">RVT Import — BIM without the Revit licence</div>
             <div class="feat2027-body">Import Revit files (versions 2015–2025) directly into ZWCAD. Geometry, categories, families, materials, and layer structures are preserved and immediately manageable through ZWCAD's layer panel — no Revit licence, no manual conversion, no waiting for someone else to export a DWG.</div>
             <span class="feat2027-tag">BIM Connectivity</span>
-            <div class="video-ph"><div class="play-circle"><div class="play-tri"></div></div><div class="video-cap">▶ Insert: RVT Import — from ZWSoft 2027 video pack</div></div>
+            <div class="video-block">
+              <div class="video-ph">
+                <video class="video-embed" controls preload="metadata" playsinline poster="/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp">
+                  <source src="/zwsoft-uk/zwcad-2027/assets/videos/rvt-import-section-view-subtitled.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video-cap">RVT Import and Section View demo video with subtitles.</div>
+            </div>
           </div>
           <div class="feat2027-card">
             <div class="feat2027-num">Feature 02</div>
@@ -2300,7 +2543,14 @@ main#content {
             <div class="feat2027-title">3D Section View — inspect models without dismantling them</div>
             <div class="feat2027-body">Slice through any 3D model using box or plane sections — instantly see what's inside without destructive editing. Works across DWG, RVT, and IFC models. Eliminates the "can you send me a section at grid C?" back-and-forth that slows collaborative projects.</div>
             <span class="feat2027-tag">Efficiency</span>
-            <div class="video-ph"><div class="play-circle"><div class="play-tri"></div></div><div class="video-cap">▶ Insert: Section View — from ZWSoft 2027 video pack</div></div>
+            <div class="video-block">
+              <div class="video-ph">
+                <video class="video-embed" controls preload="metadata" playsinline poster="/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp">
+                  <source src="/zwsoft-uk/zwcad-2027/assets/videos/rvt-import-section-view-subtitled.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video-cap">Section View workflow from the ZWCAD 2027 feature video, with subtitles.</div>
+            </div>
           </div>
           <div class="feat2027-card">
             <div class="feat2027-num">Feature 03</div>
@@ -2308,7 +2558,14 @@ main#content {
             <div class="feat2027-title">Batch Data Extraction — the spreadsheet you used to build by hand</div>
             <div class="feat2027-body">Pull data from dozens of drawings simultaneously. Reusable templates. Auto-updating outputs when source drawings change. Paired with coordinate extraction and area/perimeter calculations, this is a step-change for anyone doing quantity takeoff or project scheduling from CAD files.</div>
             <span class="feat2027-tag">Efficiency</span>
-            <div class="video-ph"><div class="play-circle"><div class="play-tri"></div></div><div class="video-cap">▶ Insert: Data Extraction — from ZWSoft 2027 video pack</div></div>
+            <div class="video-block">
+              <div class="video-ph">
+                <video class="video-embed" controls preload="metadata" playsinline poster="/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp">
+                  <source src="/zwsoft-uk/zwcad-2027/assets/videos/data-extraction-upgrade.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video-cap">Data Extraction Upgrade demo video.</div>
+            </div>
           </div>
           <div class="feat2027-card">
             <div class="feat2027-num">Feature 04</div>
@@ -2316,7 +2573,14 @@ main#content {
             <div class="feat2027-title">Smart Merge — your plotter will thank you</div>
             <div class="feat2027-body">Automatically calculate the optimal arrangement of drawing layouts across output sheets. Preview before you commit. Particularly valuable for teams using roll-format plotters on large infrastructure or planning submissions — where inefficient nesting adds up to real material cost.</div>
             <span class="feat2027-tag">Output</span>
-            <div class="video-ph"><div class="play-circle"><div class="play-tri"></div></div><div class="video-cap">▶ Insert: Smart Merge — from ZWSoft 2027 video pack</div></div>
+            <div class="video-block">
+              <div class="video-ph">
+                <video class="video-embed" controls preload="metadata" playsinline poster="/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp">
+                  <source src="/zwsoft-uk/zwcad-2027/assets/videos/smart-merge-subtitled.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video-cap">Smart Merge demo video with subtitles.</div>
+            </div>
           </div>
           <div class="feat2027-card feat2027-full">
             <div class="feat2027-num">Feature 05 + 06</div>
@@ -2326,14 +2590,24 @@ main#content {
                 <div class="feat2027-title">Xref Display Control</div>
                 <div class="feat2027-body">Batch-set layer colours for all external references in one click — or apply rule-based override filters that activate automatically on attach. Source files remain untouched. Consistency across your whole team, without relying on anyone remembering to do it manually.</div>
                 <span class="feat2027-tag">Collaboration</span>
-                <div class="video-ph" style="margin-top:16px"><div class="play-circle"><div class="play-tri"></div></div><div class="video-cap">▶ Xref Display</div></div>
+                <div class="video-block" style="margin-top:16px">
+                  <div class="video-ph">
+                    <img class="video-still" src="/zwsoft-uk/zwcad-2027/assets/whats-new-banner.webp" alt="ZWCAD 2027 workspace preview for Xref display and drawing reference control" loading="lazy">
+                  </div>
+                  <div class="video-cap">ZWCAD 2027 workspace preview for Xref display and reference coordination.</div>
+                </div>
               </div>
               <div>
                 <div class="feat2027-icon">🖥</div>
                 <div class="feat2027-title">Refreshed Interface — 15% More Drawing Space</div>
                 <div class="feat2027-body">A unified colour scheme, redesigned icons, and a layout reconfigured to give designers 15% more drawing area. Designers spend entire working days in their CAD environment — ZWCAD 2027 was built with that reality in mind.</div>
                 <span class="feat2027-tag">User Experience</span>
-                <div class="interface-ph">📷 Insert: ZWCAD 2027 Interface — from ZWSoft marketing pack</div>
+                <div class="video-block" style="margin-top:16px">
+                  <div class="video-ph">
+                    <img class="video-still" src="/zwsoft-uk/zwcad-2027/assets/zwcad-2027-kv.webp" alt="ZWCAD 2027 refreshed interface and drafting workspace" loading="lazy">
+                  </div>
+                  <div class="video-cap">ZWCAD 2027 interface artwork from the product marketing pack.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -2352,7 +2626,7 @@ main#content {
             <div class="ch2" style="color:#7DB8FF">ZWCAD 2027</div>
             <div class="ch2" style="color:rgba(255,255,255,.72)">AutoCAD 2027</div>
           </div>
-          <div class="compare2027-row"><div class="cf2">Perpetual licence (own it outright)</div><div class="cv2 yes">✔</div><div class="cv2 no">Sub only</div></div>
+          <div class="compare2027-row"><div class="cf2">Perpetual licence (own it outright)</div><div class="cv2 yes">✔</div><div class="cv2 no-text">Sub only</div></div>
           <div class="compare2027-row"><div class="cf2">Native RVT (Revit) file import</div><div class="cv2 yes">✔</div><div class="cv2 no">✗</div></div>
           <div class="compare2027-row"><div class="cf2">Smart Merge — print layout optimisation</div><div class="cv2 yes">✔</div><div class="cv2 no">✗</div></div>
           <div class="compare2027-row"><div class="cf2">Area & perimeter measurement table</div><div class="cv2 yes">✔</div><div class="cv2 no">✗</div></div>
@@ -2369,7 +2643,7 @@ main#content {
 
     <section class="section cygnas-section">
       <div class="section-inner" style="text-align:center">
-        <div class="cygnas-badge" style="margin:0 auto 20px"><span>🏅 ZWCAD Gold Reseller — United Kingdom</span></div>
+        <div class="cygnas-badge" style="margin:0 auto 20px"><span>Cygnas Solutions - Authorised Reseller of ZWCAD in the UK</span></div>
         <h2 class="cygnas-h" style="max-width:600px;margin:0 auto 16px">Try ZWCAD 2027 Beta — with Cygnas guiding you through it</h2>
         <p class="cygnas-body" style="max-width:560px;margin:0 auto 28px">Register through Cygnas Solutions and get a personalised download link, UK setup guide, and a free 30-minute onboarding call with a technical consultant. Not a chatbot — a real person who has done this 100+ times.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -2425,7 +2699,7 @@ main#content {
                 <div class="calc-hint">Standalone: one user per machine. Network: shared pool across your team.</div>
                 <div class="btn-group">
                   <button class="btn-option active" onclick="setLicType(this,'standalone')">Standalone</button>
-                  <button class="btn-option" onclick="setLicType(this,'network')">Network<br><small style="font-weight:400;font-size:10px">+15% on perpetual</small></button>
+                  <button class="btn-option" onclick="setLicType(this,'network')">Network<br><small style="font-weight:400;font-size:10px">official ratio estimate</small></button>
                 </div>
               </div>
 
@@ -2459,7 +2733,7 @@ main#content {
                 <div class="output-row-val acad" id="out-acad-seat">£1,512</div>
               </div>
               <div class="output-row">
-                <div class="output-row-label" id="out-zwcad-label">ZWCAD Standard — per seat (perpetual)</div>
+                <div class="output-row-label" id="out-zwcad-label">ZWCAD Standard — per seat (standalone licence · perpetual)</div>
                 <div class="output-row-val zwcad" id="out-zwcad-seat">£799</div>
               </div>
               <div class="output-row">
@@ -2484,7 +2758,7 @@ main#content {
               </div>
 
               <div class="calc-disclaimer">
-                AutoCAD benchmark price: $1,890/year per seat, converted at £1 = $1.25. ZWCAD prices are Cygnas Solutions UK indicative perpetual prices and may vary; <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=pricing_disclaimer#zwcad-lead">contact us</a> for an exact quote. Flexible upgrades are estimated at 18% of perpetual price per year. Prices exclude VAT. Network licence includes 15% uplift on perpetual price.
+                AutoCAD benchmark price: $1,890/year per seat, converted at £1 = $1.25. ZWCAD prices are Cygnas Solutions UK indicative perpetual rates and may vary; <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=pricing_disclaimer#zwcad-lead">contact us</a> for an exact quote. Flexible upgrades are estimated at 18% of perpetual price per year. Prices exclude VAT. Network mode estimates UK pricing by applying the current official ZWSOFT network-to-standalone ratio for each edition, checked on April 23, 2026.
               </div>
             </div>
           </div>
@@ -2494,75 +2768,182 @@ main#content {
 
     <section class="pricing-section">
       <div class="section-inner">
-        <div class="section-label">Licence Tiers</div>
-        <h2 class="section-h">Choose the Right Version<br>for Your Business</h2>
-        <p class="section-sub">All tiers include full DWG compatibility, UK-based support from Cygnas Solutions, and a free 30-day trial before you commit.</p>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-tier">Standard</div>
-            <div class="pricing-name">ZWCAD Standard</div>
-            <div class="pricing-desc">Cost-effective 2D CAD for professional 2D drafting</div>
-            <div class="pricing-price">
-              <div class="pricing-amount">£799 <span>/ seat</span></div>
-              <div class="pricing-type">Perpetual licence · one-time payment</div>
-            </div>
-            <ul class="pricing-features">
-              <li>Full DWG/DXF/DWT compatibility</li>
-              <li>Complete 2D drafting toolset</li>
-              <li>LISP, VBA, .NET API support</li>
-              <li>Smart tools (Match, Mouse, Voice)</li>
-              <li>PDF import</li>
-              <li>Sheet Set Manager</li>
-              <li class="na">3D modelling tools</li>
-              <li class="na">Point Cloud</li>
-              <li class="na">GIS integration</li>
-            </ul>
-            <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=standard_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+        <div class="section-label">Official ZWSOFT Pricing</div>
+        <h2 class="section-h">Tabbed Pricing, Matching the<br>ZWSOFT Licence Split</h2>
+        <p class="section-sub">Switch between the two official licence routes just like the ZWSOFT pricing page, while keeping the full product-card view visible for each route.</p>
+
+        <div class="pricing-license-shell">
+          <div class="pricing-license-tabs" role="tablist" aria-label="ZWCAD pricing licence types">
+            <button class="pricing-license-tab active" id="pricing-tab-standalone" type="button" role="tab" aria-selected="true" aria-controls="pricing-pane-standalone" onclick="switchPricingLicenseTab(this, 'standalone')">
+              <span class="pricing-license-tab-kicker">Official Tab 01</span>
+              <span class="pricing-license-tab-title">Standalone Licence</span>
+              <span class="pricing-license-tab-copy">One user on one machine at a time. Best for fixed individual workstations.</span>
+            </button>
+            <button class="pricing-license-tab" id="pricing-tab-network" type="button" role="tab" aria-selected="false" aria-controls="pricing-pane-network" onclick="switchPricingLicenseTab(this, 'network')">
+              <span class="pricing-license-tab-kicker">Official Tab 02</span>
+              <span class="pricing-license-tab-title">Network Licence</span>
+              <span class="pricing-license-tab-copy">Shared floating access across your TCP/IP network through the Network License Manager.</span>
+            </button>
           </div>
 
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Most Popular</div>
-            <div class="pricing-tier">Professional</div>
-            <div class="pricing-name">ZWCAD Professional</div>
-            <div class="pricing-desc">Powerful 2D/3D CAD with full API and GIS capabilities</div>
-            <div class="pricing-price">
-              <div class="pricing-amount">£1,135 <span>/ seat</span></div>
-              <div class="pricing-type">Perpetual licence · one-time payment</div>
+          <div class="pricing-license-pane active" id="pricing-pane-standalone" role="tabpanel" aria-labelledby="pricing-tab-standalone">
+            <div class="pricing-license-head">
+              <div>
+                <div class="pricing-license-title">Standalone Licence</div>
+                <p class="pricing-license-copy">A standalone licence allows a single user to use ZWCAD software on one machine at a time.</p>
+              </div>
+              <div class="pricing-license-meta">Official pricing checked April 23, 2026</div>
             </div>
-            <ul class="pricing-features">
-              <li>Everything in Standard</li>
-              <li>3D modelling tools</li>
-              <li>Point Cloud (import, edit, manage)</li>
-              <li>GIS integration</li>
-              <li>Raster to Vector conversion</li>
-              <li>Full API capabilities (ZRX included)</li>
-              <li>RVT import (ZWCAD 2027)</li>
-              <li>Section View 3D (ZWCAD 2027)</li>
-            </ul>
-            <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=professional_quote#zwcad-lead" class="btn btn-primary" style="width:100%;justify-content:center">Get a Quote</a>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <div class="pricing-tier">Standard</div>
+                <div class="pricing-name">ZWCAD Standard</div>
+                <div class="pricing-desc">Cost-effective 2D CAD for professional 2D drafting</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Standalone Licence</div>
+                  <div class="pricing-amount">$899 <span>/ seat</span></div>
+                  <div class="pricing-type">Perpetual licence · one-time payment</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Full DWG/DXF/DWT compatibility</li>
+                  <li>Complete 2D drafting toolset</li>
+                  <li>LISP, VBA, .NET API support</li>
+                  <li>Smart tools (Match, Mouse, Voice)</li>
+                  <li>PDF import</li>
+                  <li>Sheet Set Manager</li>
+                  <li class="na">3D modelling tools</li>
+                  <li class="na">Point Cloud</li>
+                  <li class="na">GIS integration</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=standard_standalone_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+
+              <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-tier">Professional</div>
+                <div class="pricing-name">ZWCAD Professional</div>
+                <div class="pricing-desc">Powerful 2D/3D CAD with full API and GIS capabilities</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Standalone Licence</div>
+                  <div class="pricing-amount">$1,399 <span>/ seat</span></div>
+                  <div class="pricing-type">Perpetual licence · one-time payment</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Everything in Standard</li>
+                  <li>3D modelling tools</li>
+                  <li>Point Cloud (import, edit, manage)</li>
+                  <li>GIS integration</li>
+                  <li>Raster to Vector conversion</li>
+                  <li>Full API capabilities (ZRX included)</li>
+                  <li>RVT import (ZWCAD 2027)</li>
+                  <li>Section View 3D (ZWCAD 2027)</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=professional_standalone_quote#zwcad-lead" class="btn btn-primary" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+
+              <div class="pricing-card">
+                <div class="pricing-tier">MFG</div>
+                <div class="pricing-name">ZWCAD MFG</div>
+                <div class="pricing-desc">Professional CAD with full mechanical toolsets</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Standalone Licence</div>
+                  <div class="pricing-amount">$1,699 <span>/ seat</span></div>
+                  <div class="pricing-type">Perpetual licence · one-time payment</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Everything in Professional</li>
+                  <li>Standard part library</li>
+                  <li>AutoCAD® Mechanical compatibility</li>
+                  <li>Automatic BOM generation</li>
+                  <li>Mechanical drawing tools</li>
+                  <li>Power Dimension</li>
+                  <li>Mechanical annotation & calculation</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=mfg_standalone_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+            </div>
           </div>
 
-          <div class="pricing-card">
-            <div class="pricing-tier">MFG</div>
-            <div class="pricing-name">ZWCAD MFG</div>
-            <div class="pricing-desc">Professional CAD with full mechanical toolsets</div>
-            <div class="pricing-price">
-              <div class="pricing-amount">£1,360 <span>/ seat</span></div>
-              <div class="pricing-type">Perpetual licence · one-time payment</div>
+          <div class="pricing-license-pane" id="pricing-pane-network" role="tabpanel" aria-labelledby="pricing-tab-network">
+            <div class="pricing-license-head">
+              <div>
+                <div class="pricing-license-title">Network Licence</div>
+                <p class="pricing-license-copy">A network licence allows multiple users on the same TCP/IP network to share access to licences. The Network License Manager, installed on your server, controls access.</p>
+              </div>
+              <div class="pricing-license-meta">Official pricing checked April 23, 2026</div>
             </div>
-            <ul class="pricing-features">
-              <li>Everything in Professional</li>
-              <li>Standard part library</li>
-              <li>AutoCAD® Mechanical compatibility</li>
-              <li>Automatic BOM generation</li>
-              <li>Mechanical drawing tools</li>
-              <li>Power Dimension</li>
-              <li>Mechanical annotation & calculation</li>
-            </ul>
-            <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=mfg_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <div class="pricing-tier">Standard</div>
+                <div class="pricing-name">ZWCAD Standard</div>
+                <div class="pricing-desc">Cost-effective 2D CAD for professional 2D drafting</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Network Licence</div>
+                  <div class="pricing-amount">$999 <span>/ seat</span></div>
+                  <div class="pricing-type">Network licence · shared access via NLM</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Full DWG/DXF/DWT compatibility</li>
+                  <li>Complete 2D drafting toolset</li>
+                  <li>LISP, VBA, .NET API support</li>
+                  <li>Smart tools (Match, Mouse, Voice)</li>
+                  <li>PDF import</li>
+                  <li>Sheet Set Manager</li>
+                  <li class="na">3D modelling tools</li>
+                  <li class="na">Point Cloud</li>
+                  <li class="na">GIS integration</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=standard_network_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+
+              <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-tier">Professional</div>
+                <div class="pricing-name">ZWCAD Professional</div>
+                <div class="pricing-desc">Powerful 2D/3D CAD with full API and GIS capabilities</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Network Licence</div>
+                  <div class="pricing-amount">$1,549 <span>/ seat</span></div>
+                  <div class="pricing-type">Network licence · shared access via NLM</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Everything in Standard</li>
+                  <li>3D modelling tools</li>
+                  <li>Point Cloud (import, edit, manage)</li>
+                  <li>GIS integration</li>
+                  <li>Raster to Vector conversion</li>
+                  <li>Full API capabilities (ZRX included)</li>
+                  <li>RVT import (ZWCAD 2027)</li>
+                  <li>Section View 3D (ZWCAD 2027)</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=professional_network_quote#zwcad-lead" class="btn btn-primary" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+
+              <div class="pricing-card">
+                <div class="pricing-tier">MFG</div>
+                <div class="pricing-name">ZWCAD MFG</div>
+                <div class="pricing-desc">Professional CAD with full mechanical toolsets</div>
+                <div class="pricing-price">
+                  <div class="pricing-price-label">Network Licence</div>
+                  <div class="pricing-amount">$1,849 <span>/ seat</span></div>
+                  <div class="pricing-type">Network licence · shared access via NLM</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>Everything in Professional</li>
+                  <li>Standard part library</li>
+                  <li>AutoCAD® Mechanical compatibility</li>
+                  <li>Automatic BOM generation</li>
+                  <li>Mechanical drawing tools</li>
+                  <li>Power Dimension</li>
+                  <li>Mechanical annotation & calculation</li>
+                </ul>
+                <a href="/zwsoft-uk/zwcad-2027/download/?lead_source=mfg_network_quote#zwcad-lead" class="btn btn-ghost" style="width:100%;justify-content:center">Get a Quote</a>
+              </div>
+            </div>
           </div>
         </div>
-        <p style="font-size:12px;color:var(--muted);margin-top:16px;text-align:center">Prices shown are indicative UK prices excluding VAT and optional flexible upgrades. Contact Cygnas Solutions for an exact quote based on your requirements. Network licence pricing available on request.</p>
+
+        <p class="pricing-source-note">Source checked on April 23, 2026 from ZWSOFT&rsquo;s official pricing page: Standalone pricing is Standard $899, Professional $1,399, and MFG $1,699; Network pricing is Standard $999, Professional $1,549, and MFG $1,849. ZWSOFT notes that listed prices exclude VAT and yearly maintenance. For an exact UK reseller quote, contact Cygnas Solutions.</p>
       </div>
     </section>
 
@@ -2597,7 +2978,7 @@ main#content {
 
     <section class="section cygnas-section">
       <div class="section-inner" style="text-align:center">
-        <div class="cygnas-badge" style="margin:0 auto 20px"><span>🏅 ZWCAD Gold Reseller — United Kingdom</span></div>
+        <div class="cygnas-badge" style="margin:0 auto 20px"><span>Cygnas Solutions - Authorised Reseller of ZWCAD in the UK</span></div>
         <h2 class="cygnas-h" style="max-width:640px;margin:0 auto 16px">Ready for an exact quote tailored to your team?</h2>
         <p class="cygnas-body" style="max-width:520px;margin:0 auto 28px">The calculator gives you a strong indicative figure. For an exact quote — including volume discounts, network pricing, and flexible upgrade options — speak to Cygnas Solutions directly. We'll respond within one working day.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -2645,10 +3026,27 @@ function toggleFaq(el) {
   el.parentElement.classList.toggle('open');
 }
 
+function switchPricingLicenseTab(btn, id) {
+  document.querySelectorAll('.pricing-license-tab').forEach(function(item) {
+    item.classList.remove('active');
+    item.setAttribute('aria-selected', 'false');
+  });
+  document.querySelectorAll('.pricing-license-pane').forEach(function(pane) {
+    pane.classList.remove('active');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  document.getElementById('pricing-pane-' + id).classList.add('active');
+}
+
 const ACAD_PER_SEAT_YEAR = 1890 / 1.25;
 const ZWCAD_PRICES = { standard: 799, professional: 1135, mfg: 1360 };
 const FLEX_UPGRADE_RATE = 0.18;
-const NETWORK_UPLIFT = 1.15;
+const NETWORK_MULTIPLIERS = {
+  standard: 999 / 899,
+  professional: 1549 / 1399,
+  mfg: 1849 / 1699
+};
 
 let calcState = {
   seats: 5,
@@ -2723,7 +3121,7 @@ function recalc() {
   const acadTotal = acadPerSeatYear * seats * years;
 
   let zwcadPerSeat = ZWCAD_PRICES[edition];
-  if (licType === 'network') zwcadPerSeat *= NETWORK_UPLIFT;
+  if (licType === 'network') zwcadPerSeat *= NETWORK_MULTIPLIERS[edition];
 
   const initialCost = zwcadPerSeat * seats;
   const flexibleUpgradeTotal = upgrade === 'flexible' ? zwcadPerSeat * FLEX_UPGRADE_RATE * seats * years : 0;
@@ -2732,12 +3130,13 @@ function recalc() {
   const pct = Math.round((saving / acadTotal) * 100);
 
   const edLabels = { standard: 'Standard', professional: 'Professional', mfg: 'MFG' };
+  const licLabel = licType === 'network' ? 'network licence' : 'standalone licence';
   const upgradeLabel = upgrade === 'flexible' ? 'perpetual + flexible upgrades' : 'perpetual';
 
   document.getElementById('out-seats').textContent = seats;
   document.getElementById('out-seats2').textContent = seats;
   document.getElementById('out-acad-seat').textContent = fmt(acadPerSeatYear) + '/yr';
-  document.getElementById('out-zwcad-label').textContent = `ZWCAD ${edLabels[edition]} — per seat (${upgradeLabel})`;
+  document.getElementById('out-zwcad-label').textContent = `ZWCAD ${edLabels[edition]} — per seat (${licLabel} · ${upgradeLabel})`;
   document.getElementById('out-zwcad-seat').textContent = fmt(zwcadPerSeat);
   document.getElementById('out-years-label').textContent = years;
   document.getElementById('out-years-label2').textContent = years;

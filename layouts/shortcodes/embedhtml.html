@@ -4,6 +4,7 @@
 {{ $body := replaceRE "(?i)</body>[\\s\\S]*$" "" $step1 }}
 {{ $body = replaceRE "(?i)<header[\\s\\S]*?</header>" "" $body }}
 {{ $body = replaceRE "(?i)<footer[\\s\\S]*?</footer>" "" $body }}
+{{ $body = replaceRE "(?i)</?main[^>]*>" "" $body }}
 {{ if or (eq $path "index.html") (eq $path "/index.html") }}
   {{ $body = replaceRE "(?is)<script[\\s\\S]*?</script>" "" $body }}
 {{ end }}

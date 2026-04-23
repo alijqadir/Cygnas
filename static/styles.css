@@ -99,6 +99,14 @@ nav {
   padding: 1.1rem 2.1rem;
   border-radius: 999px;
   box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+}
+.cta-button:hover,
+.cta-button:focus,
+.cta-button:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
 }
 
 .hamburger {
@@ -307,8 +315,15 @@ nav {
 }
 .btn-primary {
   background: linear-gradient(135deg, #3b82f6, #06b6d4);
-  color: #fff;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
   box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
 }
 .btn-secondary {
   background: transparent;
@@ -698,6 +713,14 @@ footer {
 .footer-brand p {
   color: var(--gray);
   line-height: 1.8;
+}
+.footer-brand a {
+  color: var(--gray);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-brand a:hover {
+  color: #67e8f9;
 }
 .footer-links h4 {
   margin-bottom: 1.5rem;

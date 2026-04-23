@@ -6,6 +6,14 @@ function setHeaderVar(){
 }
 window.addEventListener('load', setHeaderVar);
 window.addEventListener('resize', setHeaderVar);
+window.addEventListener('pageshow', setHeaderVar);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(setHeaderVar).catch(() => {});
+}
+const headerResizeTarget = document.getElementById('header');
+if (headerResizeTarget && 'ResizeObserver' in window) {
+  new ResizeObserver(setHeaderVar).observe(headerResizeTarget);
+}
 
 // Sticky header style
 const headerEl = document.getElementById('header');
