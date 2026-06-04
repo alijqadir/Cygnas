@@ -1,13 +1,15 @@
-{{ $rel := .RelPermalink }}
-{{ $isSoftwareSite := eq .Site.Params.site_variant "software" }}
-{{ if or $isSoftwareSite (not .Params.hide_site_footer) }}
+{{ $rel := .RelPermalink }} {{ $isSoftwareSite := eq .Site.Params.site_variant
+"software" }} {{ if or $isSoftwareSite (not .Params.hide_site_footer) }}
 <footer>
   <div class="container">
     {{ if eq .Site.Params.site_variant "software" }}
     <div class="footer-content">
       <div class="footer-brand">
         <h3>Cygnas Software</h3>
-        <p>CAD, CAM and engineering software supplied with practical implementation support.</p>
+        <p>
+          CAD, CAM and engineering software supplied with practical
+          implementation support.
+        </p>
         <p>134 Mid Stocket Rd, Aberdeen AB15 5HX</p>
         <p><a href="mailto:sales@cygnas.co.uk">sales@cygnas.co.uk</a></p>
         <p><a href="tel:+447550680067">+44 (0) 7550 680067</a></p>
@@ -25,7 +27,15 @@
       <div class="footer-links">
         <h4>Support</h4>
         <ul>
-          <li><a href="#softwareLeadModal" data-software-modal data-software-interest="Workflow Consultation" data-software-source="Software footer - implementation">Implementation</a></li>
+          <li>
+            <a
+              href="#softwareLeadModal"
+              data-software-modal
+              data-software-interest="Workflow Consultation"
+              data-software-source="Software footer - implementation"
+              >Implementation</a
+            >
+          </li>
           <li><a href="/zwsoft-uk/zwcad-2027/migration/">Migration</a></li>
           <li><a href="/zwsoft-uk/zwcad-2027/compare/">CAD Comparison</a></li>
           <li><a href="/zwsoft-uk/zwcad-2027/download/">Trial Access</a></li>
@@ -36,7 +46,14 @@
         <ul>
           <li><a href="/#why">Why Cygnas</a></li>
           <li><a href="/about/">About Cygnas Software</a></li>
-          <li><a href="#softwareLeadModal" data-software-modal data-software-interest="General software enquiry">Contact</a></li>
+          <li>
+            <a
+              href="#softwareLeadModal"
+              data-software-modal
+              data-software-interest="General software enquiry"
+              >Contact</a
+            >
+          </li>
           <li>
             <a
               href="https://www.linkedin.com/company/cygnas-solutions-limited/"
@@ -98,25 +115,22 @@
     </div>
     {{ end }}
     <div class="footer-bottom">
-      <p style="color: rgba(255, 255, 255, 0.88) !important">
+      <p style="color: rgba(255, 255, 255, 0.89) !important">
         &copy; {{ now.Year }} Cygnas Solutions Ltd. All rights reserved.
       </p>
     </div>
   </div>
 </footer>
-{{ end }}
-
-{{ if $isSoftwareSite }}
-  {{ partial "software-lead-modal.html" . }}
-{{ end }}
+{{ end }} {{ if $isSoftwareSite }} {{ partial "software-lead-modal.html" . }} {{
+end }}
 
 <!-- Page-specific JS -->
-{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
-{{ $isZW2027 := hasPrefix $rel "/zwsoft-uk/zwcad-2027/" }}
-{{ $isSoftwareZW3D := and $isSoftwareSite (hasPrefix $rel "/zwsoft-uk/zw3d/") }}
-{{ $isZWLegacy := and $isZW (not $isZW2027) (not $isSoftwareZW3D) (not (and $isSoftwareSite (eq $rel "/zwsoft-uk/"))) }}
-{{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
-{{ if $isZWLegacy }}
+{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html")
+}} {{ $isZW2027 := hasPrefix $rel "/zwsoft-uk/zwcad-2027/" }} {{ $isSoftwareZW3D
+:= and $isSoftwareSite (hasPrefix $rel "/zwsoft-uk/zw3d/") }} {{ $isZWLegacy :=
+and $isZW (not $isZW2027) (not $isSoftwareZW3D) (not (and $isSoftwareSite (eq
+$rel "/zwsoft-uk/"))) }} {{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel
+"/asystom/index.html") }} {{ if $isZWLegacy }}
 <script src="/zwsoft-uk/js/jquery.min.js"></script>
 <script src="/zwsoft-uk/js/bootstrap.min.js"></script>
 <script src="/zwsoft-uk/js/intltelinput-17.0.8.min.js"></script>
