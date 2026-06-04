@@ -1,0 +1,137 @@
+{{ $rel := .RelPermalink }}
+{{ $isSoftwareSite := eq .Site.Params.site_variant "software" }}
+{{ if or $isSoftwareSite (not .Params.hide_site_footer) }}
+<footer>
+  <div class="container">
+    {{ if eq .Site.Params.site_variant "software" }}
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Cygnas Software</h3>
+        <p>CAD, CAM and engineering software supplied with practical implementation support.</p>
+        <p>134 Mid Stocket Rd, Aberdeen AB15 5HX</p>
+        <p><a href="mailto:sales@cygnas.co.uk">sales@cygnas.co.uk</a></p>
+        <p><a href="tel:+447550680067">+44 (0) 7550 680067</a></p>
+      </div>
+      <div class="footer-links">
+        <h4>Software</h4>
+        <ul>
+          <li><a href="/zwsoft-uk/zwcad-2027/">ZWCAD 2027</a></li>
+          <li><a href="/zwsoft-uk/zwcad/index.html">ZWCAD</a></li>
+          <li><a href="/zwsoft-uk/zw3d/">ZW3D</a></li>
+          <li><a href="/cosmon-nexus/">Cosmon Nexus</a></li>
+          <li><a href="/blog/">Software Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#softwareLeadModal" data-software-modal data-software-interest="Workflow Consultation" data-software-source="Software footer - implementation">Implementation</a></li>
+          <li><a href="/zwsoft-uk/zwcad-2027/migration/">Migration</a></li>
+          <li><a href="/zwsoft-uk/zwcad-2027/compare/">CAD Comparison</a></li>
+          <li><a href="/zwsoft-uk/zwcad-2027/download/">Trial Access</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Cygnas</h4>
+        <ul>
+          <li><a href="/#why">Why Cygnas</a></li>
+          <li><a href="/about/">About Cygnas Software</a></li>
+          <li><a href="#softwareLeadModal" data-software-modal data-software-interest="General software enquiry">Contact</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/company/cygnas-solutions-limited/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="http://www.youtube.com/@cygnas" target="_blank">YouTube</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {{ else }}
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Cygnas Solutions</h3>
+        <p>Engineering experience through innovation</p>
+        <p>134 Mid Stocket Rd, Aberdeen AB15 5HX</p>
+        <p><a href="mailto:sales@cygnas.co.uk">sales@cygnas.co.uk</a></p>
+        <p><a href="tel:+447550680067">+44 (0) 7550 680067</a></p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/index.html#services">Digital Twins</a></li>
+          <li><a href="/index.html#services">AI Analysis</a></li>
+          <li><a href="/index.html#services">Simulations</a></li>
+          <li><a href="/index.html#services">Asset Integrity</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/index.html#industries">Oil &amp; Gas</a></li>
+          <li><a href="/index.html#industries">Renewable Energy</a></li>
+          <li><a href="/index.html#industries">Hydrogen</a></li>
+          <li><a href="/index.html#industries">Aerospace</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+          <li><a href="/index.html#contact">Careers</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/company/cygnas-solutions-limited/"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="http://www.youtube.com/@cygnas" target="_blank">YouTube</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {{ end }}
+    <div class="footer-bottom">
+      <p style="color: rgba(255, 255, 255, 0.88) !important">
+        &copy; {{ now.Year }} Cygnas Solutions Ltd. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+{{ end }}
+
+{{ if $isSoftwareSite }}
+  {{ partial "software-lead-modal.html" . }}
+{{ end }}
+
+<!-- Page-specific JS -->
+{{ $isZW := or (hasPrefix $rel "/zwsoft-uk/") (eq $rel "/zwsoft-uk/index.html") }}
+{{ $isZW2027 := hasPrefix $rel "/zwsoft-uk/zwcad-2027/" }}
+{{ $isSoftwareZW3D := and $isSoftwareSite (hasPrefix $rel "/zwsoft-uk/zw3d/") }}
+{{ $isZWLegacy := and $isZW (not $isZW2027) (not $isSoftwareZW3D) (not (and $isSoftwareSite (eq $rel "/zwsoft-uk/"))) }}
+{{ $isAsy := or (hasPrefix $rel "/asystom/") (eq $rel "/asystom/index.html") }}
+{{ if $isZWLegacy }}
+<script src="/zwsoft-uk/js/jquery.min.js"></script>
+<script src="/zwsoft-uk/js/bootstrap.min.js"></script>
+<script src="/zwsoft-uk/js/intltelinput-17.0.8.min.js"></script>
+<script src="/zwsoft-uk/js/intltelinput-config-autocad-comparison.js"></script>
+<script src="/zwsoft-uk/js/gsap-3.10.4.min.js"></script>
+<script src="/zwsoft-uk/js/gsap-scrolltrigger-3.10.4.min.js"></script>
+<script src="/zwsoft-uk/js/owl.carousel-2.3.4.min.js"></script>
+<script src="/zwsoft-uk/js/swiper.min.js"></script>
+<script src="/zwsoft-uk/js/aos.js"></script>
+<!-- Form handlers -->
+<script src="/zwsoft-uk/form-to-sheets.js"></script>
+<script src="/zwsoft-uk/zwsoft_form_patch_formpost_v1.js"></script>
+{{ end }} {{ if $isAsy }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="/asystom/js/lead-form-fallback.js"></script>
+{{ end }}
+
+<script src="/script.js"></script>

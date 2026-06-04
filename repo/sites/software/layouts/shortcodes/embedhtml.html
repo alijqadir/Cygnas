@@ -1,0 +1,20 @@
+{{ $path := .Get 0 }}
+{{ $raw := "" }}
+{{ with resources.Get $path }}
+  {{ $raw = .Content }}
+{{ else }}
+  {{ $raw = readFile $path }}
+{{ end }}
+{{ $body := $raw }}
+{{ if findRE "(?i)<body(\\s|>)" $raw }}
+  {{ $body = replaceRE "(?i)^[\\s\\S]*?<body[^>]*>" "" $body }}
+  {{ $body = replaceRE "(?i)</body>[\\s\\S]*$" "" $body }}
+{{ end }}
+{{ $body = replaceRE "(?i)<header(\\s|>)[\\s\\S]*?</header>" "" $body }}
+{{ $body = replaceRE "(?i)<footer(\\s|>)[\\s\\S]*?</footer>" "" $body }}
+{{ $body = replaceRE "(?i)<main(\\s|>)[^>]*>" "" $body }}
+{{ $body = replaceRE "(?i)</main>" "" $body }}
+{{ if or (eq $path "index.html") (eq $path "/index.html") }}
+  {{ $body = replaceRE "(?is)<script[\\s\\S]*?</script>" "" $body }}
+{{ end }}
+{{ $body | safeHTML }}

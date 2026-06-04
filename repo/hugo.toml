@@ -1,0 +1,43 @@
+baseURL = "https://www.cygnas.co.uk/"
+title = "Cygnas"
+languageCode = "en-gb"
+enableRobotsTXT = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  minifyOutput = true
+
+[params]
+  brand_name = "Cygnas"
+  tagline = "Engineering. AI. Reliability."
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 80
