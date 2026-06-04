@@ -6,23 +6,27 @@ on:
       - main
     paths:
       - ".github/workflows/**"
-      - "content/**"
-      - "layouts/**"
-      - "static/**"
-      - "assets/**"
-      - "zwsoft-uk/**"
-      - "archetypes/**"
-      - "hugo.toml"
-      - "netlify.hugo.toml"
-      - "config.*"
-      - "package.json"
-      - "package-lock.json"
+      - "repo/content/**"
+      - "repo/layouts/**"
+      - "repo/static/**"
+      - "repo/assets/**"
+      - "repo/zwsoft-uk/**"
+      - "repo/archetypes/**"
+      - "repo/hugo.toml"
+      - "repo/netlify.hugo.toml"
+      - "repo/config.*"
+      - "repo/package.json"
+      - "repo/package-lock.json"
   workflow_dispatch:
 
 jobs:
   deploy:
     name: Build Hugo site and sync to Lightsail
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: repo/
 
     steps:
       - name: Checkout repository
