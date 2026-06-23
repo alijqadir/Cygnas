@@ -1,0 +1,65 @@
+{{ define "main" }}
+  {{ if eq .Section "blog" }}
+    <div class="container single-post grid grid-2">
+      <article>
+        <header>
+          <p class="breadcrumb"><a href="/blog/">← Back to Blog</a></p>
+          <h1>{{ .Title }}</h1>
+          <div class="meta">
+            {{ .Date.Format "02 Jan 2006" }} · {{ .ReadingTime }} min read{{ with .Params.author }} · {{ . }}{{ end }}{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+          </div>
+          {{ with .Params.image }}
+            <figure class="featured-image">
+              <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="width:100%;height:auto;border-radius:12px" loading="lazy">
+            </figure>
+          {{ end }}
+        </header>
+
+        <div class="content">{{ .Content }}</div>
+
+        {{ with .Params.tags }}
+          <div class="tags">
+            {{ range . }}<a class="tag-chip" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}
+          </div>
+        {{ end }}
+
+        {{ $related := .Site.RegularPages.Related . | first 4 }}
+        {{ with $related }}
+          <hr />
+          <h3>Related</h3>
+          <ul class="related-list">
+            {{ range . }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        <nav class="post-nav">
+          {{ with .PrevInSection }}
+            <a class="prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>
+          {{ end }}
+          {{ with .NextInSection }}
+            <a class="next" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+          {{ end }}
+        </nav>
+      </article>
+
+      <aside class="sidebar">
+        <div class="post-card">
+          <h3>About {{ .Site.Params.brand_name }}</h3>
+          <p>{{ .Site.Params.tagline }}</p>
+        </div>
+        <div class="post-card">
+          <h3>Categories</h3>
+          <ul>
+            {{ range $name, $_ := .Site.Taxonomies.categories }}
+              <li><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/">{{ $name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  {{ else }}
+    {{ .Content }}
+  {{ end }}
+{{ end }}

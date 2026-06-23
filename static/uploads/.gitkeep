@@ -1,0 +1,11 @@
+# keep
+If NOT using Netlify: replace the backend block in config.yml with:
+
+yaml
+Copy code
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  branch: main
+…and set up a GitHub OAuth server (Decap docs). For most clients, Netlify + git-gateway is simpler.
+

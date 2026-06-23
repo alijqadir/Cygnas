@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asystom Predictive Maintenance on Cygnas • Asystom Predictive Maintenance</title>
+    <link>https://www.cygnas.co.uk/asystom/</link>
+    <description>Recent content in Asystom Predictive Maintenance on Cygnas • Asystom Predictive Maintenance</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://www.cygnas.co.uk/asystom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manufacturing</title>
+      <link>https://www.cygnas.co.uk/asystom/industries/manufacturing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.cygnas.co.uk/asystom/industries/manufacturing/</guid>
+      <description>&lt;p&gt;{&amp;lt; cta label=&amp;ldquo;Book a Site Survey&amp;rdquo; anchor=&amp;quot;#contact&amp;quot; &amp;gt;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Oil &amp; Gas</title>
+      <link>https://www.cygnas.co.uk/asystom/industries/oil-gas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.cygnas.co.uk/asystom/industries/oil-gas/</guid>
+      <description>&lt;p&gt;{&amp;lt; cta label=&amp;ldquo;Book a Site Survey&amp;rdquo; anchor=&amp;quot;#contact&amp;quot; &amp;gt;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pharmaceuticals</title>
+      <link>https://www.cygnas.co.uk/asystom/industries/pharma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.cygnas.co.uk/asystom/industries/pharma/</guid>
+      <description>&lt;p&gt;{&amp;lt; cta label=&amp;ldquo;Book a Site Survey&amp;rdquo; anchor=&amp;quot;#contact&amp;quot; &amp;gt;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Power Generation</title>
+      <link>https://www.cygnas.co.uk/asystom/industries/power/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.cygnas.co.uk/asystom/industries/power/</guid>
+      <description>&lt;p&gt;{&amp;lt; cta label=&amp;ldquo;Book a Site Survey&amp;rdquo; anchor=&amp;quot;#contact&amp;quot; &amp;gt;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ROI Calculator</title>
+      <link>https://www.cygnas.co.uk/asystom/resources/roi-calculator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.cygnas.co.uk/asystom/resources/roi-calculator/</guid>
+      <description>&lt;div class=&#34;roi-wrap&#34;&gt;&#xA;  &lt;form id=&#34;roiForm&#34; class=&#34;roi-form&#34;&gt;&#xA;    &lt;label&gt;Downtime cost per hour (£)&lt;input type=&#34;number&#34; name=&#34;cost_per_hour&#34; min=&#34;0&#34; step=&#34;1&#34; required&gt;&lt;/label&gt;&#xA;    &lt;label&gt;Unplanned downtime hours / month&lt;input type=&#34;number&#34; name=&#34;hours_per_month&#34; min=&#34;0&#34; step=&#34;0.5&#34; required&gt;&lt;/label&gt;&#xA;    &lt;label&gt;Expected downtime reduction (%)&lt;input type=&#34;number&#34; name=&#34;reduction_pct&#34; min=&#34;0&#34; max=&#34;100&#34; step=&#34;1&#34; value=&#34;30&#34; required&gt;&lt;/label&gt;&#xA;    &lt;label&gt;Monthly maintenance cost (£)&lt;input type=&#34;number&#34; name=&#34;maint_cost&#34; min=&#34;0&#34; step=&#34;1&#34; required&gt;&lt;/label&gt;&#xA;    &lt;label&gt;Maintenance cost reduction (%)&lt;input type=&#34;number&#34; name=&#34;maint_reduction_pct&#34; min=&#34;0&#34; max=&#34;100&#34; step=&#34;1&#34; value=&#34;10&#34; required&gt;&lt;/label&gt;&#xA;    &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Calculate ROI&lt;/button&gt;&#xA;  &lt;/form&gt;&#xA;  &lt;div id=&#34;roiResult&#34; class=&#34;roi-result&#34; aria-live=&#34;polite&#34;&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;script src=&#34;https://www.cygnas.co.uk/asystom/js/roi.js&#34;&gt;&lt;/script&gt;</description>
+    </item>
+  </channel>
+</rss>

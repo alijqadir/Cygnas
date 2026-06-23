@@ -1,0 +1,106 @@
+baseURL = "https://software.cygnas.co.uk/"
+title = "Cygnas Software"
+languageCode = "en-gb"
+enableRobotsTXT = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  minifyOutput = true
+
+[params]
+  brand_name = "Cygnas Software"
+  tagline = "CAD, CAM and engineering software, implemented with practical support."
+  site_variant = "software"
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 80
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "../../layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "../../assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "../../zwsoft-uk"
+    target = "assets/embedded/zwsoft-uk"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/assets"
+    target = "static/zwsoft-uk/assets"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/css"
+    target = "static/zwsoft-uk/css"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/font"
+    target = "static/zwsoft-uk/font"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/fonts"
+    target = "static/zwsoft-uk/fonts"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/image"
+    target = "static/zwsoft-uk/image"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/images"
+    target = "static/zwsoft-uk/images"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/js"
+    target = "static/zwsoft-uk/js"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/zwcad-2027"
+    target = "static/zwsoft-uk/zwcad-2027"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/close_icon.svg"
+    target = "static/zwsoft-uk/close_icon.svg"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/form-to-sheets.js"
+    target = "static/zwsoft-uk/form-to-sheets.js"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/gv_top-b.png"
+    target = "static/zwsoft-uk/gv_top-b.png"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/gv_top.png"
+    target = "static/zwsoft-uk/gv_top.png"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/thank-you.html"
+    target = "static/zwsoft-uk/thank-you.html"
+  [[module.mounts]]
+    source = "../../static/zwsoft-uk/zwsoft_form_patch_formpost_v1.js"
+    target = "static/zwsoft-uk/zwsoft_form_patch_formpost_v1.js"
+  [[module.mounts]]
+    source = "../../static/script.js"
+    target = "static/script.js"
