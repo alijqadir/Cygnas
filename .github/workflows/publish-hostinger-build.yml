@@ -1,0 +1,56 @@
+name: Publish Hostinger Build
+
+on:
+  push:
+    branches:
+      - main2
+    paths:
+      - ".github/workflows/publish-hostinger-build.yml"
+      - "archetypes/**"
+      - "assets/**"
+      - "content/**"
+      - "data/**"
+      - "layouts/**"
+      - "static/**"
+      - "zwsoft-uk/**"
+      - "hugo.toml"
+      - "netlify.hugo.toml"
+      - "config.*"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hostinger-build
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Build Hugo site and publish static output
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.150.0"
+          extended: true
+
+      - name: Build site
+        run: hugo --gc --minify --baseURL "https://www.cygnas.co.uk/"
+
+      - name: Publish public output to hostinger-build
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: hostinger-build
+          publish_dir: ./public
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Publish Hostinger build from ${{ github.sha }}"
