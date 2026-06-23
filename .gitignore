@@ -20,6 +20,7 @@ static/assets/ZWCAD 2027 What's New Video/
 !static/zwsoft-uk/assets/*.gif
 !static/zwsoft-uk/assets/*.webp
 !static/zwsoft-uk/zwcad-2027/assets/*.webp
+!static/zwsoft-uk/zwcad-2027/assets/videos/*-web.mp4
 static/zwsoft-uk/assets/FileCompare.mp4
 static/zwsoft-uk/assets/Flexiblock.mp4
 
