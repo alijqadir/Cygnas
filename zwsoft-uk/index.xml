@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zwsoft-Uks on Cygnas</title><link>https://www.cygnas.co.uk/zwsoft-uk/</link><description>Recent content in Zwsoft-Uks on Cygnas</description><generator>Hugo</generator><language>en-gb</language><atom:link href="https://www.cygnas.co.uk/zwsoft-uk/index.xml" rel="self" type="application/rss+xml"/><item><title>ZW3D</title><link>https://www.cygnas.co.uk/zwsoft-uk/zw3d/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.cygnas.co.uk/zwsoft-uk/zw3d/</guid><description/></item><item><title>ZWCAD</title><link>https://www.cygnas.co.uk/zwsoft-uk/zwcad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.cygnas.co.uk/zwsoft-uk/zwcad/</guid><description>&lt;style id="cyg-value-css"&gt;
+ .cyg-value { padding: 80px 6vw; background: #f5f7fb; }
+ .cyg-value .wrap { max-width: 1200px; margin: 0 auto; display: grid; gap: 18px; }
+ .cyg-value h2 { margin: 0; font-size: 32px; letter-spacing: 0.2px; }
+ .cyg-value .lead { margin: 0; color: #374151; line-height: 1.6; }
+ .cyg-value .sublead { margin: 0; color: #1f2937; font-weight: 700; line-height: 1.5; }
+ .cyg-value .detail { margin: 0; color: #4b5563; line-height: 1.6; }
+ .cyg-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(15,27,41,0.12); }
+ .cyg-table th, .cyg-table td { padding: 14px 16px; border: 1px solid #e5e7eb; text-align: left; font-size: 14px; line-height: 1.5; }
+ .cyg-table th { background: #0f1b29; color: #f8fbff; font-weight: 700; }
+ .cyg-table tr:nth-child(even) td { background: #f9fafb; }
+ .cyg-table tr:hover td { background: #f1f5f9; }
+ .cyg-badge { display: inline-flex; align-items: center; justify-content: center; padding: 5px 12px; border-radius: 999px; background: linear-gradient(135deg,#0e82ff,#12c6ff); color:#fff; font-weight:700; font-size:12px; box-shadow:0 10px 22px rgba(14,130,255,0.18); }
+ .cyg-flag { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+ .cyg-flag .ti { font-size: 16px; line-height: 1; }
+ .cyg-yes .ti { color: #0ea5e9; }
+ .cyg-no .ti { color: #ef4444; }
+ .cyg-neutral .ti { color: #6b7280; }
+ .cyg-note { font-weight: 400; color: #4b5563; }
+ /* Mobile-optimized stacked layout for the comparison table */
+ @media (max-width: 768px){
+ .cyg-table, .cyg-table thead, .cyg-table tbody, .cyg-table th, .cyg-table td, .cyg-table tr { display:block; }
+ .cyg-table thead{ display:none; }
+ .cyg-table tr{ margin:12px 0; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; box-shadow:0 8px 18px rgba(15,27,41,.06); background:#fff; }
+ .cyg-table td{ border:0; border-bottom:1px solid #e5e7eb; padding:12px 16px; background:#fff; }
+ .cyg-table td:last-child{ border-bottom:0; }
+ /* Feature title row */
+ .cyg-table td:first-child{ background:#f1f5f9; font-weight:800; color:#0f1b29; }
+ /* Inline labels above values */
+ .cyg-table td:nth-child(2)::before{ content:"Cygnas"; display:block; font-size:12px; font-weight:700; color:#64748b; margin-bottom:6px; }
+ .cyg-table td:nth-child(3)::before{ content:"Typical Online Resellers"; display:block; font-size:12px; font-weight:700; color:#64748b; margin-bottom:6px; }
+ }
+ @media (max-width: 640px) { .cyg-value { padding: 60px 5vw; } .cyg-value h2 { font-size: 26px; } .cyg-table th, .cyg-table td { font-size: 13px; padding: 12px 12px; } }
+ &lt;/style&gt;
+
+&lt;style id="cyg-fixes"&gt;
+ html,body{overflow-x:hidden}
+ html{overflow-y:auto}
+ body{overflow-y:visible}
+ /* Full-bleed sections via 100vw */
+ .dc-main,.df-main,.de-main,.dm-main,.tu-main,.why-zw,.compare-zw,.cyg-value,.faq{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+ @supports (width:100dvw){
+ .dc-main,.df-main,.de-main,.dm-main,.tu-main,.why-zw,.compare-zw,.cyg-value,.faq{width:100dvw;margin-left:calc(50% - 50dvw);margin-right:calc(50% - 50dvw)}
+ }
+ /* Footers: revert to negative margin method (does not create extra scrollbars) */
+ .cyg-footer,.zw-footer{position:relative;left:50%;width:100vw;max-width:100vw;margin-left:-50vw;margin-right:0;box-shadow:none;clip-path:none}
+ .zw-footer::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:#0d1118}
+ /* Features spacing */
+ .df-main{padding-bottom:40px !important}
+ @media (max-width:640px){.df-main{padding-bottom:28px !important}}
+ /* Neutralize header scrollers */
+ .ta-wrap{overflow:visible !important;margin-left:0 !important;width:100% !important}
+ .ta-bot{overflow:visible !important}
+ #thankBox .modal-content{overflow:visible !important}
+ /* Play overlay: centered inner marker */
+ .df-box{position:relative;cursor:pointer;border-radius:12px;overflow:hidden}
+ .df-box .df-play{position:absolute;display:grid;place-items:center;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35));z-index:2}
+ .df-box .df-play .play-marker{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0e82ff,#12c6ff);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+ .df-box .df-play .play-marker::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-40%,-50%);border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
+ .df-img{display:block;width:100%;height:auto}
+ .de-img{position:relative}
+ .de-img video{display:block;width:100%;height:auto;position:relative;z-index:1;border-radius:16px}
+ .vector-play{z-index:3}
+ #faq-more{column-count:3;column-gap:12px}
+ @media (max-width:960px){ .faq-list,#faq-more{column-count:2} }
+ @media (max-width:640px){ .faq-list,#faq-more{column-count:1} }
+ &lt;/style&gt;
+
+&lt;style id="zwcad-page-enhancements"&gt; /* ZWCAD page-specific enhancements. The universal site header is restored below. */ html, body { margin: 0 !important; padding: 0 !important; } @media (max-width: 900px) { .zw-topbar { justify-content: center; } .zw-topbar-inner { padding: 0 24px; justify-content: center; } } @media (max-width: 640px) { .zw-topbar { font-size: 13px; padding: 8px 0; justify-content: center; place-items: center; } .zw-topbar-inner { padding: 0 18px; gap: 8px; flex-direction: column; align-items: center; text-align: center; justify-content: center; max-width: 520px; } .zw-topbar-inner span { line-height: 1.4; } .zw-topbar img { height: 32px; } .zw-topbar a.cta { width: 100%; margin-left: 0 !important; padding: 9px 12px; text-align: center; } } #header { display: block; height: auto; overflow: visible; } main#content { padding-top: 0 !important; margin-top: 0 !important; } .da-main { margin-top: 0 !important; } .zw-topbar { width: 100%; background: #f5f6f8; color: #2f2f32; font-size: 15px; padding: 10px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.06); display: grid; align-items: center; justify-content: flex-start; position: relative; z-index: 10000; isolation: isolate; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); } .zw-topbar-inner { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 6vw 0 100px; display: flex; align-items: center; gap: 14px; justify-content: flex-start; background: #f5f6f8; } .zw-topbar a.cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 10px; background: #fff; color: #0f2a3f; text-decoration: none; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.06); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); } .zw-topbar-inner span { white-space: normal; font-weight: 600; letter-spacing: 0.1px; } .zw-topbar img { height: 42px; width: auto; } /* Hero highlight pill */ .da-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; margin: 10px 0 4px; border-radius: 999px; background: linear-gradient(135deg, #0e82ff, #12c6ff); color: #fff; font-weight: 700; box-shadow: 0 8px 24px rgba(14, 130, 255, 0.35); letter-spacing: 0.2px; } .da-pill .pill-dot { width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2); } /* Why/Compare sections */ .why-zw, .compare-zw { padding: 80px 6vw; } .why-zw { background: #f6f8fb; } .compare-zw { background: linear-gradient(135deg, #0b1c2d, #0f2a3f); color: #e7f1ff; } .section-wrap { max-width: 1200px; margin: 0 auto; display: grid; gap: 26px; } .section-head { display: flex; flex-direction: column; gap: 10px; } .section-head h2 { margin: 0; font-size: 32px; letter-spacing: 0.2px; } .section-head p { margin: 0; color: #4b5563; line-height: 1.6; } .compare-zw .section-head p { color: rgba(231, 241, 255, 0.8); } .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; } .why-card, .compare-card { border-radius: 16px; padding: 18px 18px 20px; background: #fff; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08); display: grid; gap: 10px; } .compare-card { background: rgba(255, 255, 255, 0.06); box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16); border: 1px solid rgba(255, 255, 255, 0.16); backdrop-filter: blur(4px); } .card-top { display: flex; align-items: center; gap: 12px; } .pill-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(145deg, #0e82ff, #12c6ff); display: grid; place-items: center; color: #fff; font-weight: 800; letter-spacing: 0.1px; } .compare-card .pill-icon { background: rgba(255, 255, 255, 0.14); } .pill-icon i { font-size: 20px; line-height: 1; } .card-title { font-size: 18px; margin: 0; } .card-body { margin: 0; color: #4b5563; line-height: 1.6; } .compare-card .card-body { color: rgba(231, 241, 255, 0.86); } .chip-row { display: flex; flex-wrap: wrap; gap: 8px; } .chip { display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; min-height: 28px; border-radius: 999px; background: #eef2f7; color: #1f2937; font-weight: 700; font-size: 12px; line-height: 1.2; letter-spacing: 0.1px; } .compare-card .chip { background: rgba(255, 255, 255, 0.28); border: 1px solid rgba(255, 255, 255, 0.4); color: #f8fbff; box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16); } .df-embed {
+ display: none;
+ margin-top: 18px;
+ border-radius: 14px;
+ border: 1px solid rgba(0, 0, 0, 0.08);
+ box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+ background: #0f1b29;
+ padding: 16px;
+ position: relative;
+ }
+ .df-embed.show { display: block; }
+ .df-embed-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 14px;
+ }
+ .embed-card {
+ background: rgba(255, 255, 255, 0.06);
+ border: 1px solid rgba(255, 255, 255, 0.12);
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+ cursor: pointer;
+ transition: transform 0.15s ease, box-shadow 0.15s ease;
+ }
+ .embed-card:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.28); }
+ .embed-media { position: relative; width: 100%; background: #0b1622; }
+ .embed-media img,
+ .embed-media video { display: block; width: 100%; height: auto; object-fit: cover; }
+ .embed-play { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35)); }
+ .embed-play .pill-icon { width: 46px; height: 46px; border-radius: 50%; }
+ .embed-caption { padding: 10px 12px; color: #e7f1ff; font-weight: 700; letter-spacing: 0.2px; }
+ .df-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: none; align-items: center; justify-content: center; z-index: 99999; padding: 20px; }
+ .df-lightbox.show { display: flex; }
+ .df-lightbox-inner { position: relative; width: min(960px, 95vw); background: #0f1b29; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+ .df-lightbox video, .df-lightbox img { display: block; width: 100%; height: auto; max-height: 80vh; }
+ .df-lightbox-close { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 32px; height: 32px; font-weight: 800; cursor: pointer; }
+ .df-embed-close {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ z-index: 2;
+ background: rgba(255, 255, 255, 0.9);
+ border: 0;
+ border-radius: 999px;
+ padding: 6px 10px;
+ cursor: pointer;
+ font-weight: 700;
+ }
+ /* FAQ styles */ .faq { padding: 80px 6vw; background: #0f1b29; color: #e7f1ff; } .faq .wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 18px; } .faq h2 { margin: 0; font-size: 32px; } .faq .lead { margin: 0; color: rgba(231,241,255,0.8); line-height: 1.6; } .faq-list { column-count: 3; column-gap: 12px; } .faq-item { border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; display: block; break-inside: avoid; margin-bottom: 12px; } .faq-item summary { list-style: none; padding: 14px 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 700; } .faq-item summary::-webkit-details-marker { display: none; } .faq-item .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg,#0e82ff,#12c6ff); color:#fff; display:grid; place-items:center; font-size:16px; transition: transform .2s ease; } .faq-item[open] .faq-icon { transform: rotate(45deg); } .faq-item .faq-body { padding: 0 16px 14px 16px; color: rgba(231,241,255,0.85); line-height: 1.6; } .faq-more-ctl { text-align: center; margin: 10px 0; } .faq-more-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:999px; background:linear-gradient(135deg,#0e82ff,#12c6ff); color:#fff; font-weight:700; border:0; cursor:pointer; box-shadow:0 8px 20px rgba(14,130,255,0.25); } @media (max-width: 960px) { .faq-list { column-count: 2; } } @media (max-width: 640px) { .faq-list { column-count: 1; } } @media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .section-head h2 { font-size: 28px; } } @media (max-width: 640px) { .why-zw, .compare-zw { padding: 60px 5vw; } .card-grid { grid-template-columns: 1fr; } } /* Ensure mobile top bar centers content (overrides base padding/order) */ @media (max-width: 640px) { .zw-topbar { justify-content: center; place-items: center; } .zw-topbar-inner { padding: 0 16px; gap: 8px; flex-direction: column; align-items: center; text-align: center; justify-content: center; max-width: 520px; } .zw-topbar img { height: 32px; } .zw-topbar-inner span { line-height: 1.4; } .zw-topbar a.cta { width: 100%; margin-left: 0 !important; padding: 10px 12px; text-align: center; } } .zw-header { position: sticky; top: 0; z-index: 9999; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 6vw; background: linear-gradient(90deg, #0b1c2d, #0f2a3f); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18); } .zw-header .brand { display: flex; align-items: center; gap: 10px; } .zw-header .brand img { height: 42px; width: auto; display: block; } .zw-header .brand span { color: #e7f1ff; font-weight: 700; letter-spacing: 0.6px; } .zw-header .brand .cygnas { height: 42px; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.18)); } .zw-header .actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; } .zw-header .cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; background: linear-gradient(135deg, #1ba3ff, #12c6ff); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 28px rgba(18, 198, 255, 0.32); cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease; } .zw-header .cta.secondary { background: rgba(255, 255, 255, 0.12); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.2); } .zw-header .cta:hover { transform: translateY(-1px); box-shadow: 0 14px 32px rgba(18, 198, 255, 0.4); opacity: 0.94; } .zw-footer { background: #0d1118; color: #d7e0ed; padding: 36px 6vw 28px; border-top: 1px solid rgba(255, 255, 255, 0.08); } .zw-footer .container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; } .zw-footer .footer-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; } .zw-footer .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.5px; } .zw-footer .brand img { height: 38px; width: auto; } .zw-footer .brand .cygnas { height: 42px; } .zw-footer .reseller { color: #b9c6d6; font-size: 14px; line-height: 1.5; } .zw-footer .copy { color: #9fb3c8; font-size: 14px; } .zw-footer .auth-badge { display: flex; align-items: center; justify-content: center; padding: 6px 0; } .zw-footer .auth-badge img { max-width: 140px; width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16); } @media (max-width: 900px) { .zw-header { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px 5vw; } .zw-header .brand { width: 100%; justify-content: space-between; } .zw-header .brand img { height: 38px; } .zw-header .actions { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; } .zw-header .cta { width: 100%; justify-content: center; } } @media (max-width: 640px) { .zw-header { padding: 12px 4vw; align-items: stretch; gap: 10px; } .zw-header .brand { flex-wrap: wrap; gap: 8px; justify-content: space-between; } .zw-header .brand img { height: 34px; } .zw-header .actions { width: 100%; grid-template-columns: 1fr; } .zw-header .cta { width: 100%; justify-content: center; font-size: 14px; padding: 11px 12px; } } /* Modal responsiveness */ @media (max-width: 768px) { .modal-dialog { max-width: 95%; margin: 130px auto 0; } .modal-content { border-radius: 10px; } .modal-body { padding: 18px 14px; } .popform .form-group { margin-bottom: 12px; } .popform .form-control { font-size: 14px; } } /* ensure modal not hidden under header on desktop */ .modal-dialog { margin-top: 200px; } /* Intl Tel Input width fixes */ .iti { width: 100%; } .iti__flag-container { z-index: 5; } /* Cygnas footer (sits above zw footer) */ .cyg-footer { background: #1a1a2e; color: #f8fafc; padding: 48px 6vw 32px; display: block; clear: both; box-sizing: border-box; } .cyg-footer .container { max-width: 1200px; margin: 0 auto; } .cyg-footer .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 24px; margin-bottom: 28px; } .cyg-footer .footer-brand h3 { font-size: 32px; margin: 0 0 12px; letter-spacing: 0.5px; } .cyg-footer .footer-brand p { margin: 0; color: #94a3b8; line-height: 1.8; } .cyg-footer .footer-links h4 { margin: 0 0 12px; font-size: 17px; color: #f8fafc; } .cyg-footer .footer-links ul { list-style: none; margin: 0; padding: 0; } .cyg-footer .footer-links a { color: #94a3b8; text-decoration: none; display: block; padding: 6px 0; transition: color 0.2s ease, transform 0.2s ease; } .cyg-footer .footer-links a:hover { color: #67e8f9; transform: translateX(4px); } .cyg-footer .contact-block { display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; } .cyg-footer .contact-block h4 { margin: 0 0 10px; font-size: 17px; color: #f8fafc; } .cyg-footer .contact-item { display: inline-flex; gap: 8px; align-items: center; justify-content: center; margin: 6px 0; color: #94a3b8; font-size: 14px; line-height: 1.4; } .cyg-footer .contact-item i { color: #67e8f9; font-size: 16px; line-height: 1.4; margin-top: 2px; min-width: 16px; } .cyg-footer .contact-item a { color: #94a3b8; text-decoration: none; } .cyg-footer .contact-item a:hover { color: #67e8f9; } .cyg-footer .footer-bottom { padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.12); color: #94a3b8; } @media (max-width: 1024px) { .cyg-footer .footer-content { grid-template-columns: 1fr 1fr; } } @media (max-width: 640px) { .cyg-footer .footer-content { grid-template-columns: 1fr; } } &lt;/style&gt;
+
+&lt;style id="zw-reset-body"&gt;
+ body {
+ background: #fff !important;
+ color: #111 !important;
+ }
+ &lt;/style&gt;
+
+&lt;!-- HERO --&gt; &lt;div class="da-main"&gt; &lt;div class="da-bg pc" style="background-image: url('images/pw1.jpg')" &gt;&lt;/div&gt; &lt;div class="da-bg phone" style="background-image: url('images/pw1-b.jpg')" &gt;&lt;/div&gt; &lt;div class="da-text"&gt; &lt;div class="da-box"&gt; &lt;div class="da-tip d-bold"&gt;ZWCAD CAD Software&lt;/div&gt; &lt;div class="da-pill"&gt; &lt;span class="pill-dot"&gt;&lt;/span&gt; ZWCAD now available &lt;/div&gt; &lt;h2 class="da-titles d-bold"&gt; ZWCAD is built for faster DWG CAD workflows &lt;/h2&gt; &lt;div class="da-intro"&gt; Native RVT import, faster block editing, and one-click data extraction for UK design teams. &lt;/div&gt; &lt;div class="da-buttombox"&gt; &lt;a class="da-buttom d-bold" href="https://www.cygnas.co.uk/zwsoft-uk/zwcad-2027/#pricing"&gt;See Pricing&lt;/a&gt; &lt;a class="da-buttom white d-bold" href="https://www.cygnas.co.uk/zwsoft-uk/assets/zwcad-2027-brochure.pdf" target="_blank" rel="noopener" &gt;Download Brochure&lt;/a &gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- WHAT'S NEW --&gt; &lt;div class="dc-main"&gt; &lt;div class="dc-inner"&gt; &lt;div class="dc-top"&gt; &lt;h2 class="dc-titles d-bold"&gt; ZWCAD – &lt;span class="dc-span d-bold"&gt;More Powerful, More Efficient&lt;/span&gt; &lt;/h2&gt; &lt;div class="dc-synopsis"&gt; ZWCAD takes performance, stability, and functionality to the next level. With enhanced reliability and exciting new features, it's designed to help you work smarter and faster than ever before. &lt;/div&gt; &lt;div class="dc-synopsis2 d-bold"&gt; Discover the key highlights below and see what's new in ZWCAD. &lt;/div&gt; &lt;/div&gt; &lt;div class="dc-cont"&gt; &lt;div class="dc-item"&gt; &lt;div class="dc-box"&gt; &lt;video src="assets/ParametricDesign.mp4" x5-playsinline playsinline webkit-playsinline="true" autoplay="autoplay" muted="muted" loop="loop" &gt;&lt;/video&gt; &lt;/div&gt; &lt;div class="dc-text"&gt; &lt;div class="dc-name d-bold"&gt;Parametric Design&lt;/div&gt; &lt;div class="dc-intro"&gt; Drive geometry with parameters to iterate faster and keep designs consistent across revisions. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="dc-item"&gt; &lt;div class="dc-box"&gt; &lt;img src="assets/Smart%20Match.webp" alt="Smart Match" /&gt; &lt;/div&gt; &lt;div class="dc-text"&gt; &lt;div class="dc-name d-bold"&gt;Smart Match&lt;/div&gt; &lt;div class="dc-intro"&gt; Instantly match properties between objects to keep drawings tidy without manual tweaks. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="dc-item"&gt; &lt;div class="dc-box"&gt; &lt;img src="assets/Smart%20Dimension.gif" alt="Smart Dimension" /&gt; &lt;/div&gt; &lt;div class="dc-text"&gt; &lt;div class="dc-name d-bold"&gt;Smart Dimension&lt;/div&gt; &lt;div class="dc-intro"&gt; Add precise dimensions with automatic alignment and spacing, reducing cleanup time. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="dc-item"&gt; &lt;div class="dc-box"&gt; &lt;img src="assets/Similar%20Search.gif" alt="Similar Search" /&gt; &lt;/div&gt; &lt;div class="dc-text"&gt; &lt;div class="dc-name d-bold"&gt;Similar Search&lt;/div&gt; &lt;div class="dc-intro"&gt; Find and reuse similar components instantly to speed up repetitive drafting tasks. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="dc-bottom"&gt; &lt;a class="dc-link d-bold" data-toggle="modal" data-target="#leadform" data-lead-source="whats_new_order" &gt;Order ZWCAD Now&lt;/a &gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- FEATURES --&gt; &lt;div class="df-main"&gt; &lt;div class="df-inner"&gt; &lt;div class="df-top"&gt; &lt;h2 class="df-titles d-bold"&gt; ZWCAD - our best CAD solution - now even &lt;span class="df-span d-bold"&gt;more powerful&lt;/span&gt; &lt;/h2&gt; &lt;div class="df-synopsis"&gt; ZWCAD elevates your design with innovative features that simplify your workflow, enhance productivity, and provide the precision and flexibility to bring your ideas to life. &lt;/div&gt; &lt;/div&gt; &lt;div class="df-bottom"&gt; &lt;div class="df-dl"&gt; &lt;h2 class="df-dt d-bold"&gt;Top Features&lt;/h2&gt; &lt;div class="df-dd"&gt; &lt;div class="df-list"&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/ParametricDesign.mp4" &gt; &lt;img data-img="images/zc-4.jpg" alt="ZWCAD efficiency improvement preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;Enhanced&lt;/span&gt; &lt;span class="df-versions"&gt;V1.2&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;Efficiency Improvement&lt;/div&gt; &lt;div class="df-des"&gt; Open, pan and zoom complex 3D models faster and smoother. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="https://www.youtube.com/embed/kUU9mXejHQc" &gt; &lt;img data-img="images/zc-5.jpg" alt="ZWCAD visual styles preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;New&lt;/span &gt;&lt;span class="df-versions"&gt;V1.2&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;New Visual Styles&lt;/div&gt; &lt;div class="df-des"&gt; Meet diverse visualization needs with the addition of 4 visualstyles, including Conceptual, Realistic, Shade of Grey, and Xray. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/IFC_Import_Edit_Export.mp4"&gt; &lt;img data-img="images/zc-6.jpg" alt="ZWCAD STEP file import preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;New&lt;/span &gt;&lt;span class="df-versions"&gt;V1.2&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;STEP File Import&lt;/div&gt; &lt;div class="df-des"&gt; Directly import 3D files in STEP formats (AP203 and AP214) without the hassle of format conversion. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/ZWCADToolbox.mp4"&gt; &lt;img data-img="images/zc-7.jpg" alt="ZWCAD 3D Gizmo preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt;&lt;span class="df-lb"&gt;New&lt;/span&gt;&lt;/div&gt; &lt;div class="df-tit d-bold"&gt;3D Gizmo&lt;/div&gt; &lt;div class="df-des"&gt; Move, rotate, and scale 3D objects conveniently with 3D gizmos. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/SmartPlot.mp4"&gt; &lt;img data-img="images/zc-8.jpg" alt="ZWCAD ribbon improvement preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;Enhanced&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;Ribbon Improvement&lt;/div&gt; &lt;div class="df-des"&gt; Customize your own workspace freely with Ribbon panels that can be slid out, dragged, floated and collapsed as icons. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/SelectMenu.mp4"&gt; &lt;img data-img="images/zc-9.jpg" alt="ZWCAD panel improvement preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;Enhanced&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;Panel Improvement&lt;/div&gt; &lt;div class="df-des"&gt; Panels can be stacked and hidden automatically to provide a bigger drawing space. A new navigator helps you drag or dock panels more conveniently. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/AddSelect.mp4"&gt; &lt;img data-img="images/zc-10.jpg" alt="ZWCAD floating drawing window preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt;&lt;span class="df-lb"&gt;New&lt;/span&gt;&lt;/div&gt; &lt;div class="df-tit d-bold"&gt;Floating Drawing Window&lt;/div&gt; &lt;div class="df-des"&gt; View multiple drawings simultaneously with drawing windows that can be dragged out of the program as floating windows. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/SimilarSearch.mp4"&gt; &lt;img data-img="images/zc-11.jpg" alt="ZWCAD point cloud improvement preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;Enhanced&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;Point Cloud Improvement&lt;/div&gt; &lt;div class="df-des"&gt; Meet different needs with the addition of 3 visual styles including Intensity, Elevation, and Classification, and the Navigate to Scan View function. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-item"&gt; &lt;div class="df-box play-box" data-mp4="assets/SmartMatch.mp4"&gt; &lt;img data-img="images/zc-12.jpg" alt="ZWCAD GIS improvement preview" class="df-img" /&gt; &lt;div class="df-play"&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class="df-text"&gt; &lt;div class="df-lbs"&gt; &lt;span class="df-lb"&gt;Enhanced&lt;/span&gt; &lt;/div&gt; &lt;div class="df-tit d-bold"&gt;GIS Improvement&lt;/div&gt; &lt;div class="df-des"&gt; It can import more mapping services such as Bing Maps, and match geographic markers with specified points in drawings. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-last"&gt; &lt;div class="df-more d-bold"&gt; Show &lt;span class="df-more-txt1 d-bold"&gt;More&lt;/span&gt; &lt;span class="df-more-txt2 d-bold"&gt;Less&lt;/span&gt; &lt;span class="df-more-icon"&gt;&lt;/span&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="df-discoverbox"&gt;
+ &lt;a
+ href="#"
+ class="df-discover d-bold"
+ data-embed-src="#"
+ &gt;Discover More&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="df-embed" aria-hidden="true"&gt;
+ &lt;button class="df-embed-close" type="button"&gt;Close&lt;/button&gt;
+ &lt;div class="df-embed-grid"&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/ParametricDesign.mp4"
+ data-title="Parametric Design"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/ParametricDesign.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;Parametric Design&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/SmartMatch.mp4"
+ data-title="Smart Match"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/SmartMatch.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;Smart Match&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/SmartDimension.mp4"
+ data-title="Smart Dimension"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/SmartDimension.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;Smart Dimension&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/SimilarSearch.mp4"
+ data-title="Similar Search"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/SimilarSearch.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;Similar Search&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/SmartPlot.mp4"
+ data-title="Smart Plot"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/SmartPlot.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;Smart Plot&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/ZWCADToolbox.mp4"
+ data-title="ZWCAD Toolbox"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/ZWCADToolbox.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;ZWCAD Toolbox&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/IFC_Import_Edit_Export.mp4"
+ data-title="IFC Import, Edit, Export"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/IFC_Import_Edit_Export.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;IFC Import, Edit, Export&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/AddSelect.mp4"
+ data-title="AddSelect"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/AddSelect.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;AddSelect&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div
+ class="embed-card"
+ data-video="assets/SelectMenu.mp4"
+ data-title="SelectMenu"
+ &gt;
+ &lt;div class="embed-media"&gt;
+ &lt;video
+ src="assets/SelectMenu.mp4"
+ muted
+ playsinline
+ preload="metadata"
+ &gt;&lt;/video&gt;
+ &lt;div class="embed-play"&gt;
+ &lt;div class="pill-icon"&gt;&lt;i class="ti ti-player-play"&gt;&lt;/i&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="embed-caption"&gt;SelectMenu&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="df-lightbox" aria-hidden="true"&gt;
+ &lt;div class="df-lightbox-inner"&gt;
+ &lt;button class="df-lightbox-close" type="button" aria-label="Close"&gt;×&lt;/button&gt;
+ &lt;div class="df-lightbox-body"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- WHY ZWCAD --&gt; &lt;section class="why-zw" id="why-zwcad"&gt; &lt;div class="section-wrap"&gt; &lt;div class="section-head"&gt; &lt;h2 class="d-bold"&gt;Why ZWCAD?&lt;/h2&gt; &lt;p&gt; Modern CAD without lock-in: own it perpetually, work natively with DWG, and tap into smart tools that speed up every day. &lt;/p&gt;</description></item></channel></rss>
