@@ -1,0 +1,50 @@
+name: Build and Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main2
+    paths:
+      - ".github/workflows/deploy-hostinger-main2.yml"
+      - "archetypes/**"
+      - "assets/**"
+      - "content/**"
+      - "data/**"
+      - "layouts/**"
+      - "static/**"
+      - "zwsoft-uk/**"
+      - "hugo.toml"
+      - "netlify.hugo.toml"
+      - "config.*"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build Hugo site and sync public output
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.150.0"
+          extended: true
+
+      - name: Build site
+        run: hugo --gc --minify --baseURL "https://www.cygnas.co.uk/"
+
+      - name: Deploy public output to Hostinger
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          switches: -az --delete --exclude .htaccess --exclude .well-known/
+          path: public/
+          remote_path: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+          remote_host: ${{ secrets.HOSTINGER_HOST }}
+          remote_port: ${{ secrets.HOSTINGER_PORT }}
+          remote_user: ${{ secrets.HOSTINGER_USER }}
+          remote_key: ${{ secrets.HOSTINGER_SSH_KEY }}
